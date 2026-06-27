@@ -57,10 +57,10 @@ const steps = [
 ];
 
 const missions = [
-  { name: "Hoțul de Roluri", desc: "Descoperă și schimbă rolurile care te țin pe loc.", level: "Nivel 1", price: 299, img: mission1, icon: Drama },
-  { name: "Operatorul Secret", desc: "Învață să acționezi strategic și să obții rezultate.", level: "Nivel 2", price: 499, img: mission2, icon: Eye },
-  { name: "Superputerea", desc: "Activează-ți puterea interioară și creează-ți realitatea.", level: "Nivel 3", price: 699, img: mission3, icon: Zap },
-  { name: "Nucleul Secret", desc: "Acces la nucleul profund al transformării tale.", level: "Nivel 4", price: 999, img: mission4, icon: Mountain },
+  { name: "Hoțul de Roluri", desc: "Descoperă și schimbă rolurile care te țin pe loc.", level: "Misiunea 1", price: 29, img: mission1, icon: Drama },
+  { name: "Operatorul Secret", desc: "Învață să acționezi strategic și să obții rezultate.", level: "Misiunea 2", price: 39, img: mission2, icon: Eye },
+  { name: "Superputerea", desc: "Activează-ți puterea interioară și creează-ți realitatea.", level: "Misiunea 3", price: 49, img: mission3, icon: Zap },
+  { name: "Nucleul Secret", desc: "Acces la nucleul profund al transformării tale.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
 ];
 
 const trust = [
