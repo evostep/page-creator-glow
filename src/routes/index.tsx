@@ -276,7 +276,7 @@ function Index() {
           <div>
             <h4 className="font-semibold text-foreground mb-3">Ai nevoie de ajutor?</h4>
             <p className="text-sm text-muted-foreground">Scrie-ne pe Discord sau pe email:</p>
-            <a href="mailto:contact@evostep.ro" className="mt-1 inline-block text-sm font-medium text-primary hover:underline">contact@evostep.ro</a>
+            <a href="mailto:hello.evostep@gmail.com" className="mt-1 inline-block text-sm font-medium text-primary hover:underline">hello.evostep@gmail.com</a>
           </div>
         </div>
         <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} EvoStep. Toate drepturile rezervate.</div>
