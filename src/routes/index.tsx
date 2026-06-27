@@ -199,7 +199,9 @@ function Index() {
           <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold text-foreground">MISIUNILE NIVELULUI 1</h2>
           <span className="h-px w-12 bg-primary/40" />
         </div>
-        <p className="text-center text-sm text-muted-foreground mb-10">4 misiuni · câte 1 pe săptămână</p>
+        <p className="text-center text-sm text-muted-foreground mb-10 whitespace-pre-line">
+          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n\n\n"}
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {missions.map((m) => (
