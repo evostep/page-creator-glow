@@ -57,10 +57,10 @@ const steps = [
 ];
 
 const missions = [
-  { name: "Hoțul de Roluri", desc: "Descoperă și schimbă rolurile care te țin pe loc.", level: "Nivel 1", price: 299, img: mission1, icon: Drama },
-  { name: "Operatorul Secret", desc: "Învață să acționezi strategic și să obții rezultate.", level: "Nivel 2", price: 499, img: mission2, icon: Eye },
-  { name: "Superputerea", desc: "Activează-ți puterea interioară și creează-ți realitatea.", level: "Nivel 3", price: 699, img: mission3, icon: Zap },
-  { name: "Nucleul Secret", desc: "Acces la nucleul profund al transformării tale.", level: "Nivel 4", price: 999, img: mission4, icon: Mountain },
+  { name: "Hoțul de Roluri", desc: "Descoperă și schimbă rolurile care te țin pe loc.", level: "Misiunea 1", price: 29, img: mission1, icon: Drama },
+  { name: "Operatorul Secret", desc: "Învață să acționezi strategic și să obții rezultate.", level: "Misiunea 2", price: 39, img: mission2, icon: Eye },
+  { name: "Superputerea", desc: "Activează-ți puterea interioară și creează-ți realitatea.", level: "Misiunea 3", price: 49, img: mission3, icon: Zap },
+  { name: "Nucleul Secret", desc: "Acces la nucleul profund al transformării tale.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
 ];
 
 const trust = [
@@ -199,7 +199,9 @@ function Index() {
           <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold text-foreground">MISIUNILE NIVELULUI 1</h2>
           <span className="h-px w-12 bg-primary/40" />
         </div>
-        <p className="text-center text-sm text-muted-foreground mb-10">4 misiuni · câte 1 pe săptămână</p>
+        <p className="text-center text-sm text-muted-foreground mb-10 whitespace-pre-line">
+          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n\n\n"}
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {missions.map((m) => (
@@ -274,7 +276,7 @@ function Index() {
           <div>
             <h4 className="font-semibold text-foreground mb-3">Ai nevoie de ajutor?</h4>
             <p className="text-sm text-muted-foreground">Scrie-ne pe Discord sau pe email:</p>
-            <a href="mailto:contact@evostep.ro" className="mt-1 inline-block text-sm font-medium text-primary hover:underline">contact@evostep.ro</a>
+            <a href="mailto:hello.evostep@gmail.com" className="mt-1 inline-block text-sm font-medium text-primary hover:underline">hello.evostep@gmail.com</a>
           </div>
         </div>
         <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} EvoStep. Toate drepturile rezervate.</div>
