@@ -89,7 +89,7 @@ function Index() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       {/* NAV */}
       <header className="bg-[var(--gradient-hero)]">
-        <nav className="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between gap-6">
+        <nav className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-6">
           <Logo />
           <ul className="hidden lg:flex items-center gap-9 text-sm text-foreground/80">
             {navLinks.map((l) => (
@@ -98,22 +98,21 @@ function Index() {
               </li>
             ))}
           </ul>
-          <a href="#cta" className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-95 transition">
-            <DiscordIcon className="h-4 w-4" /> Intră pe Discord
+          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+            <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord
           </a>
         </nav>
 
         {/* HERO */}
-        <section className="mx-auto max-w-7xl px-6 pt-6 pb-20 grid lg:grid-cols-2 gap-10 items-center">
+        <section className="mx-auto max-w-7xl px-6 pt-4 pb-12 grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="font-serif text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight">
-              Bine ai venit în
-              <span className="block text-primary">EvoStep!</span>
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight">
+              Bine ai venit în <span className="text-primary">EvoStep!</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-md">
-              O aventură de dezvoltare personală,<br />în care fiecare misiune te transformă.
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-md">
+              O aventură de dezvoltare personală, în care fiecare misiune te transformă.
             </p>
-            <ul className="mt-8 space-y-4">
+            <ul className="mt-6 space-y-3">
               {[
                 { icon: Users, label: "Misiuni progresive" },
                 { icon: Compass, label: "Comunitate activă" },
@@ -127,13 +126,13 @@ function Index() {
                 </li>
               ))}
             </ul>
-            <div className="mt-10 max-w-md rounded-2xl bg-primary-soft/70 backdrop-blur p-5 flex items-center gap-4 shadow-[var(--shadow-card)]">
+            <div className="mt-6 max-w-md rounded-2xl bg-primary-soft/70 backdrop-blur p-4 flex items-center gap-4 shadow-[var(--shadow-card)]">
               <div>
                 <div className="font-semibold text-foreground">Totul se întâmplă în Discord.</div>
                 <div className="text-sm text-muted-foreground mt-0.5">Intră, alege o misiune și începe-ți transformarea.</div>
               </div>
               <div className="ml-auto h-11 w-11 shrink-0 rounded-xl bg-[var(--gradient-primary)] flex items-center justify-center">
-                <DiscordIcon className="h-5 w-5 text-primary-foreground" />
+                <DiscordIcon className="h-5 w-5 text-white" />
               </div>
             </div>
           </div>
@@ -142,22 +141,13 @@ function Index() {
             <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-glow)] aspect-[4/5] lg:aspect-[5/6]">
               <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="h-full w-full object-cover" />
             </div>
-            <div className="absolute -bottom-6 -left-4 lg:left-auto lg:-right-4 bg-card rounded-2xl shadow-[var(--shadow-card)] px-5 py-3.5 flex items-center gap-3 max-w-[260px]">
-              <span className="h-10 w-10 rounded-full bg-warning/20 flex items-center justify-center">
-                <Compass className="h-5 w-5 text-warning" />
-              </span>
-              <div className="text-sm leading-tight">
-                <div className="font-semibold">Tu ești busola.</div>
-                <div className="text-muted-foreground">Noi îți oferim harta.</div>
-              </div>
-            </div>
           </div>
         </section>
       </header>
 
       {/* HOW IT WORKS */}
-      <section id="cum" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="flex items-center justify-center gap-4 mb-12">
+      <section id="cum" className="mx-auto max-w-7xl px-6 py-12">
+        <div className="flex items-center justify-center gap-4 mb-8">
           <span className="h-px w-12 bg-primary/40" />
           <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold text-foreground">CUM FUNCȚIONEAZĂ</h2>
           <span className="h-px w-12 bg-primary/40" />
@@ -193,17 +183,17 @@ function Index() {
       </section>
 
       {/* MISSIONS */}
-      <section id="misiuni" className="mx-auto max-w-7xl px-6 pb-20">
+      <section id="misiuni" className="mx-auto max-w-7xl px-6 pb-12">
         <div className="flex items-center justify-center gap-4 mb-3">
           <span className="h-px w-12 bg-primary/40" />
           <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold text-foreground">MISIUNILE NIVELULUI 1</h2>
           <span className="h-px w-12 bg-primary/40" />
         </div>
-        <p className="text-center text-sm text-muted-foreground mb-10 whitespace-pre-line">
+        <p className="text-center text-sm text-muted-foreground mb-6 whitespace-pre-line">
           {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n\n\n"}
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {missions.map((m) => (
             <article key={m.name} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden flex flex-col">
               <div className="aspect-[4/3] overflow-hidden">
@@ -227,7 +217,7 @@ function Index() {
         </div>
 
         {/* TRUST BAR */}
-        <div className="mt-10 rounded-2xl bg-primary-soft/50 px-6 py-5 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-8 rounded-2xl bg-primary-soft/50 px-6 py-4 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {trust.map((t) => (
             <div key={t.t} className="flex items-center gap-3">
               <span className="h-10 w-10 rounded-xl bg-card flex items-center justify-center shadow-[var(--shadow-card)]">
@@ -243,24 +233,24 @@ function Index() {
       </section>
 
       {/* CTA */}
-      <section id="cta" className="mx-auto max-w-7xl px-6 pb-16">
-        <div className="relative overflow-hidden rounded-3xl bg-primary-soft/60 px-8 py-8 flex flex-col lg:flex-row items-center gap-6">
+      <section id="cta" className="mx-auto max-w-7xl px-6 pb-10">
+        <div className="relative overflow-hidden rounded-3xl bg-primary-soft/60 px-6 py-6 flex flex-col lg:flex-row items-center gap-5">
           <div className="h-14 w-14 rounded-2xl bg-[var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)] shrink-0">
-            <DiscordIcon className="h-7 w-7 text-primary-foreground" />
+            <DiscordIcon className="h-7 w-7 text-white" />
           </div>
           <div className="flex-1 text-center lg:text-left">
             <h3 className="font-serif text-2xl font-bold">Ești gata să începi?</h3>
             <p className="text-muted-foreground text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
           </div>
-          <a href="#" className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-7 py-3.5 text-base font-medium text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-95 transition">
-            Intră pe Discord <Send className="h-4 w-4" />
+          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-7 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+            Intră pe Discord <Send className="h-4 w-4 text-white" />
           </a>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="mx-auto max-w-7xl px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Logo />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">Devino cea mai bună versiune a ta.</p>
