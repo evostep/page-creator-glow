@@ -16,6 +16,7 @@ import {
   Drama,
   Send,
 } from "lucide-react";
+import evostepLogo from "@/assets/evostep-logo.asset.json";
 import heroPortal from "@/assets/hero-portal.jpg";
 import mission1 from "@/assets/mission-1.jpg";
 import mission2 from "@/assets/mission-2.jpg";
@@ -73,12 +74,10 @@ const trust = [
 function Logo() {
   return (
     <div className="flex items-center gap-2.5">
-      <div className="relative h-10 w-10 rounded-full bg-gradient-to-br from-primary to-primary-soft shadow-[var(--shadow-glow)] flex items-center justify-center">
-        <Compass className="h-5 w-5 text-primary-foreground" strokeWidth={2.2} />
-      </div>
+      <img src={evostepLogo.url} alt="EvoStep logo" width={44} height={44} className="h-11 w-11 rounded-full shadow-[var(--shadow-glow)]" />
       <div className="leading-tight">
         <div className="font-serif text-2xl font-bold text-foreground tracking-tight">EvoStep</div>
-        <div className="text-[9px] tracking-[0.18em] text-primary font-semibold">EVOLUȚIE PAS CU PAS</div>
+        <div className="text-[9px] tracking-[0.18em] bg-[var(--gradient-primary)] bg-clip-text text-transparent font-semibold">EVOLVE • GROW • STEP BY STEP</div>
       </div>
     </div>
   );
@@ -107,7 +106,7 @@ function Index() {
         <section className="mx-auto max-w-7xl px-6 pt-4 pb-12 grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight">
-              Bine ai venit în <span className="text-primary">EvoStep!</span>
+              Bine ai venit în <span className="bg-[var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-md">
               O aventură de dezvoltare personală, în care fiecare misiune te transformă.
