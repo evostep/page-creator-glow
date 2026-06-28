@@ -106,7 +106,7 @@ function Index() {
         <section className="mx-auto max-w-7xl px-6 pt-4 pb-12 grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight">
-              Bine ai venit în <span className="text-primary">EvoStep!</span>
+              Bine ai venit în <span className="bg-[var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-md">
               O aventură de dezvoltare personală, în care fiecare misiune te transformă.
