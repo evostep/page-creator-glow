@@ -98,8 +98,8 @@ function Index() {
               </li>
             ))}
           </ul>
-          <a href="#cta" className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-95 transition">
-            <DiscordIcon className="h-4 w-4" /> Intră pe Discord
+          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+            <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord
           </a>
         </nav>
 
@@ -132,7 +132,7 @@ function Index() {
                 <div className="text-sm text-muted-foreground mt-0.5">Intră, alege o misiune și începe-ți transformarea.</div>
               </div>
               <div className="ml-auto h-11 w-11 shrink-0 rounded-xl bg-[var(--gradient-primary)] flex items-center justify-center">
-                <DiscordIcon className="h-5 w-5 text-primary-foreground" />
+                <DiscordIcon className="h-5 w-5 text-white" />
               </div>
             </div>
           </div>
