@@ -15,6 +15,9 @@ import {
   Zap,
   Drama,
   Send,
+  VenetianMask,
+  UsersRound,
+  Sparkles,
 } from "lucide-react";
 import evostepLogo from "@/assets/evostep-logo.asset.json";
 import heroPortal from "@/assets/hero-portal.jpg";
@@ -51,10 +54,10 @@ const navLinks = [
 const steps = [
   { n: 1, title: "Nu ai cont Discord?", desc: "Urmărește video-ul de mai jos și creează-ți contul Discord în 2 minute.", icon: UserPlus, cta: { label: "Vezi tutorial", variant: "ghost" as const } },
   { n: 2, title: "Intră pe server", desc: "Alătură-te serverului EvoStep. Acolo vei primi rolul de Vizitator.", icon: DiscordIcon, cta: { label: "Intră pe Discord", variant: "primary" as const } },
-  { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: ShieldCheck },
+  { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2 },
   { n: 4, title: "Alege o misiune", desc: "Selectează misiunea care rezonează cu tine și efectuează plata în siguranță.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "ghost" as const } },
-  { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: Lock },
-  { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi transformarea.", icon: PartyPopper, ctaNote: "Simplu și rapid!" },
+  { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: VenetianMask },
+  { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi transformarea.", icon: Sparkles, ctaNote: "Simplu și rapid!" },
 ];
 
 const missions = [
@@ -65,9 +68,9 @@ const missions = [
 ];
 
 const trust = [
-  { icon: ShieldCheck, t: "Acces securizat", s: "prin roluri" },
-  { icon: Users, t: "Comunitate activă", s: "și suport real" },
-  { icon: Lock, t: "Permisiuni clare,", s: "doar unde ai acces" },
+  { icon: VenetianMask, t: "Acces securizat", s: "prin roluri" },
+  { icon: UsersRound, t: "Comunitate activă", s: "și suport real" },
+  { icon: Drama, t: "Permisiuni clare,", s: "doar unde ai acces" },
   { icon: Headphones, t: "Mentorat și", s: "cabinete de voce" },
 ];
 
@@ -103,50 +106,44 @@ function Index() {
         </nav>
 
         {/* HERO */}
-        <section className="mx-auto max-w-7xl px-6 pt-4 pb-12 grid lg:grid-cols-2 gap-8 items-center">
+        <section className="mx-auto max-w-7xl px-6 pt-2 pb-8 grid lg:grid-cols-2 gap-6 items-center">
           <div>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
               Bine ai venit în <span className="bg-[var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-md">
+            <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-md">
               O aventură de dezvoltare personală, în care fiecare misiune te transformă.
             </p>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-4 space-y-2.5">
               {[
                 { icon: Users, label: "Misiuni progresive" },
                 { icon: Compass, label: "Comunitate activă" },
                 { icon: Lock, label: "Acces doar prin roluri" },
               ].map((f) => (
                 <li key={f.label} className="flex items-center gap-3">
-                  <span className="h-9 w-9 rounded-full bg-primary-soft flex items-center justify-center">
-                    <f.icon className="h-4 w-4 text-primary" />
+                  <span className="h-9 w-9 rounded-full bg-[var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                    <f.icon className="h-4 w-4 text-white" />
                   </span>
                   <span className="text-foreground/85">{f.label}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-6 max-w-md rounded-2xl bg-primary-soft/70 backdrop-blur p-4 flex items-center gap-4 shadow-[var(--shadow-card)]">
-              <div>
-                <div className="font-semibold text-foreground">Totul se întâmplă în Discord.</div>
-                <div className="text-sm text-muted-foreground mt-0.5">Intră, alege o misiune și începe-ți transformarea.</div>
-              </div>
-              <div className="ml-auto h-11 w-11 shrink-0 rounded-xl bg-[var(--gradient-primary)] flex items-center justify-center">
-                <DiscordIcon className="h-5 w-5 text-white" />
-              </div>
-            </div>
+            <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-6 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition ring-1 ring-primary/30">
+              <DiscordIcon className="h-5 w-5 text-white" /> Intră pe Discord
+            </a>
           </div>
 
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-glow)] aspect-[4/5] lg:aspect-[5/6]">
-              <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="h-full w-full object-cover" />
+            <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-glow)] aspect-[4/5] lg:aspect-square max-w-md mx-auto">
+              <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="h-full w-full object-cover contrast-110 saturate-125 brightness-95" />
             </div>
           </div>
         </section>
       </header>
 
       {/* HOW IT WORKS */}
-      <section id="cum" className="mx-auto max-w-7xl px-6 py-12">
-        <div className="flex items-center justify-center gap-4 mb-8">
+      <section id="cum" className="mx-auto max-w-7xl px-6 py-8">
+        <div className="flex items-center justify-center gap-4 mb-6">
           <span className="h-px w-12 bg-primary/40" />
           <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold text-foreground">CUM FUNCȚIONEAZĂ</h2>
           <span className="h-px w-12 bg-primary/40" />
@@ -155,20 +152,20 @@ function Index() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
           {steps.map((s, i) => (
             <div key={s.n} className="relative">
-              <div className="h-full rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)] flex flex-col">
+              <div className="h-full rounded-2xl bg-card border border-border p-4 shadow-[var(--shadow-card)] flex flex-col">
                 <div className="mx-auto h-10 w-10 rounded-full bg-[var(--gradient-primary)] text-primary-foreground font-bold flex items-center justify-center text-sm">{s.n}</div>
-                <div className="mt-5 mx-auto h-16 w-16 rounded-2xl bg-primary-soft flex items-center justify-center">
-                  <s.icon className="h-8 w-8 text-primary" />
+                <div className="mt-4 mx-auto h-16 w-16 rounded-2xl bg-[var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                  <s.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="mt-4 text-center font-semibold text-foreground">{s.title}</h3>
+                <h3 className="mt-3 text-center font-semibold text-foreground text-sm">{s.title}</h3>
                 <p className="mt-2 text-center text-xs text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
                 {s.cta && (
-                  <button className={`mt-4 mx-auto rounded-lg px-4 py-2 text-xs font-medium transition ${s.cta.variant === "primary" ? "bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]" : "border border-primary/30 text-primary hover:bg-primary-soft"}`}>
+                  <button className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "bg-[var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
                     {s.cta.label}
                   </button>
                 )}
                 {s.ctaNote && (
-                  <div className="mt-4 mx-auto inline-flex items-center gap-1.5 text-xs font-medium text-success">
+                  <div className="mt-3 mx-auto inline-flex items-center gap-1.5 text-xs font-medium text-success">
                     <CheckCircle2 className="h-3.5 w-3.5" /> {s.ctaNote}
                   </div>
                 )}
@@ -182,13 +179,13 @@ function Index() {
       </section>
 
       {/* MISSIONS */}
-      <section id="misiuni" className="mx-auto max-w-7xl px-6 pb-12">
+      <section id="misiuni" className="mx-auto max-w-7xl px-6 pb-8">
         <div className="flex items-center justify-center gap-4 mb-3">
           <span className="h-px w-12 bg-primary/40" />
-          <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold text-foreground">MISIUNILE NIVELULUI 1</h2>
+          <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold bg-[var(--gradient-primary)] bg-clip-text text-transparent">MISIUNILE NIVELULUI 1</h2>
           <span className="h-px w-12 bg-primary/40" />
         </div>
-        <p className="text-center text-sm text-muted-foreground mb-6 whitespace-pre-line">
+        <p className="text-center text-sm text-muted-foreground mb-5 whitespace-pre-line">
           {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n\n\n"}
         </p>
 
@@ -196,17 +193,17 @@ function Index() {
           {missions.map((m) => (
             <article key={m.name} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden flex flex-col">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={m.img} alt={m.name} width={768} height={576} loading="lazy" className="h-full w-full object-cover" />
+                <img src={m.img} alt={m.name} width={768} height={576} loading="lazy" className="h-full w-full object-cover contrast-110 saturate-125 brightness-95" />
               </div>
-              <div className="p-5 flex-1 flex flex-col">
+              <div className="p-4 flex-1 flex flex-col">
                 <div className="flex items-center gap-2">
                   <m.icon className="h-5 w-5 text-primary" />
-                  <h3 className="font-serif text-xl font-bold text-primary">{m.name}</h3>
+                  <h3 className="font-serif text-xl font-bold bg-[var(--gradient-primary)] bg-clip-text text-transparent">{m.name}</h3>
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground flex-1">{m.desc}</p>
-                <div className="mt-5 flex items-end justify-between">
-                  <span className="rounded-md bg-primary-soft px-2.5 py-1 text-xs font-medium text-primary">{m.level}</span>
-                  <div className="font-serif text-3xl font-bold text-warning">
+                <div className="mt-4 flex items-end justify-between">
+                  <span className="rounded-md bg-[var(--gradient-primary)] px-2.5 py-1 text-xs font-semibold text-white shadow-sm">{m.level}</span>
+                  <div className="font-serif text-3xl font-bold bg-[var(--gradient-primary)] bg-clip-text text-transparent">
                     {m.price}<span className="text-xs text-muted-foreground font-sans ml-1 tracking-wider">RON</span>
                   </div>
                 </div>
@@ -216,11 +213,11 @@ function Index() {
         </div>
 
         {/* TRUST BAR */}
-        <div className="mt-8 rounded-2xl bg-primary-soft/50 px-6 py-4 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-6 rounded-2xl bg-primary-soft/50 px-6 py-4 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {trust.map((t) => (
             <div key={t.t} className="flex items-center gap-3">
-              <span className="h-10 w-10 rounded-xl bg-card flex items-center justify-center shadow-[var(--shadow-card)]">
-                <t.icon className="h-5 w-5 text-primary" />
+              <span className="h-10 w-10 rounded-xl bg-[var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                <t.icon className="h-5 w-5 text-white" />
               </span>
               <div className="text-sm leading-tight">
                 <div className="font-medium text-foreground">{t.t}</div>
@@ -232,17 +229,17 @@ function Index() {
       </section>
 
       {/* CTA */}
-      <section id="cta" className="mx-auto max-w-7xl px-6 pb-10">
-        <div className="relative overflow-hidden rounded-3xl bg-primary-soft/60 px-6 py-6 flex flex-col lg:flex-row items-center gap-5">
-          <div className="h-14 w-14 rounded-2xl bg-[var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)] shrink-0">
+      <section id="cta" className="mx-auto max-w-7xl px-6 pb-8">
+        <div className="relative overflow-hidden rounded-3xl bg-[var(--gradient-primary)] px-6 py-7 flex flex-col lg:flex-row items-center gap-5 shadow-[var(--shadow-glow)]">
+          <div className="h-14 w-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center shrink-0 ring-1 ring-white/30">
             <DiscordIcon className="h-7 w-7 text-white" />
           </div>
           <div className="flex-1 text-center lg:text-left">
-            <h3 className="font-serif text-2xl font-bold">Ești gata să începi?</h3>
-            <p className="text-muted-foreground text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
+            <h3 className="font-serif text-2xl font-bold text-white">Ești gata să începi?</h3>
+            <p className="text-white/90 text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
           </div>
-          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-7 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
-            Intră pe Discord <Send className="h-4 w-4 text-white" />
+          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-bold text-primary shadow-lg hover:bg-white/95 transition">
+            Intră pe Discord <Send className="h-4 w-4 text-primary" />
           </a>
         </div>
       </section>
