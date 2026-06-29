@@ -80,7 +80,7 @@ function Logo() {
       <img src={evostepLogo.url} alt="EvoStep logo" width={44} height={44} className="h-11 w-11 rounded-full shadow-[var(--shadow-glow)]" />
       <div className="leading-tight">
         <div className="font-serif text-2xl font-bold text-foreground tracking-tight">EvoStep</div>
-        <div className="text-[9px] tracking-[0.18em] bg-[var(--gradient-primary)] bg-clip-text text-transparent font-semibold">EVOLVE • GROW • STEP BY STEP</div>
+        <div className="text-[9px] tracking-[0.18em] [background-image:var(--gradient-primary)] bg-clip-text text-transparent font-semibold">EVOLVE • GROW • STEP BY STEP</div>
       </div>
     </div>
   );
@@ -100,7 +100,7 @@ function Index() {
               </li>
             ))}
           </ul>
-          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
             <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord
           </a>
         </nav>
@@ -109,7 +109,7 @@ function Index() {
         <section className="mx-auto max-w-7xl px-6 pt-2 pb-8 grid lg:grid-cols-2 gap-6 items-center">
           <div>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
-              Bine ai venit în <span className="bg-[var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
+              Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
             </h1>
             <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-md">
               O aventură de dezvoltare personală, în care fiecare misiune te transformă.
@@ -121,14 +121,14 @@ function Index() {
                 { icon: Lock, label: "Acces doar prin roluri" },
               ].map((f) => (
                 <li key={f.label} className="flex items-center gap-3">
-                  <span className="h-9 w-9 rounded-full bg-[var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                  <span className="h-9 w-9 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
                     <f.icon className="h-4 w-4 text-white" />
                   </span>
                   <span className="text-foreground/85">{f.label}</span>
                 </li>
               ))}
             </ul>
-            <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-6 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition ring-1 ring-primary/30">
+            <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-6 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition ring-1 ring-primary/30">
               <DiscordIcon className="h-5 w-5 text-white" /> Intră pe Discord
             </a>
           </div>
@@ -153,14 +153,14 @@ function Index() {
           {steps.map((s, i) => (
             <div key={s.n} className="relative">
               <div className="h-full rounded-2xl bg-card border border-border p-4 shadow-[var(--shadow-card)] flex flex-col">
-                <div className="mx-auto h-10 w-10 rounded-full bg-[var(--gradient-primary)] text-primary-foreground font-bold flex items-center justify-center text-sm">{s.n}</div>
-                <div className="mt-4 mx-auto h-16 w-16 rounded-2xl bg-[var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                <div className="mx-auto h-10 w-10 rounded-full [background-image:var(--gradient-primary)] text-primary-foreground font-bold flex items-center justify-center text-sm">{s.n}</div>
+                <div className="mt-4 mx-auto h-16 w-16 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
                   <s.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="mt-3 text-center font-semibold text-foreground text-sm">{s.title}</h3>
                 <p className="mt-2 text-center text-xs text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
                 {s.cta && (
-                  <button className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "bg-[var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
+                  <button className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
                     {s.cta.label}
                   </button>
                 )}
@@ -182,7 +182,7 @@ function Index() {
       <section id="misiuni" className="mx-auto max-w-7xl px-6 pb-8">
         <div className="flex items-center justify-center gap-4 mb-3">
           <span className="h-px w-12 bg-primary/40" />
-          <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold bg-[var(--gradient-primary)] bg-clip-text text-transparent">MISIUNILE NIVELULUI 1</h2>
+          <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">MISIUNILE NIVELULUI 1</h2>
           <span className="h-px w-12 bg-primary/40" />
         </div>
         <p className="text-center text-sm text-muted-foreground mb-5 whitespace-pre-line">
@@ -198,12 +198,12 @@ function Index() {
               <div className="p-4 flex-1 flex flex-col">
                 <div className="flex items-center gap-2">
                   <m.icon className="h-5 w-5 text-primary" />
-                  <h3 className="font-serif text-xl font-bold bg-[var(--gradient-primary)] bg-clip-text text-transparent">{m.name}</h3>
+                  <h3 className="font-serif text-xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">{m.name}</h3>
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground flex-1">{m.desc}</p>
                 <div className="mt-4 flex items-end justify-between">
-                  <span className="rounded-md bg-[var(--gradient-primary)] px-2.5 py-1 text-xs font-semibold text-white shadow-sm">{m.level}</span>
-                  <div className="font-serif text-3xl font-bold bg-[var(--gradient-primary)] bg-clip-text text-transparent">
+                  <span className="rounded-md [background-image:var(--gradient-primary)] px-2.5 py-1 text-xs font-semibold text-white shadow-sm">{m.level}</span>
+                  <div className="font-serif text-3xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">
                     {m.price}<span className="text-xs text-muted-foreground font-sans ml-1 tracking-wider">RON</span>
                   </div>
                 </div>
@@ -216,7 +216,7 @@ function Index() {
         <div className="mt-6 rounded-2xl bg-primary-soft/50 px-6 py-4 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {trust.map((t) => (
             <div key={t.t} className="flex items-center gap-3">
-              <span className="h-10 w-10 rounded-xl bg-[var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+              <span className="h-10 w-10 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
                 <t.icon className="h-5 w-5 text-white" />
               </span>
               <div className="text-sm leading-tight">
@@ -230,7 +230,7 @@ function Index() {
 
       {/* CTA */}
       <section id="cta" className="mx-auto max-w-7xl px-6 pb-8">
-        <div className="relative overflow-hidden rounded-3xl bg-[var(--gradient-primary)] px-6 py-7 flex flex-col lg:flex-row items-center gap-5 shadow-[var(--shadow-glow)]">
+        <div className="relative overflow-hidden rounded-3xl [background-image:var(--gradient-primary)] px-6 py-7 flex flex-col lg:flex-row items-center gap-5 shadow-[var(--shadow-glow)]">
           <div className="h-14 w-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center shrink-0 ring-1 ring-white/30">
             <DiscordIcon className="h-7 w-7 text-white" />
           </div>
