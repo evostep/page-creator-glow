@@ -61,10 +61,10 @@ const steps = [
 ];
 
 const missions = [
-  { name: "Hoțul de Roluri", desc: "Descoperă și schimbă rolurile care te țin pe loc.", level: "Misiunea 1", price: 29, img: mission1, icon: Drama },
-  { name: "Operatorul Secret", desc: "Învață să acționezi strategic și să obții rezultate.", level: "Misiunea 2", price: 39, img: mission2, icon: Eye },
-  { name: "Superputerea", desc: "Activează-ți puterea interioară și creează-ți realitatea.", level: "Misiunea 3", price: 49, img: mission3, icon: Zap },
-  { name: "Nucleul Secret", desc: "Acces la nucleul profund al transformării tale.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
+  { name: "Hoțul de Roluri", desc: "Descoperă cine ești dincolo de rolurile tale.", level: "Misiunea 1", price: 29, img: mission1, icon: Drama },
+  { name: "Operatorul Secret", desc: "Descoperă ce te îndepărtează de tine.", level: "Misiunea 2", price: 39, img: mission2, icon: Eye },
+  { name: "Superputerea", desc: "Recuperează fragmentele Superputerii tale.", level: "Misiunea 3", price: 49, img: mission3, icon: Zap },
+  { name: "Nucleul Secret", desc: "Construiește-ți Busola Personală.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
 ];
 
 const trust = [
@@ -186,7 +186,7 @@ function Index() {
           <span className="h-px w-12 bg-primary/40" />
         </div>
         <p className="text-center text-sm text-muted-foreground mb-5 whitespace-pre-line">
-          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n\n\n"}
+          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n🎁 În primele 3 misiuni vei recupera 3 artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Personală.\n\n"}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -237,6 +237,7 @@ function Index() {
           <div className="flex-1 text-center lg:text-left">
             <h3 className="font-serif text-2xl font-bold text-white">Ești gata să începi?</h3>
             <p className="text-white/90 text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
+            <p className="text-white/90 text-sm mt-2">La finalul LV1 vei recupera 3 artefacte pe care le vei integra în Busola Personală.</p>
           </div>
           <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-bold text-primary shadow-lg hover:bg-white/95 transition">
             Intră pe Discord <Send className="h-4 w-4 text-primary" />
