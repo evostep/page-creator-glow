@@ -108,7 +108,7 @@ function Index() {
         {/* HERO */}
         <section className="mx-auto max-w-7xl px-6 pt-2 pb-8 grid lg:grid-cols-2 gap-6 items-start">
           <div>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight">
               Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
             </h1>
             <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-md">
@@ -134,7 +134,7 @@ function Index() {
           </div>
 
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-glow)] aspect-[4/5] lg:aspect-square max-w-md mx-auto">
+            <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-glow)] aspect-[16/10] w-full">
               <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="h-full w-full object-cover contrast-110 saturate-125 brightness-95" />
             </div>
           </div>
