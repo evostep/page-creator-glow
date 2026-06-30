@@ -106,7 +106,7 @@ function Index() {
         </nav>
 
         {/* HERO */}
-        <section className="mx-auto max-w-7xl px-6 pt-2 pb-8 grid lg:grid-cols-2 gap-6 items-center">
+        <section className="mx-auto max-w-7xl px-6 pt-2 pb-8 grid lg:grid-cols-2 gap-6 items-start">
           <div>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
               Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
