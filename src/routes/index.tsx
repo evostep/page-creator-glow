@@ -164,11 +164,6 @@ function Index() {
                     {s.cta.label}
                   </button>
                 )}
-                {s.ctaNote && (
-                  <div className="mt-3 mx-auto inline-flex items-center gap-1.5 text-xs font-medium text-success">
-                    <CheckCircle2 className="h-3.5 w-3.5" /> {s.ctaNote}
-                  </div>
-                )}
               </div>
               {i < steps.length - 1 && (
                 <ChevronRight className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-primary/40" />
