@@ -57,7 +57,7 @@ const steps = [
   { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2, cta: { label: "Am citit", variant: "primary" as const } },
   { n: 4, title: "Alege o misiune", desc: "Selectează misiunea care rezonează cu tine și efectuează plata în siguranță.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "ghost" as const } },
   { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: VenetianMask, cta: { label: "Stripe", variant: "primary" as const } },
-  { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi transformarea.", icon: Sparkles, ctaNote: "Simplu și rapid!" },
+  { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi transformarea.", icon: Sparkles, cta: { label: "Simplu și rapid", variant: "primary" as const } },
 ];
 
 const missions = [
@@ -163,11 +163,6 @@ function Index() {
                   <button className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
                     {s.cta.label}
                   </button>
-                )}
-                {s.ctaNote && (
-                  <div className="mt-3 mx-auto inline-flex items-center gap-1.5 text-xs font-medium text-success">
-                    <CheckCircle2 className="h-3.5 w-3.5" /> {s.ctaNote}
-                  </div>
                 )}
               </div>
               {i < steps.length - 1 && (
