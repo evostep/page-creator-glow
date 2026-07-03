@@ -225,6 +225,25 @@ function Index() {
       </section>
 
       {/* CTA */}
+      {/* HARTA JOCULUI */}
+      <section id="harta" className="mx-auto max-w-7xl px-6 py-8">
+        <div className="flex items-center justify-center gap-4 mb-5">
+          <span className="h-px w-12 bg-primary/40" />
+          <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">HARTA JOCULUI</h2>
+          <span className="h-px w-12 bg-primary/40" />
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-card">
+          <img
+            src={hartaEvostep.url}
+            alt="Harta jocului EvoStep — 12 niveluri, 3 etape, o singură aventură"
+            width={1536}
+            height={1024}
+            loading="lazy"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </section>
+
       <section id="cta" className="mx-auto max-w-7xl px-6 pb-8">
         <div className="relative overflow-hidden rounded-3xl [background-image:var(--gradient-primary)] px-6 py-7 flex flex-col lg:flex-row items-center gap-5 shadow-[var(--shadow-glow)]">
           <div className="h-14 w-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center shrink-0 ring-1 ring-white/30">
