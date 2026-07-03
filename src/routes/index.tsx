@@ -64,7 +64,7 @@ const missions = [
   { name: "Hoțul de Roluri", desc: "Descoperă cine ești dincolo de rolurile tale.", level: "Misiunea 1", price: 29, img: mission1, icon: Drama },
   { name: "Operatorul Secret", desc: "Descoperă ce te îndepărtează de tine.", level: "Misiunea 2", price: 39, img: mission2, icon: Eye },
   { name: "Superputerea", desc: "Recuperează fragmentele Superputerii tale.", level: "Misiunea 3", price: 49, img: mission3, icon: Zap },
-  { name: "Nucleul Secret", desc: "Construiește-ți Busola Personală.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
+  { name: "Busola Interioară", desc: "Construiește-ți Busola Personală.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
 ];
 
 const trust = [
