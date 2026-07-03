@@ -226,8 +226,6 @@ function Index() {
 
       {/* CTA */}
       <section id="cta" className="mx-auto max-w-7xl px-6 pb-8">
-        {/* Harta jocului */}
-      </section>
         <div className="relative overflow-hidden rounded-3xl [background-image:var(--gradient-primary)] px-6 py-7 flex flex-col lg:flex-row items-center gap-5 shadow-[var(--shadow-glow)]">
           <div className="h-14 w-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center shrink-0 ring-1 ring-white/30">
             <DiscordIcon className="h-7 w-7 text-white" />
