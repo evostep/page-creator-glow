@@ -199,9 +199,10 @@ function Index() {
                       </Link>
                     )
                   ) : (
-                    <button className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
+                    <span className="mt-3 mx-auto inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary-soft/60 px-3 py-1 text-[11px] font-medium text-primary">
+                      <CheckCircle2 className="h-3.5 w-3.5" />
                       {s.cta.label}
-                    </button>
+                    </span>
                   )
                 )}
               </div>
