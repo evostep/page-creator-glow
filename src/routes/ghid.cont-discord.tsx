@@ -21,7 +21,7 @@ const guideSteps = [
   {
     n: 1,
     title: "Deschide pagina Discord",
-    desc: "Accesează discord.com/register din browser (Chrome, Safari, Edge). Funcționează la fel pe telefon și pe calculator.",
+    desc: "Accesează discord.com/register din orice browser (Chrome, Firefox, Safari, Edge, Opera etc.). Funcționează la fel pe telefon și pe calculator.",
     img: img1,
   },
   {
