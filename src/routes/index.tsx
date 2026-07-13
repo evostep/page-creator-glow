@@ -135,9 +135,7 @@ function Index() {
           </div>
 
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-glow)] aspect-[16/10] w-full">
-              <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="h-full w-full object-cover contrast-110 saturate-125 brightness-95" />
-            </div>
+            <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="w-full h-auto object-contain" />
           </div>
         </section>
       </header>
