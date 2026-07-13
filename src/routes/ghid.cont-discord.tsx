@@ -44,8 +44,8 @@ const guideSteps = [
   },
   {
     n: 5,
-    title: "Gata! Revino aici",
-    desc: "După verificare, contul tău e activ. Poți reveni pe site și continua cu pasul 2: intrarea pe serverul EvoStep.",
+    title: "Gata! Revino la pași",
+    desc: "După verificare, contul tău e activ. Nu trebuie să cauți serverul manual: revino pe pagina principală și apasă butonul „Continuă” de la pasul 2 — te va duce direct pe serverul EvoStep cu rolul de Vizitator.",
     img: img5,
   },
 ];
