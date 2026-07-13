@@ -1,5 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import img1 from "@/assets/guide-discord-1.jpg";
+import img2 from "@/assets/guide-discord-2.jpg";
+import img3 from "@/assets/guide-discord-3.jpg";
+import img4 from "@/assets/guide-discord-4.jpg";
+import img5 from "@/assets/guide-discord-5.jpg";
 
 export const Route = createFileRoute("/ghid/cont-discord")({
   head: () => ({
@@ -17,26 +22,31 @@ const guideSteps = [
     n: 1,
     title: "Deschide pagina Discord",
     desc: "Accesează discord.com/register din browser (Chrome, Safari, Edge). Funcționează la fel pe telefon și pe calculator.",
+    img: img1,
   },
   {
     n: 2,
     title: "Completează datele",
     desc: "Introdu adresa de e-mail, un nume de utilizator și o parolă. Alege un nume cu care vrei să te prezinți în comunitate.",
+    img: img2,
   },
   {
     n: 3,
     title: "Confirmă data nașterii",
     desc: "Discord îți va cere să confirmi că ai peste 13 ani. Selectează data corectă și apasă „Continuă”.",
+    img: img3,
   },
   {
     n: 4,
     title: "Verifică e-mailul",
     desc: "Deschide căsuța de e-mail și apasă butonul „Verify Email” din mesajul primit de la Discord. Fără acest pas, contul rămâne inactiv.",
+    img: img4,
   },
   {
     n: 5,
     title: "Gata! Revino aici",
     desc: "După verificare, contul tău e activ. Poți reveni pe site și continua cu pasul 2: intrarea pe serverul EvoStep.",
+    img: img5,
   },
 ];
 
@@ -63,20 +73,27 @@ function GhidContDiscord() {
           </p>
         </header>
 
-        <ol className="space-y-10">
+        <ol className="space-y-6">
           {guideSteps.map((s) => (
-            <li key={s.n} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden">
-              <div className="aspect-[16/9] bg-muted flex items-center justify-center border-b border-border">
-                <span className="text-xs text-muted-foreground tracking-wide">Captură pas {s.n}</span>
+            <li key={s.n} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden grid md:grid-cols-[240px_1fr] gap-0">
+              <div className="bg-muted border-b md:border-b-0 md:border-r border-border">
+                <img
+                  src={s.img}
+                  alt={`Pas ${s.n}: ${s.title}`}
+                  loading="lazy"
+                  width={1280}
+                  height={720}
+                  className="w-full h-40 md:h-full object-cover"
+                />
               </div>
-              <div className="p-6 md:p-8">
+              <div className="p-5 md:p-6">
                 <div className="flex items-center gap-3">
-                  <span className="h-8 w-8 rounded-full [background-image:var(--gradient-primary)] text-primary-foreground font-bold flex items-center justify-center text-sm">
+                  <span className="h-7 w-7 rounded-full [background-image:var(--gradient-primary)] text-primary-foreground font-bold flex items-center justify-center text-xs">
                     {s.n}
                   </span>
-                  <h2 className="font-semibold text-lg text-foreground">{s.title}</h2>
+                  <h2 className="font-semibold text-base text-foreground">{s.title}</h2>
                 </div>
-                <p className="mt-3 text-muted-foreground leading-relaxed text-sm md:text-base">{s.desc}</p>
+                <p className="mt-2 text-muted-foreground leading-relaxed text-sm">{s.desc}</p>
               </div>
             </li>
           ))}
