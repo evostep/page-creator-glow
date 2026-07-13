@@ -269,17 +269,18 @@ function Index() {
       </section>
 
       <section id="cta" className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="relative overflow-hidden rounded-3xl [background-image:var(--gradient-primary)] px-8 py-10 md:px-12 md:py-12 flex flex-col lg:flex-row items-center gap-6 shadow-[var(--shadow-glow)]">
-          <div className="h-14 w-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center shrink-0 ring-1 ring-white/30">
+        <div className="relative overflow-hidden rounded-3xl bg-card border border-border px-8 py-10 md:px-12 md:py-12 flex flex-col lg:flex-row items-center gap-6 shadow-[var(--shadow-card)]">
+          <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
+          <div className="relative h-14 w-14 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center shrink-0 shadow-[var(--shadow-glow)]">
             <DiscordIcon className="h-7 w-7 text-white" />
           </div>
-          <div className="flex-1 text-center lg:text-left">
-            <h3 className="font-serif text-2xl font-bold text-white">Ești gata să începi?</h3>
-            <p className="text-white/90 text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
-            <p className="text-white/90 text-sm mt-2">La finalul LV1 vei recupera 3 artefacte pe care le vei integra în Busola Personală.</p>
+          <div className="relative flex-1 text-center lg:text-left">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Ești gata să începi?</h3>
+            <p className="text-muted-foreground text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
+            <p className="text-muted-foreground text-sm mt-2">La finalul LV1 vei recupera 3 artefacte pe care le vei integra în Busola Personală.</p>
           </div>
-          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-base font-bold text-primary shadow-lg hover:bg-white/95 transition">
-            Intră pe Discord <Send className="h-4 w-4 text-primary" />
+          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-3.5 text-base font-bold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+            Intră pe Discord <Send className="h-4 w-4 text-white" />
           </a>
         </div>
       </section>
