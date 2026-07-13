@@ -103,7 +103,7 @@ function Index() {
               </li>
             ))}
           </ul>
-          <a href={discordInviteUrl} target="_top" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+          <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
             <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord
           </a>
         </nav>
@@ -137,7 +137,7 @@ function Index() {
               ))}
             </ul>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href={discordInviteUrl} target="_top" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-4 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition ring-1 ring-primary/30">
+              <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-4 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition ring-1 ring-primary/30">
                 <DiscordIcon className="h-5 w-5 text-white" /> Intră pe Discord
               </a>
               <a href="#misiuni" className="inline-flex items-center gap-2 rounded-xl border border-border bg-background/70 backdrop-blur px-6 py-4 text-base font-semibold text-foreground hover:border-primary/40 hover:text-primary transition">
@@ -179,7 +179,7 @@ function Index() {
                 {s.cta && (
                   s.cta.href ? (
                     s.cta.href.startsWith("http") ? (
-                      <a href={s.cta.href} target="_top" className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
+                      <a href={s.cta.href} target="_blank" rel="noopener noreferrer" className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
                         {s.cta.label}
                       </a>
                     ) : (
@@ -293,7 +293,7 @@ function Index() {
             <p className="text-muted-foreground text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
             <p className="text-muted-foreground text-sm mt-2">La finalul LV1 vei recupera 3 artefacte pe care le vei integra în Busola Personală.</p>
           </div>
-          <a href={discordInviteUrl} target="_top" className="relative inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-3.5 text-base font-bold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+          <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-3.5 text-base font-bold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
             Intră pe Discord <Send className="h-4 w-4 text-white" />
           </a>
         </div>
