@@ -107,45 +107,61 @@ function Index() {
         </nav>
 
         {/* HERO */}
-        <section className="mx-auto max-w-7xl px-6 pt-2 pb-8 grid lg:grid-cols-2 gap-6 items-start">
-          <div>
-            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight">
+        <section className="relative mx-auto max-w-7xl px-6 pt-10 pb-20 md:pt-16 md:pb-24 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+          <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full [background-image:var(--gradient-primary)] opacity-20 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-32 right-0 h-[28rem] w-[28rem] rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
+          <div className="relative">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary-soft/60 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] uppercase text-primary">
+              <Sparkles className="h-3.5 w-3.5" /> Evolve • Grow • Step by step
+            </span>
+            <h1 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight">
               Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
             </h1>
-            <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-md">
+            <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
               O aventură de dezvoltare personală, în care fiecare misiune te transformă.
             </p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-7 space-y-3">
               {[
                 { icon: Users, label: "Misiuni progresive" },
                 { icon: Compass, label: "Comunitate activă" },
                 { icon: Lock, label: "Acces doar prin roluri" },
               ].map((f) => (
                 <li key={f.label} className="flex items-center gap-3">
-                  <span className="h-9 w-9 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                    <f.icon className="h-4 w-4 text-white" />
+                  <span className="h-10 w-10 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                    <f.icon className="h-4.5 w-4.5 text-white" />
                   </span>
-                  <span className="text-foreground/85">{f.label}</span>
+                  <span className="text-foreground/85 text-base">{f.label}</span>
                 </li>
               ))}
             </ul>
-            <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-6 py-3.5 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition ring-1 ring-primary/30">
-              <DiscordIcon className="h-5 w-5 text-white" /> Intră pe Discord
-            </a>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-4 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition ring-1 ring-primary/30">
+                <DiscordIcon className="h-5 w-5 text-white" /> Intră pe Discord
+              </a>
+              <a href="#misiuni" className="inline-flex items-center gap-2 rounded-xl border border-border bg-background/70 backdrop-blur px-6 py-4 text-base font-semibold text-foreground hover:border-primary/40 hover:text-primary transition">
+                Vezi misiunile <ChevronRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
           <div className="relative">
-            <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="w-full h-auto object-contain" />
+            <div aria-hidden className="absolute inset-0 -z-10 [background-image:var(--gradient-primary)] opacity-25 blur-3xl rounded-full" />
+            <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="relative w-full h-auto object-contain drop-shadow-2xl" />
           </div>
         </section>
       </header>
 
       {/* HOW IT WORKS */}
-      <section id="cum" className="mx-auto max-w-7xl px-6 py-8">
-        <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="h-px w-12 bg-primary/40" />
-          <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold text-foreground">CUM FUNCȚIONEAZĂ</h2>
-          <span className="h-px w-12 bg-primary/40" />
+      <section id="cum" className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+        <div className="flex flex-col items-center gap-3 mb-12">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold text-primary uppercase">Cum funcționează</h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
+            Șase pași simpli până la <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">prima ta misiune</span>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
@@ -173,17 +189,22 @@ function Index() {
       </section>
 
       {/* MISSIONS */}
-      <section id="misiuni" className="mx-auto max-w-7xl px-6 pb-8">
-        <div className="flex items-center justify-center gap-4 mb-3">
-          <span className="h-px w-12 bg-primary/40" />
-          <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">MISIUNILE NIVELULUI 1</h2>
-          <span className="h-px w-12 bg-primary/40" />
+      <section id="misiuni" className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+        <div className="flex flex-col items-center gap-3 mb-6">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Misiunile Nivelului 1</h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
+            Patru misiuni, o singură <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">transformare</span>
+          </p>
         </div>
-        <p className="text-center text-sm text-muted-foreground mb-5 whitespace-pre-line">
+        <p className="text-center text-base text-muted-foreground mb-10 max-w-2xl mx-auto whitespace-pre-line">
           {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n🎁 În primele 3 misiuni vei recupera 3 artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Personală.\n\n"}
         </p>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {missions.map((m) => (
             <article key={m.name} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden flex flex-col">
               <div className="aspect-[16/9] overflow-hidden">
@@ -207,7 +228,7 @@ function Index() {
         </div>
 
         {/* TRUST BAR */}
-        <div className="mt-6 rounded-2xl bg-primary-soft/50 px-6 py-4 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-12 rounded-2xl bg-primary-soft/50 border border-primary/10 px-6 py-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {trust.map((t) => (
             <div key={t.t} className="flex items-center gap-3">
               <span className="h-10 w-10 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
@@ -224,11 +245,16 @@ function Index() {
 
       {/* CTA */}
       {/* HARTA JOCULUI */}
-      <section id="harta" className="mx-auto max-w-7xl px-6 py-8">
-        <div className="flex items-center justify-center gap-4 mb-5">
-          <span className="h-px w-12 bg-primary/40" />
-          <h2 className="text-center font-serif tracking-[0.2em] text-sm font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">HARTA JOCULUI</h2>
-          <span className="h-px w-12 bg-primary/40" />
+      <section id="harta" className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+        <div className="flex flex-col items-center gap-3 mb-10">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Harta jocului</h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
+            12 niveluri, 3 etape, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">o singură aventură</span>
+          </p>
         </div>
         <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-card">
           <img
@@ -242,8 +268,8 @@ function Index() {
         </div>
       </section>
 
-      <section id="cta" className="mx-auto max-w-7xl px-6 pb-8">
-        <div className="relative overflow-hidden rounded-3xl [background-image:var(--gradient-primary)] px-6 py-7 flex flex-col lg:flex-row items-center gap-5 shadow-[var(--shadow-glow)]">
+      <section id="cta" className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="relative overflow-hidden rounded-3xl [background-image:var(--gradient-primary)] px-8 py-10 md:px-12 md:py-12 flex flex-col lg:flex-row items-center gap-6 shadow-[var(--shadow-glow)]">
           <div className="h-14 w-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center shrink-0 ring-1 ring-white/30">
             <DiscordIcon className="h-7 w-7 text-white" />
           </div>
