@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Compass,
   Users,
@@ -53,12 +53,12 @@ const navLinks = [
 ];
 
 const steps = [
-  { n: 1, title: "Nu ai cont Discord?", desc: "Urmărește video-ul de mai jos și creează-ți contul Discord în 2 minute.", icon: UserPlus, cta: { label: "Vezi tutorial", variant: "primary" as const } },
-  { n: 2, title: "Intră pe server", desc: "Alătură-te serverului EvoStep. Acolo vei primi rolul de Vizitator.", icon: DiscordIcon, cta: { label: "Intră pe Discord", variant: "primary" as const } },
-  { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2, cta: { label: "Am citit", variant: "primary" as const } },
-  { n: 4, title: "Alege o misiune", desc: "Selectează misiunea care rezonează cu tine și efectuează plata în siguranță.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "primary" as const } },
-  { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: VenetianMask, cta: { label: "Stripe", variant: "primary" as const } },
-  { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi transformarea.", icon: Sparkles, cta: { label: "Simplu și rapid", variant: "primary" as const } },
+  { n: 1, title: "Nu ai cont Discord?", desc: "Creează-ți contul Discord în câțiva pași simpli, cu poze la fiecare etapă.", icon: UserPlus, cta: { label: "Vezi pașii", variant: "primary" as const, href: "/ghid/cont-discord" } },
+  { n: 2, title: "Intră pe server", desc: "Alătură-te serverului EvoStep. Acolo vei primi rolul de Vizitator.", icon: DiscordIcon, cta: { label: "Intră pe Discord", variant: "primary" as const, href: undefined } },
+  { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2, cta: { label: "Am citit", variant: "primary" as const, href: undefined } },
+  { n: 4, title: "Alege o misiune", desc: "Selectează misiunea care rezonează cu tine și efectuează plata în siguranță.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "primary" as const, href: undefined } },
+  { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: VenetianMask, cta: { label: "Stripe", variant: "primary" as const, href: undefined } },
+  { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi transformarea.", icon: Sparkles, cta: { label: "Simplu și rapid", variant: "primary" as const, href: undefined } },
 ];
 
 const missions = [
@@ -175,9 +175,15 @@ function Index() {
                 <h3 className="mt-3 text-center font-semibold text-foreground text-sm">{s.title}</h3>
                 <p className="mt-2 text-center text-xs text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
                 {s.cta && (
-                  <button className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
-                    {s.cta.label}
-                  </button>
+                  s.cta.href ? (
+                    <Link to={s.cta.href as "/ghid/cont-discord"} className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
+                      {s.cta.label}
+                    </Link>
+                  ) : (
+                    <button className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
+                      {s.cta.label}
+                    </button>
+                  )
                 )}
               </div>
               {i < steps.length - 1 && (
