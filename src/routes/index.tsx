@@ -54,7 +54,7 @@ const navLinks = [
 
 const steps = [
   { n: 1, title: "Nu ai cont Discord?", desc: "Creează-ți contul Discord în câțiva pași simpli, cu poze la fiecare etapă.", icon: UserPlus, cta: { label: "Vezi pașii", variant: "primary" as const, href: "/ghid/cont-discord" } },
-  { n: 2, title: "Intră pe server", desc: "Alătură-te serverului EvoStep. Acolo vei primi rolul de Vizitator.", icon: DiscordIcon, cta: { label: "Intră pe Discord", variant: "primary" as const, href: undefined } },
+  { n: 2, title: "Intră pe server", desc: "Alătură-te serverului EvoStep. Acolo vei primi rolul de Vizitator.", icon: DiscordIcon, cta: { label: "Continuă", variant: "primary" as const, href: "https://discord.gg/" } },
   { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2, cta: { label: "Am citit", variant: "primary" as const, href: undefined } },
   { n: 4, title: "Alege o misiune", desc: "Selectează misiunea care rezonează cu tine și efectuează plata în siguranță.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "primary" as const, href: undefined } },
   { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: VenetianMask, cta: { label: "Stripe", variant: "primary" as const, href: undefined } },
