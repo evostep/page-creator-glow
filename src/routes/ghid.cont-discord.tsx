@@ -75,15 +75,15 @@ function GhidContDiscord() {
 
         <ol className="space-y-6">
           {guideSteps.map((s) => (
-            <li key={s.n} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden grid md:grid-cols-[240px_1fr] gap-0">
-              <div className="bg-muted border-b md:border-b-0 md:border-r border-border">
+            <li key={s.n} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden">
+              <div className="bg-muted border-b border-border">
                 <img
                   src={s.img}
                   alt={`Pas ${s.n}: ${s.title}`}
                   loading="lazy"
                   width={1280}
                   height={720}
-                  className="w-full h-40 md:h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
               <div className="p-5 md:p-6">
