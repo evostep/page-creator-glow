@@ -291,7 +291,7 @@ function Index() {
             <p className="text-muted-foreground text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
             <p className="text-muted-foreground text-sm mt-2">La finalul LV1 vei recupera 3 artefacte pe care le vei integra în Busola Personală.</p>
           </div>
-          <a href="https://discord.gg/" target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-3.5 text-base font-bold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+          <a href="https://discord.gg/fsXDY8qv5n" target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-3.5 text-base font-bold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
             Intră pe Discord <Send className="h-4 w-4 text-white" />
           </a>
         </div>
