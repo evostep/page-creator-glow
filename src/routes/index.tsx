@@ -112,7 +112,7 @@ function Index() {
           <div aria-hidden className="pointer-events-none absolute -bottom-32 right-0 h-[28rem] w-[28rem] rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
           <div className="relative">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary-soft/60 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] uppercase text-primary">
-              <Sparkles className="h-3.5 w-3.5" /> Evolve • Grow • Step by step
+              <Sparkles className="h-3.5 w-3.5" /> Dezvoltare personală gamificată
             </span>
             <h1 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight">
               Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
