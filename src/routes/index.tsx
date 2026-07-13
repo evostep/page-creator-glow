@@ -88,15 +88,15 @@ function Logo() {
   );
 }
 
-const discordInviteUrl = "https://discord.com/invite/fsXDY8qv5n";
+const discordInviteUrl = "https://discord.gg/fsXDY8qv5n";
 
 function openDiscordInvite(event: MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
 
-  const opened = window.open(discordInviteUrl, "_blank", "noopener,noreferrer");
+  const newWindow = window.open(discordInviteUrl, "_blank");
 
-  if (!opened) {
-    window.location.href = discordInviteUrl;
+  if (newWindow) {
+    newWindow.opener = null;
   }
 }
 
