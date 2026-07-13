@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GhidContDiscordRouteImport } from './routes/ghid.cont-discord'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GhidContDiscordRoute = GhidContDiscordRouteImport.update({
+  id: '/ghid/cont-discord',
+  path: '/ghid/cont-discord',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/ghid/cont-discord'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/ghid/cont-discord'
+  id: '__root__' | '/' | '/ghid/cont-discord'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GhidContDiscordRoute: typeof GhidContDiscordRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ghid/cont-discord': {
+      id: '/ghid/cont-discord'
+      path: '/ghid/cont-discord'
+      fullPath: '/ghid/cont-discord'
+      preLoaderRoute: typeof GhidContDiscordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GhidContDiscordRoute: GhidContDiscordRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
