@@ -331,9 +331,16 @@ function Index() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Ai nevoie de ajutor?</h4>
-            <p className="text-sm text-muted-foreground">Scrie-ne pe Discord sau pe email:</p>
-            <a href="mailto:hello.evostep@gmail.com" className="mt-1 inline-block text-sm font-medium text-primary hover:underline">hello.evostep@gmail.com</a>
+            <h4 className="font-semibold text-foreground mb-3">Contact</h4>
+            <p className="text-sm text-muted-foreground mb-3">Alege cum vrei să ne scrii:</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground hover:border-primary/40 hover:text-primary transition">
+                <Send className="h-4 w-4" /> Scrie-ne pe email
+              </a>
+              <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-4 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+                <DiscordIcon className="h-4 w-4 text-white" /> Scrie-ne pe Discord
+              </a>
+            </div>
           </div>
         </div>
         <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} EvoStep. Toate drepturile rezervate.</div>
