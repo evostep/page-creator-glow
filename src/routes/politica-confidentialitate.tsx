@@ -26,27 +26,26 @@ function PoliticaPage() {
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">Ultima actualizare: 30.06.2026</p>
 
-        <div className="mt-8 space-y-5 text-foreground/85 leading-relaxed">
+        <div className="mt-6 space-y-4 text-foreground/85 leading-relaxed">
           <h2 className="font-serif text-2xl font-bold tracking-tight">Confidențialitatea datelor tale</h2>
           <p>La EvoStep considerăm că datele personale îți aparțin. Rolul nostru este să le folosim doar atunci când este necesar pentru funcționarea platformei și să le protejăm în permanență.</p>
           <p>Această Politică explică ce informații colectăm, de ce le colectăm și ce drepturi ai în legătură cu acestea.</p>
           <p>Prin utilizarea platformei EvoStep confirmi că ai citit această Politică de Confidențialitate.</p>
 
-          <h2 className="mt-8 font-serif text-2xl font-bold tracking-tight">1. Cine este operatorul datelor</h2>
+          <h2 className="mt-6 font-serif text-2xl font-bold tracking-tight">1. Cine este operatorul datelor</h2>
           <p>Operatorul datelor cu caracter personal este:</p>
           <p><strong>Life &amp; Live Events SRL</strong><br />România<br />E-mail de contact: <a className="text-primary hover:underline" href="mailto:hello.evostep@gmail.com">hello.evostep@gmail.com</a></p>
           <p>Această Politică este elaborată în conformitate cu Regulamentul (UE) 2016/679 (GDPR), Legea nr. 190/2018 și celelalte acte normative aplicabile privind protecția datelor.</p>
 
-          <h2 className="mt-8 font-serif text-2xl font-bold tracking-tight">2. Ce informații colectăm</h2>
+          <h2 className="mt-6 font-serif text-2xl font-bold tracking-tight">2. Ce informații colectăm</h2>
           <p><strong>Date de identificare:</strong> nume și prenume; adresă de e-mail; nume de utilizator Discord; identificatorul contului Discord.</p>
           <p><strong>Date privind accesul la platformă:</strong> nivelurile și misiunile accesate; progresul în program; răspunsurile oferite în cadrul exercițiilor; rezultatele testelor și chestionarelor; feedback-ul transmis voluntar.</p>
           <p><strong>Date privind plățile:</strong> plățile sunt procesate prin furnizori autorizați (de exemplu Stripe). Nu stocăm și nu avem acces la numărul complet al cardului bancar. Putem primi doar informații necesare confirmării plății: statusul tranzacției, identificatorul plății, valoarea achitată.</p>
           <p><strong>Comunicare:</strong> dacă ne contactezi, putem păstra mesajele trimise, solicitările de suport și răspunsurile oferite.</p>
 
-          <h2 className="mt-8 font-serif text-2xl font-bold tracking-tight">3. Cum folosim datele</h2>
+          <h2 className="mt-6 font-serif text-2xl font-bold tracking-tight">3. Cum folosim datele</h2>
           <p>Utilizăm datele exclusiv pentru:</p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>crearea și administrarea contului tău;</li>
             <li>acordarea accesului la conținutul EvoStep;</li>
             <li>procesarea comenzilor și plăților;</li>
             <li>emiterea documentelor fiscale;</li>
@@ -57,7 +56,7 @@ function PoliticaPage() {
           </ul>
           <p>Nu folosim datele tale pentru a lua decizii automate care produc efecte juridice asupra ta.</p>
 
-          <h2 className="mt-8 font-serif text-2xl font-bold tracking-tight">4. Temeiul legal</h2>
+          <h2 className="mt-6 font-serif text-2xl font-bold tracking-tight">4. Temeiul legal</h2>
           <p>Prelucrăm datele în baza unuia sau mai multora dintre următoarele temeiuri: executarea contractului dintre tine și EvoStep; obligațiile legale aplicabile; interesul nostru legitim privind securitatea și funcționarea platformei; consimțământul tău, atunci când acesta este necesar (de exemplu pentru comunicări de marketing).</p>
 
           <h2 className="mt-8 font-serif text-2xl font-bold tracking-tight">5. Cu cine partajăm informațiile</h2>
