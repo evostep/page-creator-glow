@@ -125,7 +125,7 @@ function Index() {
         </nav>
 
         {/* HERO */}
-        <section className="relative mx-auto max-w-7xl px-6 pt-10 pb-20 md:pt-16 md:pb-24 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <section className="relative mx-auto max-w-7xl px-6 pt-10 pb-14 md:pt-16 md:pb-20 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full [background-image:var(--gradient-primary)] opacity-20 blur-3xl" />
           <div aria-hidden className="pointer-events-none absolute -bottom-32 right-0 h-[28rem] w-[28rem] rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
           <div className="relative">
@@ -170,7 +170,7 @@ function Index() {
       </header>
 
       {/* HOW IT WORKS */}
-      <section id="cum" className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <section id="cum" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
         <div className="flex flex-col items-center gap-3 mb-12">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
@@ -220,7 +220,7 @@ function Index() {
       </section>
 
       {/* MISSIONS */}
-      <section id="misiuni" className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <section id="misiuni" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
         <div className="flex flex-col items-center gap-3 mb-6">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
@@ -276,7 +276,7 @@ function Index() {
 
       {/* CTA */}
       {/* HARTA JOCULUI */}
-      <section id="harta" className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <section id="harta" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
         <div className="flex flex-col items-center gap-3 mb-10">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
@@ -299,7 +299,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="cta" className="mx-auto max-w-7xl px-6 pb-24">
+      <section id="cta" className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
         <div className="relative overflow-hidden rounded-3xl bg-card border border-border px-8 py-10 md:px-12 md:py-12 flex flex-col lg:flex-row items-center gap-6 shadow-[var(--shadow-card)]">
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
           <div className="relative h-14 w-14 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center shrink-0 shadow-[var(--shadow-glow)]">
