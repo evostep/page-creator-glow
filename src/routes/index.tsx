@@ -16,6 +16,7 @@ import {
   Zap,
   Drama,
   Send,
+  Mail,
   VenetianMask,
   UsersRound,
   Sparkles,
@@ -329,7 +330,7 @@ function Index() {
                 <DiscordIcon className="h-4 w-4 text-white" />
               </a>
               <a href="mailto:hello.evostep@gmail.com" aria-label="Email EvoStep" className="h-9 w-9 shrink-0 rounded-full border border-border bg-background flex items-center justify-center text-foreground hover:border-primary/40 hover:text-primary transition">
-                <Send className="h-4 w-4" />
+                <Mail className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -338,9 +339,9 @@ function Index() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Informații legale</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition">Termeni și condiții</a></li>
-              <li><a href="#" className="hover:text-primary transition">Politica de confidențialitate</a></li>
-              <li><a href="#" className="hover:text-primary transition">Politica de cookies</a></li>
+              <li><Link to="/termeni" className="hover:text-primary transition">Termeni și condiții</Link></li>
+              <li><Link to="/politica-confidentialitate" className="hover:text-primary transition">Politica de confidențialitate</Link></li>
+              <li><Link to="/politica-cookies" className="hover:text-primary transition">Politica de cookies</Link></li>
             </ul>
           </div>
 
@@ -349,7 +350,7 @@ function Index() {
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <p className="text-sm text-muted-foreground mb-3">Scrie-ne pe Discord sau pe email:</p>
             <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition mb-4">
-              <Send className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
+              <Mail className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
             </a>
             <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-4 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
               <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Scrie-ne pe Discord
