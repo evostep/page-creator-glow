@@ -326,6 +326,35 @@ function Index() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-7xl px-6 py-10 md:py-14">
+        <div className="flex flex-col items-center gap-3 mb-8">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Întrebări frecvente</h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
+            Ai nelămuriri? <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">Aici găsești răspunsuri</span>
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          {faqs.map((f) => (
+            <div key={f.q} className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
+              <div className="flex items-start gap-3">
+                <span className="h-8 w-8 shrink-0 rounded-lg [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                  <HelpCircle className="h-4 w-4 text-white" />
+                </span>
+                <div>
+                  <h3 className="font-semibold text-foreground text-sm leading-tight">{f.q}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.a}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="border-t border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-10 md:py-14 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
