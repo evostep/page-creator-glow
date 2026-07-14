@@ -125,7 +125,7 @@ function Index() {
         </nav>
 
         {/* HERO */}
-        <section className="relative mx-auto max-w-7xl px-6 pt-10 pb-20 md:pt-16 md:pb-24 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <section className="relative mx-auto max-w-7xl px-6 pt-10 pb-14 md:pt-16 md:pb-20 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full [background-image:var(--gradient-primary)] opacity-20 blur-3xl" />
           <div aria-hidden className="pointer-events-none absolute -bottom-32 right-0 h-[28rem] w-[28rem] rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
           <div className="relative">
