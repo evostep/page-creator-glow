@@ -47,7 +47,7 @@ const DiscordIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const navLinks = [
-  { label: "Despre EvoStep", href: "#despre" },
+  { label: "Despre EvoStep", href: "/despre" },
   { label: "Cum funcționează", href: "#cum" },
   { label: "Misiunile", href: "#misiuni" },
   { label: "Întrebări frecvente", href: "#faq" },
@@ -110,7 +110,11 @@ function Index() {
           <ul className="hidden lg:flex items-center gap-9 text-sm text-foreground/80">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="hover:text-primary transition-colors">{l.label}</a>
+                {l.href.startsWith("/") ? (
+                  <Link to={l.href as "/despre"} className="hover:text-primary transition-colors">{l.label}</Link>
+                ) : (
+                  <a href={l.href} className="hover:text-primary transition-colors">{l.label}</a>
+                )}
               </li>
             ))}
           </ul>
@@ -321,7 +325,7 @@ function Index() {
           <div>
             <h4 className="font-semibold text-foreground mb-3">Linkuri utile</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#despre" className="hover:text-primary">Despre EvoStep</a></li>
+              <li><Link to="/despre" className="hover:text-primary">Despre EvoStep</Link></li>
               <li><a href="#faq" className="hover:text-primary">Întrebări frecvente</a></li>
               <li><a href="#cta" className="hover:text-primary">Contact</a></li>
             </ul>
