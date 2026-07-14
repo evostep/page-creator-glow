@@ -17,6 +17,7 @@ import {
   Drama,
   Send,
   Mail,
+  HelpCircle,
   VenetianMask,
   UsersRound,
   Sparkles,
