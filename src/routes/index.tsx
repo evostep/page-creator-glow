@@ -317,33 +317,54 @@ function Index() {
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mx-auto max-w-7xl px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+          {/* Brand */}
           <div>
             <Logo />
-            <p className="mt-4 text-sm text-muted-foreground max-w-xs">Devino cea mai bună versiune a ta.</p>
+            <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">
+              EvoStep — o aventură de dezvoltare personală. Devino cea mai bună versiune a ta.
+            </p>
+            <div className="mt-5 flex items-center gap-3">
+              <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" aria-label="Discord EvoStep" className="h-9 w-9 shrink-0 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+                <DiscordIcon className="h-4 w-4 text-white" />
+              </a>
+              <a href="mailto:hello.evostep@gmail.com" aria-label="Email EvoStep" className="h-9 w-9 shrink-0 rounded-full border border-border bg-background flex items-center justify-center text-foreground hover:border-primary/40 hover:text-primary transition">
+                <Send className="h-4 w-4" />
+              </a>
+            </div>
           </div>
+
+          {/* Legal */}
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Linkuri utile</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/despre" className="hover:text-primary">Despre EvoStep</Link></li>
-              <li><a href="#faq" className="hover:text-primary">Întrebări frecvente</a></li>
-              <li><a href="#cta" className="hover:text-primary">Contact</a></li>
+            <h4 className="font-semibold text-foreground mb-4">Informații legale</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li><a href="#" className="hover:text-primary transition">Termeni și condiții</a></li>
+              <li><a href="#" className="hover:text-primary transition">Politica de confidențialitate</a></li>
+              <li><a href="#" className="hover:text-primary transition">Politica de cookies</a></li>
             </ul>
           </div>
+
+          {/* Contact */}
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Contact</h4>
-            <p className="text-sm text-muted-foreground mb-3">Alege cum vrei să ne scrii:</p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground hover:border-primary/40 hover:text-primary transition">
-                <Send className="h-4 w-4" /> Scrie-ne pe email
+            <h4 className="font-semibold text-foreground mb-4">Contact</h4>
+            <p className="text-sm text-muted-foreground mb-4">Alege canalul preferat:</p>
+            <div className="flex flex-col gap-3">
+              <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground hover:border-primary/40 hover:text-primary transition whitespace-nowrap">
+                <Send className="h-4 w-4 shrink-0" /> Scrie-ne pe email
               </a>
-              <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-4 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
-                <DiscordIcon className="h-4 w-4 text-white" /> Scrie-ne pe Discord
+              <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-4 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
+                <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Scrie-ne pe Discord
               </a>
             </div>
           </div>
         </div>
-        <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} EvoStep. Toate drepturile rezervate.</div>
+
+        <div className="border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+            <span>© {new Date().getFullYear()} EvoStep. Toate drepturile rezervate.</span>
+            <span>Proiectat cu grijă pentru comunitatea EvoStep.</span>
+          </div>
+        </div>
       </footer>
     </div>
   );
