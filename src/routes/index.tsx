@@ -170,7 +170,7 @@ function Index() {
       </header>
 
       {/* HOW IT WORKS */}
-      <section id="cum" className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <section id="cum" className="mx-auto max-w-7xl px-6 py-14 md:py-18">
         <div className="flex flex-col items-center gap-3 mb-12">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
