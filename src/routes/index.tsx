@@ -299,7 +299,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="cta" className="mx-auto max-w-7xl px-6 pb-24">
+      <section id="cta" className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
         <div className="relative overflow-hidden rounded-3xl bg-card border border-border px-8 py-10 md:px-12 md:py-12 flex flex-col lg:flex-row items-center gap-6 shadow-[var(--shadow-card)]">
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
           <div className="relative h-14 w-14 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center shrink-0 shadow-[var(--shadow-glow)]">
