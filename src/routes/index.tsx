@@ -276,7 +276,7 @@ function Index() {
 
       {/* CTA */}
       {/* HARTA JOCULUI */}
-      <section id="harta" className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <section id="harta" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
         <div className="flex flex-col items-center gap-3 mb-10">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
