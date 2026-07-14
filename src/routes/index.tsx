@@ -347,15 +347,13 @@ function Index() {
           {/* Contact */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
-            <p className="text-sm text-muted-foreground mb-4">Alege canalul preferat:</p>
-            <div className="flex flex-col gap-3">
-              <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground hover:border-primary/40 hover:text-primary transition whitespace-nowrap">
-                <Send className="h-4 w-4 shrink-0" /> Scrie-ne pe email
-              </a>
-              <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-4 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
-                <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Scrie-ne pe Discord
-              </a>
-            </div>
+            <p className="text-sm text-muted-foreground mb-3">Scrie-ne pe Discord sau pe email:</p>
+            <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition mb-4">
+              <Send className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
+            </a>
+            <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-4 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
+              <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Scrie-ne pe Discord
+            </a>
           </div>
         </div>
 
