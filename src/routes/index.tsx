@@ -70,6 +70,15 @@ const missions = [
   { name: "Busola Interioară", desc: "Construiește-ți Busola Personală.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
 ];
 
+const faqs = [
+  { q: "Ce este EvoStep?", a: "EvoStep este o aventură de dezvoltare personală derulată într-o comunitate Discord. Fiecare nivel conține misiuni tematice, exerciții practice și momente de reflectie alături de alți participanți." },
+  { q: "Am nevoie de cont Discord?", a: "Da. EvoStep funcționează pe Discord, așa că ai nevoie de un cont gratuit pentru a accesa canalele, misiunile și comunitatea." },
+  { q: "Cât costă o misiune?", a: "Misiunile Nivelului 1 au prețuri între 29 și 59 RON, în funcție de temă și de conținut. Poți achiziționa o misiune sau poți urma întregul nivel." },
+  { q: "Cum primesc accesul la misiune?", a: "După confirmarea plății, primești automat rolul corespunzător în Discord și accesul la canalele private ale misiunii tale." },
+  { q: "Pot intra în comunitate fără să cumpăr?", a: "Da. Poți intra pe server ca Vizitator pentru a descoperi atmosfera și a citi regulamentul, fără nicio obligație de plată." },
+  { q: "Ce se întâmplă după ce termin un nivel?", a: "La finalul fiecărui nivel construiești un artefact personal — o busolă, o hartă sau un cod — pe care îl vei folosi în nivelurile următoare pentru a avansa mai departe." },
+];
+
 const trust = [
   { icon: VenetianMask, t: "Acces securizat", s: "prin roluri" },
   { icon: UsersRound, t: "Comunitate activă", s: "și suport real" },
