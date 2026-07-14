@@ -9,10 +9,29 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermeniRouteImport } from './routes/termeni'
+import { Route as PoliticaCookiesRouteImport } from './routes/politica-cookies'
+import { Route as PoliticaConfidentialitateRouteImport } from './routes/politica-confidentialitate'
 import { Route as DespreRouteImport } from './routes/despre'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GhidContDiscordRouteImport } from './routes/ghid.cont-discord'
 
+const TermeniRoute = TermeniRouteImport.update({
+  id: '/termeni',
+  path: '/termeni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaCookiesRoute = PoliticaCookiesRouteImport.update({
+  id: '/politica-cookies',
+  path: '/politica-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaConfidentialitateRoute =
+  PoliticaConfidentialitateRouteImport.update({
+    id: '/politica-confidentialitate',
+    path: '/politica-confidentialitate',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DespreRoute = DespreRouteImport.update({
   id: '/despre',
   path: '/despre',
@@ -32,35 +51,87 @@ const GhidContDiscordRoute = GhidContDiscordRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/despre': typeof DespreRoute
+  '/politica-confidentialitate': typeof PoliticaConfidentialitateRoute
+  '/politica-cookies': typeof PoliticaCookiesRoute
+  '/termeni': typeof TermeniRoute
   '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/despre': typeof DespreRoute
+  '/politica-confidentialitate': typeof PoliticaConfidentialitateRoute
+  '/politica-cookies': typeof PoliticaCookiesRoute
+  '/termeni': typeof TermeniRoute
   '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/despre': typeof DespreRoute
+  '/politica-confidentialitate': typeof PoliticaConfidentialitateRoute
+  '/politica-cookies': typeof PoliticaCookiesRoute
+  '/termeni': typeof TermeniRoute
   '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/despre' | '/ghid/cont-discord'
+  fullPaths:
+    | '/'
+    | '/despre'
+    | '/politica-confidentialitate'
+    | '/politica-cookies'
+    | '/termeni'
+    | '/ghid/cont-discord'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/despre' | '/ghid/cont-discord'
-  id: '__root__' | '/' | '/despre' | '/ghid/cont-discord'
+  to:
+    | '/'
+    | '/despre'
+    | '/politica-confidentialitate'
+    | '/politica-cookies'
+    | '/termeni'
+    | '/ghid/cont-discord'
+  id:
+    | '__root__'
+    | '/'
+    | '/despre'
+    | '/politica-confidentialitate'
+    | '/politica-cookies'
+    | '/termeni'
+    | '/ghid/cont-discord'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DespreRoute: typeof DespreRoute
+  PoliticaConfidentialitateRoute: typeof PoliticaConfidentialitateRoute
+  PoliticaCookiesRoute: typeof PoliticaCookiesRoute
+  TermeniRoute: typeof TermeniRoute
   GhidContDiscordRoute: typeof GhidContDiscordRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/termeni': {
+      id: '/termeni'
+      path: '/termeni'
+      fullPath: '/termeni'
+      preLoaderRoute: typeof TermeniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-cookies': {
+      id: '/politica-cookies'
+      path: '/politica-cookies'
+      fullPath: '/politica-cookies'
+      preLoaderRoute: typeof PoliticaCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-confidentialitate': {
+      id: '/politica-confidentialitate'
+      path: '/politica-confidentialitate'
+      fullPath: '/politica-confidentialitate'
+      preLoaderRoute: typeof PoliticaConfidentialitateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/despre': {
       id: '/despre'
       path: '/despre'
@@ -88,6 +159,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DespreRoute: DespreRoute,
+  PoliticaConfidentialitateRoute: PoliticaConfidentialitateRoute,
+  PoliticaCookiesRoute: PoliticaCookiesRoute,
+  TermeniRoute: TermeniRoute,
   GhidContDiscordRoute: GhidContDiscordRoute,
 }
 export const routeTree = rootRouteImport
