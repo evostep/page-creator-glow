@@ -125,7 +125,7 @@ function Index() {
         </nav>
 
         {/* HERO */}
-        <section className="relative mx-auto max-w-7xl px-6 pt-10 pb-14 md:pt-16 md:pb-20 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <section className="relative mx-auto max-w-7xl px-6 pt-10 pb-12 md:pt-14 md:pb-16 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full [background-image:var(--gradient-primary)] opacity-20 blur-3xl" />
           <div aria-hidden className="pointer-events-none absolute -bottom-32 right-0 h-[28rem] w-[28rem] rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
           <div className="relative">
@@ -170,8 +170,8 @@ function Index() {
       </header>
 
       {/* HOW IT WORKS */}
-      <section id="cum" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
-        <div className="flex flex-col items-center gap-3 mb-12">
+      <section id="cum" className="mx-auto max-w-7xl px-6 py-10 md:py-14">
+        <div className="flex flex-col items-center gap-3 mb-8">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
             <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold text-primary uppercase">Cum funcționează</h2>
@@ -220,7 +220,7 @@ function Index() {
       </section>
 
       {/* MISSIONS */}
-      <section id="misiuni" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
+      <section id="misiuni" className="mx-auto max-w-7xl px-6 py-10 md:py-14">
         <div className="flex flex-col items-center gap-3 mb-6">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
@@ -231,7 +231,7 @@ function Index() {
             Patru misiuni, o singură <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">transformare</span>
           </p>
         </div>
-        <p className="text-center text-base text-muted-foreground mb-10 max-w-2xl mx-auto whitespace-pre-line">
+        <p className="text-center text-base text-muted-foreground mb-6 max-w-2xl mx-auto whitespace-pre-line">
           {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n🎁 În primele 3 misiuni vei recupera 3 artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Personală.\n\n"}
         </p>
 
@@ -259,7 +259,7 @@ function Index() {
         </div>
 
         {/* TRUST BAR */}
-        <div className="mt-12 rounded-2xl bg-primary-soft/50 border border-primary/10 px-6 py-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-8 rounded-2xl bg-primary-soft/50 border border-primary/10 px-6 py-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {trust.map((t) => (
             <div key={t.t} className="flex items-center gap-3">
               <span className="h-10 w-10 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
@@ -276,8 +276,8 @@ function Index() {
 
       {/* CTA */}
       {/* HARTA JOCULUI */}
-      <section id="harta" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
-        <div className="flex flex-col items-center gap-3 mb-10">
+      <section id="harta" className="mx-auto max-w-7xl px-6 py-10 md:py-14">
+        <div className="flex flex-col items-center gap-3 mb-8">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
             <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Harta jocului</h2>
@@ -299,7 +299,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="cta" className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
+      <section id="cta" className="mx-auto max-w-7xl px-6 pb-10 md:pb-14">
         <div className="relative overflow-hidden rounded-3xl bg-card border border-border px-8 py-10 md:px-12 md:py-12 flex flex-col lg:flex-row items-center gap-6 shadow-[var(--shadow-card)]">
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
           <div className="relative h-14 w-14 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center shrink-0 shadow-[var(--shadow-glow)]">
@@ -318,7 +318,7 @@ function Index() {
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+        <div className="mx-auto max-w-7xl px-6 py-10 md:py-14 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {/* Brand */}
           <div>
             <Logo />
@@ -352,8 +352,8 @@ function Index() {
             <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition mb-4">
               <Mail className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
             </a>
-            <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-4 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
-              <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Scrie-ne pe Discord
+            <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg [background-image:var(--gradient-primary)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
+              <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Discord
             </a>
           </div>
         </div>
