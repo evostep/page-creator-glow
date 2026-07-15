@@ -170,8 +170,6 @@ function Logo() {
   );
 }
 
-const discordInviteUrl = "https://discord.gg/fsXDY8qv5n";
-
 function openDiscordInvite(event: MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
 
