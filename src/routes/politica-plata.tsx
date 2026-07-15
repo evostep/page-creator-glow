@@ -35,7 +35,7 @@ function PoliticaPlataPage() {
           <p>EvoStep comercializează exclusiv produse și servicii digitale. Acestea pot include:</p>
           <ul className="list-disc pl-6 space-y-1">
             <li>acces la misiuni de dezvoltare personală;</li>
-            <li>niveluri și trasee educaționale;</li>
+            <li>trasee educaționale structurate în misiuni;</li>
             <li>exerciții interactive;</li>
             <li>teste și chestionare;</li>
             <li>materiale digitale;</li>
