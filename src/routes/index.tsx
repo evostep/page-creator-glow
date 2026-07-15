@@ -72,34 +72,82 @@ const missions = [
   { name: "Busola Interioară", desc: "Construiește-ți Busola Personală.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
 ];
 
-const faqs = [
+const discordInviteUrl = "https://discord.gg/fsXDY8qv5n";
+
+const faqs: { q: string; a: React.ReactNode }[] = [
   {
     q: "Ce este EvoStep?",
-    a: "EvoStep este un parcurs interactiv în 12 niveluri, desfășurat într-o comunitate Discord. Fiecare nivel conține misiuni tematice, exerciții practice și Misiuni Fulger, iar descoperirile tale se adună în artefacte personale care se leagă treptat într-un sistem propriu de orientare.\n\nPe parcurs, poți discuta cu ceilalți participanți și poți cere clarificări mentorilor EvoStep, în timpul programului acestora.",
+    a: (
+      <>
+        <p>EvoStep este un parcurs interactiv în 12 niveluri, desfășurat într-o comunitate Discord. Fiecare nivel conține misiuni tematice, exerciții practice și Misiuni Fulger, iar descoperirile tale se adună în artefacte personale care se leagă treptat într-un sistem propriu de orientare.</p>
+        <p>Pe parcurs, poți discuta cu ceilalți participanți și poți cere clarificări mentorilor EvoStep, în timpul programului acestora.</p>
+      </>
+    ),
   },
   {
     q: "Am nevoie de cont Discord?",
-    a: "Da. Pentru a participa la EvoStep ai nevoie de un cont Discord. Îl poți crea gratuit în câteva minute, iar dacă ai deja unul, îl folosești pe acela.\n\nAi nevoie de ajutor? Apasă aici și vei găsi toți pașii necesari pentru crearea contului.",
+    a: (
+      <>
+        <p>Da. Pentru a participa la EvoStep ai nevoie de un cont Discord. Îl poți crea gratuit în câteva minute, iar dacă ai deja unul, îl folosești pe acela.</p>
+        <p>
+          Ai nevoie de ajutor?{" "}
+          <Link to="/ghid/cont-discord" className="text-primary font-medium hover:underline">
+            Apasă aici
+          </Link>{" "}
+          și vei găsi toți pașii necesari pentru crearea contului.
+        </p>
+      </>
+    ),
   },
   {
     q: "Cât costă o misiune?",
-    a: "Misiunile Nivelului 1 costă între 29 și 59 RON, în funcție de temă și de conținut. Fiecare misiune se achiziționează separat, iar prețul exact este afișat pentru fiecare în parte.\n\nRecomandarea noastră este să le parcurgi și să le achiziționezi în ordine, deoarece misiunile sunt legate între ele și construiesc treptat artefactul nivelului.\n\nPlata se face securizat prin platforma Stripe. După confirmarea plății, fluxul automatizat îți acordă accesul în câteva minute.",
+    a: (
+      <>
+        <p>
+          <a href="#misiuni" className="text-primary font-medium hover:underline">Misiunile Nivelului 1</a> costă între 29 și 59 RON, în funcție de temă și de conținut. Fiecare misiune se achiziționează separat, iar prețul exact este afișat pentru fiecare în parte.
+        </p>
+        <p>Recomandarea noastră este să le parcurgi și să le achiziționezi în ordine, deoarece misiunile sunt legate între ele și construiesc treptat artefactul nivelului.</p>
+        <p>Plata se face securizat prin platforma Stripe. După confirmarea plății, fluxul automatizat îți acordă accesul în câteva minute.</p>
+      </>
+    ),
   },
   {
     q: "Cum primesc accesul la misiune?",
-    a: "După confirmarea plății, botul îți atribuie automat rolul corespunzător în Discord și primești acces la canalele private ale misiunii în câteva minute.",
+    a: (
+      <p>După confirmarea plății, botul îți atribuie automat rolul corespunzător în Discord și primești acces la canalele private ale misiunii în câteva minute.</p>
+    ),
   },
   {
     q: "Unde găsesc informațiile legale și regulile de plată?",
-    a: "Poți consulta oricând Termenii și condițiile, Politica de plată și Politica de confidențialitate din subsolul paginii.",
+    a: (
+      <p>
+        Poți consulta oricând{" "}
+        <Link to="/termeni" className="text-primary font-medium hover:underline">Termenii și condițiile</Link>,{" "}
+        <Link to="/politica-plata" className="text-primary font-medium hover:underline">Politica de plată</Link> și{" "}
+        <Link to="/politica-confidentialitate" className="text-primary font-medium hover:underline">Politica de confidențialitate</Link>.
+      </p>
+    ),
   },
   {
     q: "Cum primesc sprijin în comunitatea EvoStep?",
-    a: "Mentorii EvoStep sunt activi în comunitate, de regulă, între orele 20:00 și 22:00.\n\nPentru problemele tehnice sau dificultățile întâmpinate pe platformă, poți trimite un ticket. Răspunsul nu este instant, dar vei primi sprijin în cel mult 24 de ore.\n\nÎntrebările și situațiile ridicate în comunitate pot fi selectate de mentori și discutate într-un răspuns adresat întregii comunități, atunci când tema este utilă și pentru alți participanți.",
+    a: (
+      <>
+        <p>Mentorii EvoStep sunt activi în comunitate, de regulă, între orele 20:00 și 22:00.</p>
+        <p>Pentru problemele tehnice sau dificultățile întâmpinate pe platformă, poți trimite un ticket direct pe <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">serverul Discord</a>. Răspunsul nu este instant, dar vei primi sprijin în cel mult 24 de ore.</p>
+        <p>Întrebările și situațiile ridicate în comunitate pot fi selectate de mentori și discutate într-un răspuns adresat întregii comunități, atunci când tema este utilă și pentru alți participanți.</p>
+      </>
+    ),
   },
   {
     q: "Ce se întâmplă după ce termin o misiune sau un nivel?",
-    a: "După ce finalizezi o misiune, primești acces la două Misiuni Fulger — MF1 și MF2, prin care poți aplica în viața reală ceea ce ai descoperit.\n\nMisiunea următoare poate fi achiziționată imediat după finalizarea celei anterioare sau mai târziu, atunci când simți că este momentul potrivit să continui.\n\nLa finalul fiecărui nivel, cele trei artefacte obținute în primele misiuni se reunesc într-un artefact principal al nivelului. Acesta păstrează reperele construite și se leagă, mai târziu, de artefactele nivelurilor următoare.\n\nLa finalul fiecărei etape, toate cele patru artefacte de nivel formează un artefact mai mare, iar la capătul celor 12 niveluri se conturează harta ta personală de orientare.",
+    a: (
+      <>
+        <p>După ce finalizezi o misiune, primești acces la două Misiuni Fulger — MF1 și MF2, prin care poți aplica în viața reală ceea ce ai descoperit.</p>
+        <p>Misiunea următoare poate fi achiziționată imediat după finalizarea celei anterioare sau mai târziu, atunci când simți că este momentul potrivit să continui.</p>
+        <p>La finalul fiecărui nivel, cele trei artefacte obținute în primele misiuni se reunesc într-un artefact principal al nivelului. Acesta păstrează reperele construite și se leagă, mai târziu, de artefactele nivelurilor următoare.</p>
+        <p>La finalul fiecărei etape, toate cele patru artefacte de nivel formează un artefact mai mare, iar la capătul celor 12 niveluri se conturează <a href="#harta" className="text-primary font-medium hover:underline">harta ta personală de orientare</a>.</p>
+      </>
+    ),
   },
 ];
 
@@ -121,8 +169,6 @@ function Logo() {
     </div>
   );
 }
-
-const discordInviteUrl = "https://discord.gg/fsXDY8qv5n";
 
 function openDiscordInvite(event: MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
