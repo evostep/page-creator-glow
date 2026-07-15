@@ -224,9 +224,9 @@ function DiscordMockup() {
 
   return (
     <div className="relative max-w-6xl mx-auto">
-      <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-[#1e1f22] grid grid-cols-[64px_minmax(0,240px)_minmax(0,1fr)] text-white">
-        {/* Server rail */}
-        <div className="bg-[#1a1b1e] py-3 flex flex-col items-center gap-2 border-r border-black/40">
+      <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-[#1e1f22] grid grid-cols-[140px_minmax(0,1fr)] sm:grid-cols-[56px_minmax(0,200px)_minmax(0,1fr)] lg:grid-cols-[64px_minmax(0,240px)_minmax(0,1fr)] text-white">
+        {/* Server rail — hidden on mobile */}
+        <div className="hidden sm:flex bg-[#1a1b1e] py-3 flex-col items-center gap-2 border-r border-black/40">
           <div className="h-11 w-11 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center font-bold text-white shadow-lg ring-2 ring-white/10">E</div>
           <div className="h-0.5 w-8 bg-white/10 rounded-full my-1" />
           {["🎮", "🎨", "🧩", "🌍"].map((e, i) => (
@@ -236,14 +236,14 @@ function DiscordMockup() {
 
         {/* Channels list */}
         <div className="bg-[#2b2d31] py-3 border-r border-black/40 min-w-0">
-          <div className="px-4 pb-3 border-b border-black/40 flex items-center justify-between">
+          <div className="px-3 sm:px-4 pb-3 border-b border-black/40 flex items-center justify-between gap-2">
             <span className="font-semibold text-sm truncate">EvoStep</span>
-            <ChevronRight className="h-3.5 w-3.5 rotate-90 text-white/50" />
+            <ChevronRight className="h-3.5 w-3.5 rotate-90 text-white/50 shrink-0" />
           </div>
           <div className="mt-2 space-y-3">
             {categories.map((cat) => (
               <div key={cat.name}>
-                <div className="px-3 text-[10px] tracking-widest font-bold text-white/40 uppercase truncate">{cat.name}</div>
+                <div className="px-2 sm:px-3 text-[10px] tracking-widest font-bold text-white/40 uppercase truncate">{cat.name}</div>
                 <ul className="mt-0.5">
                   {cat.channels.map((raw, i) => {
                     const ch = raw as { icon: string; name: string; active?: boolean; highlight?: "info" | "comunitate" };
@@ -252,7 +252,7 @@ function DiscordMockup() {
                       <li
                         key={i}
                         id={targetId}
-                        className={`mx-1 px-2 py-1 rounded flex items-center gap-1.5 text-[13px] leading-tight ${
+                        className={`mx-1 px-1.5 sm:px-2 py-1 rounded flex items-center gap-1.5 text-[12px] sm:text-[13px] leading-tight ${
                           ch.active ? "bg-white/10 text-white" : "text-white/60"
                         } ${ch.highlight === "info" ? "ring-2 ring-[#5865f2] shadow-[0_0_18px_rgba(88,101,242,0.55)]" : ""} ${
                           ch.highlight === "comunitate" ? "ring-2 ring-[#f472b6] shadow-[0_0_18px_rgba(244,114,182,0.55)]" : ""
@@ -270,18 +270,16 @@ function DiscordMockup() {
         </div>
 
         {/* Main area with annotations */}
-        <div className="bg-white p-4 md:p-6 min-w-0 relative text-[#2e3338]">
-          <div className="flex items-center gap-2 pb-3 border-b border-[#d6d9dc]">
+        <div className="bg-white p-3 sm:p-4 md:p-6 min-w-0 relative text-[#2e3338] col-span-2 sm:col-span-1">
+          <div className="flex items-center gap-2 pb-3 border-b border-[#d6d9dc] min-w-0">
             <span className="text-[#6b7280]">📢</span>
-            <span className="font-semibold text-sm">info-evostep-✅citire</span>
+            <span className="font-semibold text-sm truncate">info-evostep-✅citire</span>
           </div>
 
           {/* Annotation callouts */}
           <div className="mt-5 space-y-4">
-            <div className="relative rounded-xl border border-[#5865f2]/35 bg-[#f4f6ff] p-4 pl-12 shadow-[0_14px_35px_rgba(88,101,242,0.16)]">
-              <div className="absolute -left-8 top-6 h-px w-8 bg-[#5865f2]" />
-              <div className="absolute -left-9 top-[1.34rem] h-2.5 w-2.5 rotate-45 border-b-2 border-l-2 border-[#5865f2]" />
-              <div className="absolute left-3 top-4 h-7 w-7 rounded-full bg-[#5865f2] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(88,101,242,0.45)]">1</div>
+            <div className="relative rounded-xl border border-[#5865f2]/35 bg-[#f4f6ff] p-3 sm:p-4 pl-11 sm:pl-12 shadow-[0_14px_35px_rgba(88,101,242,0.16)]">
+              <div className="absolute left-2 sm:left-3 top-3 sm:top-4 h-7 w-7 rounded-full bg-[#5865f2] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(88,101,242,0.45)]">1</div>
               <div className="text-[11px] font-bold tracking-widest uppercase text-[#5865f2]">
                 #info-evostep
               </div>
@@ -290,10 +288,8 @@ function DiscordMockup() {
               </p>
             </div>
 
-            <div className="relative rounded-xl border border-[#f472b6]/35 bg-[#fff1f7] p-4 pl-12 shadow-[0_14px_35px_rgba(244,114,182,0.16)]">
-              <div className="absolute -left-8 top-6 h-px w-8 bg-[#f472b6]" />
-              <div className="absolute -left-9 top-[1.34rem] h-2.5 w-2.5 rotate-45 border-b-2 border-l-2 border-[#f472b6]" />
-              <div className="absolute left-3 top-4 h-7 w-7 rounded-full bg-[#f472b6] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(244,114,182,0.45)]">2</div>
+            <div className="relative rounded-xl border border-[#f472b6]/35 bg-[#fff1f7] p-3 sm:p-4 pl-11 sm:pl-12 shadow-[0_14px_35px_rgba(244,114,182,0.16)]">
+              <div className="absolute left-2 sm:left-3 top-3 sm:top-4 h-7 w-7 rounded-full bg-[#f472b6] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(244,114,182,0.45)]">2</div>
               <div className="text-[11px] font-bold tracking-widest uppercase text-[#db2777]">
                 #comunitate-evostep
               </div>
