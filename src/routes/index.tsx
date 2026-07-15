@@ -464,25 +464,37 @@ function Index() {
         </div>
       </section>
 
-      {/* GARANȚIE */}
+      {/* CUM FUNCȚIONEAZĂ ACCESUL */}
       <section id="garantie" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
-        <div className="max-w-3xl mx-auto relative">
-          <div className="relative rounded-2xl bg-[#fde68a] border-2 border-[#f59e0b] px-8 py-6 md:px-10 md:py-8 text-center shadow-[0_10px_30px_-10px_rgba(245,158,11,0.4)]">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#f59e0b] px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-white">
-              <ShieldCheck className="h-3.5 w-3.5" /> Garanție risc 0
-            </div>
-            <h3 className="mt-3 font-serif text-2xl md:text-3xl font-bold text-[#78350f]">Intri fără risc</h3>
-            <p className="mt-2 text-sm md:text-base text-[#78350f]/85 leading-relaxed max-w-xl mx-auto">
-              Intrarea pe Discord și rolul de Vizitator sunt gratuite. Cumperi o misiune doar dacă rezonezi cu locul și cu felul în care lucrăm.
-            </p>
-            <p className="mt-3 text-xs md:text-sm text-[#78350f]/75 max-w-xl mx-auto">
-              La finalul celor 12 niveluri poți intra, după aprobare, într-un proces de pregătire și validare pentru <span className="font-semibold">certificare ca Mentor EvoStep</span>.
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-6">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">Transparent, de la început</h3>
+            <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
+              Fără abonamente, fără clauze ascunse. Plătești o singură dată per nivel, doar dacă vrei să continui.
             </p>
           </div>
-          {/* funde jos */}
-          <div className="flex justify-center gap-4 -mt-2">
-            <div className="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[20px] border-t-[#f59e0b]" />
-            <div className="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[20px] border-t-[#f59e0b]" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
+              <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
+                <ShieldCheck className="h-5 w-5" />
+              </div>
+              <h4 className="mt-3 font-semibold text-foreground">Acces gratuit pe Discord</h4>
+              <p className="mt-1 text-sm text-muted-foreground">Intri ca Vizitator, vezi comunitatea și modul de lucru înainte să decizi.</p>
+            </div>
+            <div className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
+              <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
+                <ShieldCheck className="h-5 w-5" />
+              </div>
+              <h4 className="mt-3 font-semibold text-foreground">Plată o singură dată</h4>
+              <p className="mt-1 text-sm text-muted-foreground">Nu se reînnoiește automat. Cumperi un nivel când ești pregătit pentru el.</p>
+            </div>
+            <div className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
+              <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
+                <ShieldCheck className="h-5 w-5" />
+              </div>
+              <h4 className="mt-3 font-semibold text-foreground">Ritmul tău</h4>
+              <p className="mt-1 text-sm text-muted-foreground">Fără termene, fără presiune. Parcurgi misiunile în timpul care ți se potrivește.</p>
+            </div>
           </div>
         </div>
       </section>
