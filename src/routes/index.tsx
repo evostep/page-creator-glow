@@ -462,7 +462,7 @@ function Index() {
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <h4 className="mt-3 font-semibold text-foreground">Plată o singură dată</h4>
-              <p className="mt-1 text-sm text-muted-foreground">Nu se reînnoiește automat. Cumperi un nivel când ești pregătit pentru el.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Nu se reînnoiește automat. Cumperi fiecare misiune separat, când ești pregătit să continui.</p>
             </div>
             <div className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
               <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">

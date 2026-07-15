@@ -45,7 +45,7 @@ function TermeniPage() {
           <p>Scopul EvoStep este susținerea dezvoltării personale și a autocunoașterii.</p>
 
           <h2 className="mt-8 font-serif text-2xl font-bold tracking-tight">2. Ce primești</h2>
-          <p>Prin achiziționarea unei misiuni sau a unui nivel primești acces la conținutul digital disponibil pentru acel nivel în cadrul comunității EvoStep.</p>
+          <p>Prin achiziționarea unei misiuni primești acces la conținutul digital disponibil pentru acea misiune în cadrul comunității EvoStep.</p>
           <p>Accesul este:</p>
           <ul className="list-disc pl-6 space-y-1">
             <li>personal;</li>
