@@ -246,7 +246,8 @@ function DiscordMockup() {
               <div key={cat.name}>
                 <div className="px-3 text-[10px] tracking-widest font-bold text-white/40 uppercase truncate">{cat.name}</div>
                 <ul className="mt-0.5">
-                  {cat.channels.map((ch, i) => {
+                  {cat.channels.map((raw, i) => {
+                    const ch = raw as { icon: string; name: string; active?: boolean; highlight?: "info" | "comunitate" };
                     const targetId = ch.highlight ? `ch-${ch.highlight}` : undefined;
                     return (
                       <li
