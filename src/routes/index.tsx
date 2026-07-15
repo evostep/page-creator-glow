@@ -29,6 +29,8 @@ import mission2 from "@/assets/mission-2.jpg";
 import mission3 from "@/assets/mission-3.jpg";
 import mission4 from "@/assets/mission-4.jpg";
 import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
+import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
+import discordPreview from "@/assets/discord-preview.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
@@ -156,6 +158,13 @@ const trust = [
   { icon: UsersRound, t: "Comunitate activă", s: "și suport real" },
   { icon: Drama, t: "Permisiuni clare,", s: "doar unde ai acces" },
   { icon: Headphones, t: "Mentorat și", s: "cabinete de voce" },
+];
+
+const rezultate = [
+  { icon: Eye, t: "Vezi mai clar ce vrei", s: "și ieși din pilot automat." },
+  { icon: Compass, t: "Alegi mai bine pentru tine", s: "cu repere care rămân." },
+  { icon: Users, t: "Înțelegi ce se întâmplă în relații", s: "și pui limite fără să te pierzi." },
+  { icon: Mountain, t: "Îți găsești direcția", s: "pentru ce urmează." },
 ];
 
 function Logo() {
@@ -378,6 +387,106 @@ function Index() {
         </div>
       </section>
 
+      {/* REZULTATE AȘTEPTATE */}
+      <section id="rezultate" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+        <div className="flex flex-col items-center gap-3 mb-6">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Rezultate așteptate</h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
+            Ce poți duce cu tine <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">după primele misiuni</span>
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+          {rezultate.map((r) => (
+            <div key={r.t} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
+              <span className="h-11 w-11 shrink-0 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                <r.icon className="h-5 w-5 text-white" />
+              </span>
+              <div>
+                <div className="font-semibold text-foreground">{r.t}</div>
+                <div className="text-sm text-muted-foreground mt-0.5">{r.s}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PREVIEW DISCORD */}
+      <section id="preview-discord" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+        <div className="flex flex-col items-center gap-3 mb-6">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Cum arată comunitatea</h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
+            Un spațiu clar, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">structurat pe niveluri</span>
+          </p>
+          <p className="text-sm text-muted-foreground text-center max-w-xl">Canale dedicate pentru fiecare nivel, mentori activi, botul Călăuza care îți deschide accesul după plată.</p>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-card max-w-5xl mx-auto">
+          <img
+            src={discordPreview}
+            alt="Previzualizare a serverului Discord EvoStep — canale, misiuni și mesajul botului Călăuza"
+            width={1600}
+            height={1000}
+            loading="lazy"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      </section>
+
+      {/* FONDATOR */}
+      <section id="fondator" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+        <div className="max-w-4xl mx-auto rounded-3xl border border-border bg-card p-6 md:p-8 shadow-[var(--shadow-card)] flex flex-col md:flex-row items-center gap-6 md:gap-8">
+          <img
+            src={gabrielaBumbac.url}
+            alt="Gabriela Bumbac — fondatoare EvoStep"
+            width={200}
+            height={200}
+            loading="lazy"
+            className="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover shadow-[var(--shadow-glow)] shrink-0"
+          />
+          <div className="text-center md:text-left">
+            <div className="text-[10px] tracking-[0.24em] font-semibold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">CINE ESTE ÎN SPATELE EVOSTEP</div>
+            <h3 className="mt-1 font-serif text-2xl md:text-3xl font-bold text-foreground">Gabriela Bumbac</h3>
+            <p className="text-sm text-primary font-medium">Fondatoare EvoStep</p>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              Specialist în formare și consiliere, cu experiență în lucrul direct cu oamenii și în antreprenoriat. A construit EvoStep dintr-o idee testată mai întâi pe propriul drum, alături de o echipă din trei generații diferite.
+            </p>
+            <Link to="/despre" className="mt-4 inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+              Citește povestea EvoStep <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* GARANȚIE */}
+      <section id="garantie" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+        <div className="max-w-3xl mx-auto relative">
+          <div className="relative rounded-2xl bg-[#fde68a] border-2 border-[#f59e0b] px-8 py-6 md:px-10 md:py-8 text-center shadow-[0_10px_30px_-10px_rgba(245,158,11,0.4)]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#f59e0b] px-3 py-1 text-[10px] font-bold tracking-[0.2em] uppercase text-white">
+              <ShieldCheck className="h-3.5 w-3.5" /> Garanție risc 0
+            </div>
+            <h3 className="mt-3 font-serif text-2xl md:text-3xl font-bold text-[#78350f]">Intri fără risc</h3>
+            <p className="mt-2 text-sm md:text-base text-[#78350f]/85 leading-relaxed max-w-xl mx-auto">
+              Intrarea pe Discord și rolul de Vizitator sunt gratuite. Cumperi o misiune doar dacă rezonezi cu locul și cu felul în care lucrăm.
+            </p>
+            <p className="mt-3 text-xs md:text-sm text-[#78350f]/75 max-w-xl mx-auto">
+              La finalul celor 12 niveluri poți intra, după aprobare, într-un proces de pregătire și validare pentru <span className="font-semibold">certificare ca Mentor EvoStep</span>.
+            </p>
+          </div>
+          {/* funde jos */}
+          <div className="flex justify-center gap-4 -mt-2">
+            <div className="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[20px] border-t-[#f59e0b]" />
+            <div className="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[20px] border-t-[#f59e0b]" />
+          </div>
+        </div>
+      </section>
+
       <section id="cta" className="mx-auto max-w-7xl px-6 pb-8 md:pb-10">
         <div className="relative overflow-hidden rounded-3xl bg-card border border-border px-8 py-10 md:px-12 md:py-12 flex flex-col lg:flex-row items-center gap-6 shadow-[var(--shadow-card)]">
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
@@ -482,6 +591,20 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* STICKY CTA MOBILE */}
+      <div className="lg:hidden fixed bottom-0 inset-x-0 z-50 border-t border-border bg-background/95 backdrop-blur px-4 py-3 shadow-[0_-6px_20px_-8px_rgba(0,0,0,0.15)]">
+        <a
+          href={discordInviteUrl}
+          onClick={openDiscordInvite}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-3.5 text-sm font-bold text-white shadow-[var(--shadow-glow)]"
+        >
+          <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord — Gratuit
+        </a>
+      </div>
+      <div className="lg:hidden h-20" aria-hidden />
     </div>
   );
 }
