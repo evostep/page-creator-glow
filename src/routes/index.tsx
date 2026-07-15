@@ -29,6 +29,7 @@ import mission2 from "@/assets/mission-2.jpg";
 import mission3 from "@/assets/mission-3.jpg";
 import mission4 from "@/assets/mission-4.jpg";
 import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -72,12 +73,34 @@ const missions = [
 ];
 
 const faqs = [
-  { q: "Ce este EvoStep?", a: "EvoStep este o aventură de dezvoltare personală derulată într-o comunitate Discord. Fiecare nivel conține misiuni tematice, exerciții practice și momente de reflectie alături de alți participanți." },
-  { q: "Am nevoie de cont Discord?", a: "Da. EvoStep funcționează pe Discord, așa că ai nevoie de un cont gratuit pentru a accesa canalele, misiunile și comunitatea." },
-  { q: "Cât costă o misiune?", a: "Misiunile Nivelului 1 au prețuri între 29 și 59 RON, în funcție de temă și de conținut. Poți achiziționa o misiune sau poți urma întregul nivel." },
-  { q: "Cum primesc accesul la misiune?", a: "După confirmarea plății, primești automat rolul corespunzător în Discord și accesul la canalele private ale misiunii tale." },
-  { q: "Pot intra în comunitate fără să cumpăr?", a: "Da. Poți intra pe server ca Vizitator pentru a descoperi atmosfera și a citi regulamentul, fără nicio obligație de plată." },
-  { q: "Ce se întâmplă după ce termin un nivel?", a: "La finalul fiecărui nivel construiești un artefact personal — o busolă, o hartă sau un cod — pe care îl vei folosi în nivelurile următoare pentru a avansa mai departe." },
+  {
+    q: "Ce este EvoStep?",
+    a: "EvoStep este un parcurs interactiv în 12 niveluri, desfășurat într-o comunitate Discord. Fiecare nivel conține misiuni tematice, exerciții practice și Misiuni Fulger, iar descoperirile tale se adună în artefacte personale care se leagă treptat într-un sistem propriu de orientare.\n\nPe parcurs, poți discuta cu ceilalți participanți și poți cere clarificări mentorilor EvoStep, în timpul programului acestora.",
+  },
+  {
+    q: "Am nevoie de cont Discord?",
+    a: "Da. Pentru a participa la EvoStep ai nevoie de un cont Discord. Îl poți crea gratuit în câteva minute, iar dacă ai deja unul, îl folosești pe acela.\n\nAi nevoie de ajutor? Apasă aici și vei găsi toți pașii necesari pentru crearea contului.",
+  },
+  {
+    q: "Cât costă o misiune?",
+    a: "Misiunile Nivelului 1 costă între 29 și 59 RON, în funcție de temă și de conținut. Fiecare misiune se achiziționează separat, iar prețul exact este afișat pentru fiecare în parte.\n\nRecomandarea noastră este să le parcurgi și să le achiziționezi în ordine, deoarece misiunile sunt legate între ele și construiesc treptat artefactul nivelului.\n\nPlata se face securizat prin platforma Stripe. După confirmarea plății, fluxul automatizat îți acordă accesul în câteva minute.",
+  },
+  {
+    q: "Cum primesc accesul la misiune?",
+    a: "După confirmarea plății, botul îți atribuie automat rolul corespunzător în Discord și primești acces la canalele private ale misiunii în câteva minute.",
+  },
+  {
+    q: "Unde găsesc informațiile legale și regulile de plată?",
+    a: "Poți consulta oricând Termenii și condițiile, Politica de plată și Politica de confidențialitate din subsolul paginii.",
+  },
+  {
+    q: "Cum primesc sprijin în comunitatea EvoStep?",
+    a: "Mentorii EvoStep sunt activi în comunitate, de regulă, între orele 20:00 și 22:00.\n\nPentru problemele tehnice sau dificultățile întâmpinate pe platformă, poți trimite un ticket. Răspunsul nu este instant, dar vei primi sprijin în cel mult 24 de ore.\n\nÎntrebările și situațiile ridicate în comunitate pot fi selectate de mentori și discutate într-un răspuns adresat întregii comunități, atunci când tema este utilă și pentru alți participanți.",
+  },
+  {
+    q: "Ce se întâmplă după ce termin o misiune sau un nivel?",
+    a: "După ce finalizezi o misiune, primești acces la două Misiuni Fulger — MF1 și MF2, prin care poți aplica în viața reală ceea ce ai descoperit.\n\nMisiunea următoare poate fi achiziționată imediat după finalizarea celei anterioare sau mai târziu, atunci când simți că este momentul potrivit să continui.\n\nLa finalul fiecărui nivel, cele trei artefacte obținute în primele misiuni se reunesc într-un artefact principal al nivelului. Acesta păstrează reperele construite și se leagă, mai târziu, de artefactele nivelurilor următoare.\n\nLa finalul fiecărei etape, toate cele patru artefacte de nivel formează un artefact mai mare, iar la capătul celor 12 niveluri se conturează harta ta personală de orientare.",
+  },
 ];
 
 const trust = [
@@ -338,20 +361,28 @@ function Index() {
             Ai nelămuriri? <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">Aici găsești răspunsuri</span>
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-          {faqs.map((f) => (
-            <div key={f.q} className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
-              <div className="flex items-start gap-3">
-                <span className="h-8 w-8 shrink-0 rounded-lg [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                  <HelpCircle className="h-4 w-4 text-white" />
-                </span>
-                <div>
-                  <h3 className="font-semibold text-foreground text-sm leading-tight">{f.q}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.a}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((f, i) => (
+              <AccordionItem
+                key={f.q}
+                value={`item-${i}`}
+                className="rounded-2xl border border-border bg-card px-5 shadow-[var(--shadow-card)] data-[state=open]:border-primary/40"
+              >
+                <AccordionTrigger className="py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-3 pr-3">
+                    <span className="h-8 w-8 shrink-0 rounded-lg [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                      <HelpCircle className="h-4 w-4 text-white" />
+                    </span>
+                    <span className="font-semibold text-foreground text-sm md:text-base leading-tight">{f.q}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5 pl-11 pr-2 text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
@@ -379,6 +410,7 @@ function Index() {
             <h4 className="font-semibold text-foreground mb-4">Informații legale</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link to="/termeni" className="hover:text-primary transition">Termeni și condiții</Link></li>
+              <li><Link to="/politica-plata" className="hover:text-primary transition">Politica de plată</Link></li>
               <li><Link to="/politica-confidentialitate" className="hover:text-primary transition">Politica de confidențialitate</Link></li>
               <li><Link to="/politica-cookies" className="hover:text-primary transition">Politica de cookies</Link></li>
             </ul>

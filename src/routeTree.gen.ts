@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermeniRouteImport } from './routes/termeni'
+import { Route as PoliticaPlataRouteImport } from './routes/politica-plata'
 import { Route as PoliticaCookiesRouteImport } from './routes/politica-cookies'
 import { Route as PoliticaConfidentialitateRouteImport } from './routes/politica-confidentialitate'
 import { Route as DespreRouteImport } from './routes/despre'
@@ -19,6 +20,11 @@ import { Route as GhidContDiscordRouteImport } from './routes/ghid.cont-discord'
 const TermeniRoute = TermeniRouteImport.update({
   id: '/termeni',
   path: '/termeni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaPlataRoute = PoliticaPlataRouteImport.update({
+  id: '/politica-plata',
+  path: '/politica-plata',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PoliticaCookiesRoute = PoliticaCookiesRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/despre': typeof DespreRoute
   '/politica-confidentialitate': typeof PoliticaConfidentialitateRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
+  '/politica-plata': typeof PoliticaPlataRoute
   '/termeni': typeof TermeniRoute
   '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/despre': typeof DespreRoute
   '/politica-confidentialitate': typeof PoliticaConfidentialitateRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
+  '/politica-plata': typeof PoliticaPlataRoute
   '/termeni': typeof TermeniRoute
   '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/despre': typeof DespreRoute
   '/politica-confidentialitate': typeof PoliticaConfidentialitateRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
+  '/politica-plata': typeof PoliticaPlataRoute
   '/termeni': typeof TermeniRoute
   '/ghid/cont-discord': typeof GhidContDiscordRoute
 }
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/despre'
     | '/politica-confidentialitate'
     | '/politica-cookies'
+    | '/politica-plata'
     | '/termeni'
     | '/ghid/cont-discord'
   fileRoutesByTo: FileRoutesByTo
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/despre'
     | '/politica-confidentialitate'
     | '/politica-cookies'
+    | '/politica-plata'
     | '/termeni'
     | '/ghid/cont-discord'
   id:
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/despre'
     | '/politica-confidentialitate'
     | '/politica-cookies'
+    | '/politica-plata'
     | '/termeni'
     | '/ghid/cont-discord'
   fileRoutesById: FileRoutesById
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   DespreRoute: typeof DespreRoute
   PoliticaConfidentialitateRoute: typeof PoliticaConfidentialitateRoute
   PoliticaCookiesRoute: typeof PoliticaCookiesRoute
+  PoliticaPlataRoute: typeof PoliticaPlataRoute
   TermeniRoute: typeof TermeniRoute
   GhidContDiscordRoute: typeof GhidContDiscordRoute
 }
@@ -116,6 +129,13 @@ declare module '@tanstack/react-router' {
       path: '/termeni'
       fullPath: '/termeni'
       preLoaderRoute: typeof TermeniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-plata': {
+      id: '/politica-plata'
+      path: '/politica-plata'
+      fullPath: '/politica-plata'
+      preLoaderRoute: typeof PoliticaPlataRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/politica-cookies': {
@@ -161,19 +181,10 @@ const rootRouteChildren: RootRouteChildren = {
   DespreRoute: DespreRoute,
   PoliticaConfidentialitateRoute: PoliticaConfidentialitateRoute,
   PoliticaCookiesRoute: PoliticaCookiesRoute,
+  PoliticaPlataRoute: PoliticaPlataRoute,
   TermeniRoute: TermeniRoute,
   GhidContDiscordRoute: GhidContDiscordRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
