@@ -31,7 +31,6 @@ import mission4 from "@/assets/mission-4.jpg";
 import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
 import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
 
-import discordPreview from "@/assets/discord-preview.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
@@ -188,6 +187,126 @@ function openDiscordInvite(event: MouseEvent<HTMLAnchorElement>) {
   if (newWindow) {
     newWindow.opener = null;
   }
+}
+
+function DiscordMockup() {
+  const categories = [
+    {
+      name: "START",
+      channels: [
+        { icon: "📢", name: "info-evostep-✅citire", active: true, highlight: "info" as const },
+        { icon: "☑️", name: "reguli-✅citire" },
+      ],
+    },
+    {
+      name: "COMUNITATE",
+      channels: [
+        { icon: "🌐", name: "comunitate-evostep", highlight: "comunitate" as const },
+        { icon: "🎫", name: "tichete-deschise" },
+        { icon: "🔒", name: "echipa-secretă" },
+        { icon: "🤖", name: "boti-comunicare" },
+      ],
+    },
+    {
+      name: "CABINETE",
+      channels: [
+        { icon: "🔴", name: "Cabinet-GB" },
+        { icon: "🔴", name: "Cabinet-GR" },
+      ],
+    },
+    {
+      name: "FAZA 1 · EU CU MINE · LV1",
+      channels: [
+        { icon: "#", name: "ghid-lv1-✅citire" },
+        { icon: "💬", name: "discuții-lv1" },
+      ],
+    },
+  ];
+
+  return (
+    <div className="relative max-w-6xl mx-auto">
+      <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-[#1e1f22] grid grid-cols-[64px_minmax(0,240px)_minmax(0,1fr)] text-white">
+        {/* Server rail */}
+        <div className="bg-[#1a1b1e] py-3 flex flex-col items-center gap-2 border-r border-black/40">
+          <div className="h-11 w-11 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center font-bold text-white shadow-lg ring-2 ring-white/10">E</div>
+          <div className="h-0.5 w-8 bg-white/10 rounded-full my-1" />
+          {["🎮", "🎨", "🧩", "🌍"].map((e, i) => (
+            <div key={i} className="h-11 w-11 rounded-full bg-[#313338] flex items-center justify-center text-sm opacity-70">{e}</div>
+          ))}
+        </div>
+
+        {/* Channels list */}
+        <div className="bg-[#2b2d31] py-3 border-r border-black/40 min-w-0">
+          <div className="px-4 pb-3 border-b border-black/40 flex items-center justify-between">
+            <span className="font-semibold text-sm truncate">EvoStep</span>
+            <ChevronRight className="h-3.5 w-3.5 rotate-90 text-white/50" />
+          </div>
+          <div className="mt-2 space-y-3">
+            {categories.map((cat) => (
+              <div key={cat.name}>
+                <div className="px-3 text-[10px] tracking-widest font-bold text-white/40 uppercase truncate">{cat.name}</div>
+                <ul className="mt-0.5">
+                  {cat.channels.map((raw, i) => {
+                    const ch = raw as { icon: string; name: string; active?: boolean; highlight?: "info" | "comunitate" };
+                    const targetId = ch.highlight ? `ch-${ch.highlight}` : undefined;
+                    return (
+                      <li
+                        key={i}
+                        id={targetId}
+                        className={`mx-1 px-2 py-1 rounded flex items-center gap-1.5 text-[13px] leading-tight ${
+                          ch.active ? "bg-white/10 text-white" : "text-white/60"
+                        } ${ch.highlight === "info" ? "ring-2 ring-[#5865f2] shadow-[0_0_18px_rgba(88,101,242,0.55)]" : ""} ${
+                          ch.highlight === "comunitate" ? "ring-2 ring-[#f472b6] shadow-[0_0_18px_rgba(244,114,182,0.55)]" : ""
+                        }`}
+                      >
+                        <span className="text-xs opacity-80 shrink-0">{ch.icon}</span>
+                        <span className="truncate">{ch.name}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Main area with annotations */}
+        <div className="bg-[#313338] p-4 md:p-6 min-w-0 relative">
+          <div className="flex items-center gap-2 pb-3 border-b border-black/30">
+            <span className="text-white/50">📢</span>
+            <span className="font-semibold text-sm">info-evostep-✅citire</span>
+          </div>
+
+          <div className="mt-4 rounded-xl overflow-hidden border border-white/10 bg-[#2b2d31]">
+            <img src={hartaEvostep.url} alt="Harta parcursului EvoStep" className="w-full h-auto object-cover" loading="lazy" />
+          </div>
+
+          {/* Annotation callouts */}
+          <div className="mt-5 space-y-4">
+            <div className="relative rounded-xl border border-[#5865f2]/60 bg-gradient-to-br from-[#5865f2]/20 to-[#5865f2]/5 p-4 pl-12">
+              <div className="absolute left-3 top-4 h-7 w-7 rounded-full bg-[#5865f2] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(88,101,242,0.7)]">1</div>
+              <div className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#a5b4fc]">
+                <span>←</span> Sageată către <span className="text-white">#info-evostep</span>
+              </div>
+              <p className="mt-1 text-sm text-white/90 leading-snug">
+                Aici <b>citești despre EvoStep</b>, găsești misiunea <b>„Hoțul de Roluri”</b> și te poți <b>abona la notificări</b>. E primul loc unde ajungi.
+              </p>
+            </div>
+
+            <div className="relative rounded-xl border border-[#f472b6]/60 bg-gradient-to-br from-[#f472b6]/20 to-[#f472b6]/5 p-4 pl-12">
+              <div className="absolute left-3 top-4 h-7 w-7 rounded-full bg-[#f472b6] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(244,114,182,0.7)]">2</div>
+              <div className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#fbcfe8]">
+                <span>←</span> Sageată către <span className="text-white">#comunitate-evostep</span>
+              </div>
+              <p className="mt-1 text-sm text-white/90 leading-snug">
+                Aici <b>ne întâlnim cu toții</b> — inima comunității, unde curge discuția și energia zilnică.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function Index() {
@@ -428,16 +547,7 @@ function Index() {
           </p>
           <p className="text-sm text-muted-foreground text-center max-w-xl">Canale dedicate pentru fiecare nivel, mentori activi, botul Călăuza care îți deschide accesul după plată.</p>
         </div>
-        <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-card max-w-5xl mx-auto">
-          <img
-            src={discordPreview}
-            alt="Previzualizare a serverului Discord EvoStep — canale, misiuni și mesajul botului Călăuza"
-            width={1600}
-            height={1000}
-            loading="lazy"
-            className="w-full h-auto object-cover"
-          />
-        </div>
+        <DiscordMockup />
       </section>
 
       {/* FONDATOR */}
