@@ -28,7 +28,6 @@ import mission1 from "@/assets/mission-1.jpg";
 import mission2 from "@/assets/mission-2.jpg";
 import mission3 from "@/assets/mission-3.jpg";
 import mission4 from "@/assets/mission-4.jpg";
-import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
 import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -147,7 +146,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
         <p>După ce finalizezi o misiune, primești acces la două Misiuni Fulger — MF1 și MF2, prin care poți aplica în viața reală ceea ce ai descoperit.</p>
         <p>Misiunea următoare poate fi achiziționată imediat după finalizarea celei anterioare sau mai târziu, atunci când simți că este momentul potrivit să continui.</p>
         <p>La finalul fiecărui nivel, cele trei artefacte obținute în primele misiuni se reunesc într-un artefact principal al nivelului. Acesta păstrează reperele construite și se leagă, mai târziu, de artefactele nivelurilor următoare.</p>
-        <p>La finalul fiecărei etape, toate cele patru artefacte de nivel formează un artefact mai mare, iar la capătul celor 12 niveluri se conturează <a href="#harta" className="text-primary font-medium hover:underline">harta ta personală de orientare</a>.</p>
+        <p>La finalul fiecărei etape, toate cele patru artefacte de nivel formează un artefact mai mare, iar la capătul celor 12 niveluri se conturează harta ta personală de orientare.</p>
       </>
     ),
   },
@@ -271,34 +270,34 @@ function DiscordMockup() {
         </div>
 
         {/* Main area with annotations */}
-        <div className="bg-[#313338] p-4 md:p-6 min-w-0 relative">
-          <div className="flex items-center gap-2 pb-3 border-b border-black/30">
-            <span className="text-white/50">📢</span>
+        <div className="bg-white p-4 md:p-6 min-w-0 relative text-[#2e3338]">
+          <div className="flex items-center gap-2 pb-3 border-b border-[#d6d9dc]">
+            <span className="text-[#6b7280]">📢</span>
             <span className="font-semibold text-sm">info-evostep-✅citire</span>
-          </div>
-
-          <div className="mt-4 rounded-xl overflow-hidden border border-white/10 bg-[#2b2d31]">
-            <img src={hartaEvostep.url} alt="Harta parcursului EvoStep" className="w-full h-auto object-cover" loading="lazy" />
           </div>
 
           {/* Annotation callouts */}
           <div className="mt-5 space-y-4">
-            <div className="relative rounded-xl border border-[#5865f2]/60 bg-gradient-to-br from-[#5865f2]/20 to-[#5865f2]/5 p-4 pl-12">
-              <div className="absolute left-3 top-4 h-7 w-7 rounded-full bg-[#5865f2] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(88,101,242,0.7)]">1</div>
-              <div className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#a5b4fc]">
-                <span>←</span> Sageată către <span className="text-white">#info-evostep</span>
+            <div className="relative rounded-xl border border-[#5865f2]/35 bg-[#f4f6ff] p-4 pl-12 shadow-[0_14px_35px_rgba(88,101,242,0.16)]">
+              <div className="absolute -left-8 top-6 h-px w-8 bg-[#5865f2]" />
+              <div className="absolute -left-9 top-[1.34rem] h-2.5 w-2.5 rotate-45 border-b-2 border-l-2 border-[#5865f2]" />
+              <div className="absolute left-3 top-4 h-7 w-7 rounded-full bg-[#5865f2] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(88,101,242,0.45)]">1</div>
+              <div className="text-[11px] font-bold tracking-widest uppercase text-[#5865f2]">
+                #info-evostep
               </div>
-              <p className="mt-1 text-sm text-white/90 leading-snug">
+              <p className="mt-1 text-sm text-[#2e3338] leading-snug">
                 Aici <b>citești despre EvoStep</b>, găsești misiunea <b>„Hoțul de Roluri”</b> și te poți <b>abona la notificări</b>. E primul loc unde ajungi.
               </p>
             </div>
 
-            <div className="relative rounded-xl border border-[#f472b6]/60 bg-gradient-to-br from-[#f472b6]/20 to-[#f472b6]/5 p-4 pl-12">
-              <div className="absolute left-3 top-4 h-7 w-7 rounded-full bg-[#f472b6] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(244,114,182,0.7)]">2</div>
-              <div className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#fbcfe8]">
-                <span>←</span> Sageată către <span className="text-white">#comunitate-evostep</span>
+            <div className="relative rounded-xl border border-[#f472b6]/35 bg-[#fff1f7] p-4 pl-12 shadow-[0_14px_35px_rgba(244,114,182,0.16)]">
+              <div className="absolute -left-8 top-6 h-px w-8 bg-[#f472b6]" />
+              <div className="absolute -left-9 top-[1.34rem] h-2.5 w-2.5 rotate-45 border-b-2 border-l-2 border-[#f472b6]" />
+              <div className="absolute left-3 top-4 h-7 w-7 rounded-full bg-[#f472b6] flex items-center justify-center text-white text-xs font-bold shadow-[0_0_20px_rgba(244,114,182,0.45)]">2</div>
+              <div className="text-[11px] font-bold tracking-widest uppercase text-[#db2777]">
+                #comunitate-evostep
               </div>
-              <p className="mt-1 text-sm text-white/90 leading-snug">
+              <p className="mt-1 text-sm text-[#2e3338] leading-snug">
                 Aici <b>ne întâlnim cu toții</b> — inima comunității, unde curge discuția și energia zilnică.
               </p>
             </div>
@@ -479,31 +478,6 @@ function Index() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      {/* HARTA JOCULUI */}
-      <section id="harta" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
-        <div className="flex flex-col items-center gap-3 mb-6">
-          <div className="flex items-center gap-4">
-            <span className="h-px w-12 bg-primary/40" />
-            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Harta jocului</h2>
-            <span className="h-px w-12 bg-primary/40" />
-          </div>
-          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
-            12 niveluri, 3 etape, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">o singură aventură</span>
-          </p>
-        </div>
-        <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-card">
-          <img
-            src={hartaEvostep.url}
-            alt="Harta jocului EvoStep — 12 niveluri, 3 etape, o singură aventură"
-            width={1536}
-            height={1024}
-            loading="lazy"
-            className="w-full h-auto object-contain"
-          />
         </div>
       </section>
 
