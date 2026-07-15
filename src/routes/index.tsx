@@ -428,16 +428,7 @@ function Index() {
           </p>
           <p className="text-sm text-muted-foreground text-center max-w-xl">Canale dedicate pentru fiecare nivel, mentori activi, botul Călăuza care îți deschide accesul după plată.</p>
         </div>
-        <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)] bg-card max-w-5xl mx-auto">
-          <img
-            src={discordPreview}
-            alt="Previzualizare a serverului Discord EvoStep — canale, misiuni și mesajul botului Călăuza"
-            width={1600}
-            height={1000}
-            loading="lazy"
-            className="w-full h-auto object-cover"
-          />
-        </div>
+        <DiscordMockup />
       </section>
 
       {/* FONDATOR */}
