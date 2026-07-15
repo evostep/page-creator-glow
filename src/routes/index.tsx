@@ -446,7 +446,7 @@ function Index() {
           <div className="text-center mb-6">
             <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">Transparent, de la început</h3>
             <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
-              Fără abonamente, fără clauze ascunse. Plătești o singură dată per nivel, doar dacă vrei să continui.
+              Fără abonamente, fără clauze ascunse. Plătești o singură dată per misiune, doar dacă vrei să continui.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
