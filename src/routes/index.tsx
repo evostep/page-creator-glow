@@ -29,6 +29,7 @@ import mission2 from "@/assets/mission-2.jpg";
 import mission3 from "@/assets/mission-3.jpg";
 import mission4 from "@/assets/mission-4.jpg";
 import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
+import gabrielaRadu from "@/assets/gabriela-radu.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
