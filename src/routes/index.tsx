@@ -523,23 +523,46 @@ function Index() {
 
       {/* FONDATOR */}
       <section id="fondator" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
-        <div className="max-w-4xl mx-auto rounded-3xl border border-border bg-card p-6 md:p-8 shadow-[var(--shadow-card)] flex flex-col md:flex-row items-center gap-6 md:gap-8">
-          <img
-            src={gabrielaBumbac.url}
-            alt="Gabriela Bumbac — fondatoare EvoStep"
-            width={200}
-            height={200}
-            loading="lazy"
-            className="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover shadow-[var(--shadow-glow)] shrink-0"
-          />
-          <div className="text-center md:text-left">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-6">
             <div className="text-[10px] tracking-[0.24em] font-semibold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">CINE ESTE ÎN SPATELE EVOSTEP</div>
-            <h3 className="mt-1 font-serif text-2xl md:text-3xl font-bold text-foreground">Gabriela Bumbac</h3>
-            <p className="text-sm text-primary font-medium">Fondatoare EvoStep</p>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Specialist în formare și consiliere, cu experiență în lucrul direct cu oamenii și în antreprenoriat. A construit EvoStep dintr-o idee testată mai întâi pe propriul drum.
-            </p>
-            <Link to="/despre" className="mt-4 inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+            <h3 className="mt-1 font-serif text-2xl md:text-3xl font-bold text-foreground">Fondatoarele EvoStep</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                img: gabrielaBumbac.url,
+                name: "Gabriela Bumbac",
+                role: "Fondatoare EvoStep",
+                specialist: "Specialist în formare și consiliere, cu experiență în lucrul direct cu oamenii și în antreprenoriat.",
+                bio: "Aduce în EvoStep capacitatea de a transforma o idee într-un parcurs coerent și aplicabil, construit din experiență și testat mai întâi pe propriul drum.",
+              },
+              {
+                img: gabrielaRadu.url,
+                name: "Gabriela Radu",
+                role: "Cofondatoare EvoStep",
+                specialist: "Specialist în managementul proiectelor și coach.",
+                bio: "Alături de EvoStep încă de la primii pași ai implementării, aduce rigoarea organizării, întrebările care merg dincolo de primul răspuns și susținerea prin care o descoperire poate deveni alegere și acțiune.",
+              },
+            ].map((p) => (
+              <div key={p.name} className="rounded-3xl border border-border bg-card p-6 md:p-8 shadow-[var(--shadow-card)] flex flex-col items-center text-center">
+                <img
+                  src={p.img}
+                  alt={`${p.name} — ${p.role}`}
+                  width={200}
+                  height={200}
+                  loading="lazy"
+                  className="h-40 w-40 rounded-full object-cover shadow-[var(--shadow-glow)] shrink-0"
+                />
+                <h4 className="mt-4 font-serif text-2xl font-bold text-foreground">{p.name}</h4>
+                <p className="text-sm text-primary font-medium">{p.role}</p>
+                <p className="mt-3 text-sm font-semibold text-foreground leading-relaxed">{p.specialist}</p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <Link to="/despre" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
               Citește povestea EvoStep <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
