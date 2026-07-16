@@ -31,6 +31,7 @@ import mission4 from "@/assets/mission-4.jpg";
 import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
 import gabrielaRadu from "@/assets/gabriela-radu.png.asset.json";
 import costel from "@/assets/costel.png.asset.json";
+import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
