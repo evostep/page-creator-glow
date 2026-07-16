@@ -31,6 +31,7 @@ import mission4 from "@/assets/mission-4.jpg";
 import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
 import gabrielaRadu from "@/assets/gabriela-radu.png.asset.json";
 import costel from "@/assets/costel.png.asset.json";
+import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -55,6 +56,7 @@ const DiscordIcon = ({ className = "" }: { className?: string }) => (
 const navLinks = [
   { label: "Despre EvoStep", href: "/despre" },
   { label: "Cum funcționează", href: "#cum" },
+  { label: "Harta", href: "#harta" },
   { label: "Misiunile", href: "#misiuni" },
   { label: "Întrebări frecvente", href: "#faq" },
 ];
@@ -421,6 +423,45 @@ function Index() {
               )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* HARTA PARCURSULUI */}
+      <section id="harta" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+        <div className="flex flex-col items-center gap-3 mb-6">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Harta parcursului</h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-3xl leading-tight tracking-tight">
+            12 niveluri, 3 etape, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">repere construite pas cu pas</span>
+          </p>
+          <p className="text-center text-base text-muted-foreground max-w-2xl">
+            De la <span className="font-semibold text-foreground">Eu cu mine</span>, la <span className="font-semibold text-foreground">Eu cu ceilalți</span> și <span className="font-semibold text-foreground">Eu în lume</span> — fiecare misiune adaugă un artefact, iar artefactele se leagă într-o hartă personală de orientare.
+          </p>
+        </div>
+
+        <div className="rounded-3xl bg-white border border-primary/15 shadow-[var(--shadow-card)] p-3 sm:p-5 md:p-6">
+          <a
+            href={hartaEvostep.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block group"
+            aria-label="Deschide harta EvoStep în mărime completă"
+          >
+            <img
+              src={hartaEvostep.url}
+              alt="Harta parcursului EvoStep — 12 niveluri, 3 etape"
+              width={2000}
+              height={1414}
+              loading="lazy"
+              className="w-full h-auto rounded-2xl transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+          </a>
+          <p className="mt-3 text-center text-xs text-muted-foreground">
+            💡 Atinge harta pentru a o deschide la mărime completă și a citi detaliile fiecărui nivel.
+          </p>
         </div>
       </section>
 
