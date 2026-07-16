@@ -49,10 +49,10 @@ const echipa = [
     desc: "Alături de EvoStep încă de la primii pași ai implementării, aduce rigoarea organizării, întrebările care merg dincolo de primul răspuns și susținerea prin care o descoperire poate deveni alegere și acțiune.",
   },
   {
-    nume: "Petrea Costel",
-    rol: "Programatorul echipei EvoStep",
-    subtitlu: "",
-    desc: "Construiește partea tehnică a jocului, astfel încât experiența participantului să fie ușoară, clară și coerentă.",
+    nume: "Costel Petrea",
+    rol: "Developer EvoStep",
+    subtitlu: "Specializat în mecatronică, dezvoltarea soluțiilor tehnice și automatizarea proceselor.",
+    desc: "Contribuie la dezvoltarea și optimizarea platformei EvoStep, automatizarea proceselor și integrarea funcționalităților digitale, transformând ideile în soluții eficiente, accesibile și ușor de utilizat.",
   },
 ];
 

@@ -30,6 +30,7 @@ import mission3 from "@/assets/mission-3.jpg";
 import mission4 from "@/assets/mission-4.jpg";
 import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
 import gabrielaRadu from "@/assets/gabriela-radu.png.asset.json";
+import costel from "@/assets/costel.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -526,9 +527,9 @@ function Index() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-6">
             <div className="text-[10px] tracking-[0.24em] font-semibold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">CINE ESTE ÎN SPATELE EVOSTEP</div>
-            <h3 className="mt-1 font-serif text-2xl md:text-3xl font-bold text-foreground">Fondatoarele EvoStep</h3>
+            <h3 className="mt-1 font-serif text-2xl md:text-3xl font-bold text-foreground">Echipa EvoStep</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 img: gabrielaBumbac.url,
@@ -543,6 +544,13 @@ function Index() {
                 role: "Cofondatoare EvoStep",
                 specialist: "Specialist în managementul proiectelor și coach.",
                 bio: "Alături de EvoStep încă de la primii pași ai implementării, aduce rigoarea organizării, întrebările care merg dincolo de primul răspuns și susținerea prin care o descoperire poate deveni alegere și acțiune.",
+              },
+              {
+                img: costel.url,
+                name: "Costel Petrea",
+                role: "Developer EvoStep",
+                specialist: "Specializat în mecatronică, dezvoltarea soluțiilor tehnice și automatizarea proceselor.",
+                bio: "Contribuie la dezvoltarea și optimizarea platformei EvoStep, automatizarea proceselor și integrarea funcționalităților digitale, transformând ideile în soluții eficiente, accesibile și ușor de utilizat.",
               },
             ].map((p) => (
               <div key={p.name} className="rounded-3xl border border-border bg-card p-6 md:p-8 shadow-[var(--shadow-card)] flex flex-col items-center text-center">
