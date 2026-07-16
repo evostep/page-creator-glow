@@ -56,6 +56,7 @@ const DiscordIcon = ({ className = "" }: { className?: string }) => (
 const navLinks = [
   { label: "Despre EvoStep", href: "/despre" },
   { label: "Cum funcționează", href: "#cum" },
+  { label: "Harta", href: "#harta" },
   { label: "Misiunile", href: "#misiuni" },
   { label: "Întrebări frecvente", href: "#faq" },
 ];
