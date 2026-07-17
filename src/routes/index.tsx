@@ -756,15 +756,12 @@ function Index() {
           {/* Parteneri */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Parteneri</h4>
-            <a
-              href="https://asociatiacopilot.ro"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Asociația Copilot"
-              className="inline-block rounded-lg bg-white p-2 border border-border hover:opacity-90 transition"
+            <div
+              title="Asociația Copilot — partener EvoStep"
+              className="inline-block rounded-lg bg-white p-2 border border-border"
             >
               <img src={asociatiaCopilot.url} alt="Asociația Copilot — partener EvoStep" className="h-12 w-auto max-w-[160px] object-contain block" />
-            </a>
+            </div>
           </div>
 
           {/* Protecția consumatorilor & Plăți */}
