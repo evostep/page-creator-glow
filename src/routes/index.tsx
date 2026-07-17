@@ -21,7 +21,6 @@ import {
   VenetianMask,
   UsersRound,
   Sparkles,
-  Globe2,
 } from "lucide-react";
 import evostepLogo from "@/assets/evostep-logo.asset.json";
 import heroPortal from "@/assets/hero-portal.jpg";
@@ -33,8 +32,9 @@ import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
 import gabrielaRadu from "@/assets/gabriela-radu.png.asset.json";
 import costel from "@/assets/costel.png.asset.json";
 import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
-import anpcLogo from "@/assets/anpc-logo.png";
 import stripeLogo from "@/assets/stripe-logo.png";
+import anpcSal from "@/assets/anpc-sal.png.asset.json";
+import anpcSol from "@/assets/anpc-sol.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -755,38 +755,26 @@ function Index() {
           {/* Protecția consumatorilor & Plăți */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Protecția consumatorilor</h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="https://anpc.ro/ce-este-sal/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-lg border border-border bg-card p-3 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition"
-                >
-                  <img src={anpcLogo} alt="Sigla ANPC" width={40} height={40} className="h-9 w-9 shrink-0 object-contain" />
-                  <span className="min-w-0">
-                    <span className="block text-sm font-semibold text-foreground">ANPC — SAL</span>
-                    <span className="block text-xs text-muted-foreground leading-snug">Soluționarea Alternativă a Litigiilor</span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://ec.europa.eu/consumers/odr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-lg border border-border bg-card p-3 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition"
-                >
-                  <span className="h-9 w-9 shrink-0 rounded-md bg-primary-soft flex items-center justify-center text-primary">
-                    <Globe2 className="h-4 w-4" />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-sm font-semibold text-foreground">ANPC — SOL</span>
-                    <span className="block text-xs text-muted-foreground leading-snug">Soluționarea Online a Litigiilor</span>
-                  </span>
-                </a>
-              </li>
-            </ul>
+            <div className="flex flex-col gap-2">
+              <a
+                href="https://anpc.ro/ce-este-sal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ANPC — Soluționarea Alternativă a Litigiilor"
+                className="inline-block rounded-md bg-white p-1 hover:opacity-90 transition w-fit"
+              >
+                <img src={anpcSal.url} alt="ANPC — Soluționarea Alternativă a Litigiilor" className="h-10 w-auto block" />
+              </a>
+              <a
+                href="https://ec.europa.eu/consumers/odr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ANPC — Soluționarea Online a Litigiilor"
+                className="inline-block rounded-md bg-white p-1 hover:opacity-90 transition w-fit"
+              >
+                <img src={anpcSol.url} alt="ANPC — Soluționarea Online a Litigiilor" className="h-10 w-auto block" />
+              </a>
+            </div>
 
             <h4 className="font-semibold text-foreground mt-6 mb-3">Plăți securizate</h4>
             <div className="flex items-center gap-3 rounded-lg border border-border bg-card p-3">
