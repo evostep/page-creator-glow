@@ -713,9 +713,9 @@ function Index() {
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-10 md:py-12 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+        <div className="mx-auto max-w-7xl px-6 py-10 md:py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Logo />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">
               EvoStep — o aventură de dezvoltare personală. Devino cea mai bună versiune a ta.
@@ -744,12 +744,26 @@ function Index() {
           {/* Contact */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
-            <p className="text-sm text-muted-foreground mb-3">Suntem 100% online. Ne găsești pe Discord sau pe email:</p>
-            <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition mb-4">
+            <p className="text-sm text-muted-foreground mb-3">Suntem 100% online.</p>
+            <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition mb-3">
               <Mail className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
             </a>
             <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg [background-image:var(--gradient-primary)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
               <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Discord
+            </a>
+          </div>
+
+          {/* Parteneri */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Parteneri</h4>
+            <a
+              href="https://asociatiacopilot.ro"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Asociația Copilot"
+              className="inline-block rounded-lg bg-white p-2 border border-border hover:opacity-90 transition"
+            >
+              <img src={asociatiaCopilot.url} alt="Asociația Copilot — partener EvoStep" className="h-12 w-auto max-w-[160px] object-contain block" />
             </a>
           </div>
 
@@ -764,7 +778,7 @@ function Index() {
                 aria-label="ANPC — Soluționarea Alternativă a Litigiilor"
                 className="inline-block rounded-md bg-white p-1 hover:opacity-90 transition w-fit"
               >
-                <img src={anpcSal.url} alt="ANPC — Soluționarea Alternativă a Litigiilor" className="h-10 w-auto block" />
+                <img src={anpcSal.url} alt="ANPC — Soluționarea Alternativă a Litigiilor" className="h-9 w-auto block" />
               </a>
               <a
                 href="https://ec.europa.eu/consumers/odr"
@@ -773,13 +787,13 @@ function Index() {
                 aria-label="ANPC — Soluționarea Online a Litigiilor"
                 className="inline-block rounded-md bg-white p-1 hover:opacity-90 transition w-fit"
               >
-                <img src={anpcSol.url} alt="ANPC — Soluționarea Online a Litigiilor" className="h-10 w-auto block" />
+                <img src={anpcSol.url} alt="ANPC — Soluționarea Online a Litigiilor" className="h-9 w-auto block" />
               </a>
             </div>
 
-            <h4 className="font-semibold text-foreground mt-6 mb-3">Plăți securizate</h4>
+            <h4 className="font-semibold text-foreground mt-5 mb-3">Plăți securizate</h4>
             <div className="inline-flex items-center rounded-lg border border-border bg-card p-2">
-              <img src={stripeLogo} alt="Stripe" width={120} height={60} className="h-12 w-auto shrink-0 object-contain" />
+              <img src={stripeLogo} alt="Stripe" width={120} height={60} className="h-10 w-auto shrink-0 object-contain" />
             </div>
           </div>
         </div>
