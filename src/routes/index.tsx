@@ -21,6 +21,9 @@ import {
   VenetianMask,
   UsersRound,
   Sparkles,
+  CreditCard,
+  Scale,
+  Globe2,
 } from "lucide-react";
 import evostepLogo from "@/assets/evostep-logo.asset.json";
 import heroPortal from "@/assets/hero-portal.jpg";
