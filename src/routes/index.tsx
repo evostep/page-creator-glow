@@ -777,12 +777,8 @@ function Index() {
             </div>
 
             <h4 className="font-semibold text-foreground mt-6 mb-3">Plăți securizate</h4>
-            <div className="flex items-center gap-3 rounded-lg border border-border bg-card p-3">
-              <img src={stripeLogo} alt="Stripe" width={72} height={40} className="h-6 w-auto shrink-0 object-contain" />
-              <div className="min-w-0">
-                <span className="text-sm font-semibold text-foreground">Stripe</span>
-                <span className="block text-xs text-muted-foreground leading-snug">Visa · Mastercard · Apple Pay · Google Pay</span>
-              </div>
+            <div className="inline-flex items-center rounded-lg border border-border bg-card p-2">
+              <img src={stripeLogo} alt="Stripe" width={120} height={60} className="h-12 w-auto shrink-0 object-contain" />
             </div>
           </div>
         </div>
