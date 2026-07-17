@@ -777,8 +777,8 @@ function Index() {
             </div>
 
             <h4 className="font-semibold text-foreground mt-6 mb-3">Plăți securizate</h4>
-            <div className="inline-flex items-center rounded-lg border border-border bg-card p-3">
-              <img src={stripeLogo} alt="Stripe" width={120} height={48} className="h-7 w-auto shrink-0 object-contain" />
+            <div className="inline-flex items-center rounded-lg border border-border bg-card p-2">
+              <img src={stripeLogo} alt="Stripe" width={48} height={48} className="h-11 w-auto shrink-0 object-contain" />
             </div>
           </div>
         </div>
