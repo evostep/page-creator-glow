@@ -21,8 +21,6 @@ import {
   VenetianMask,
   UsersRound,
   Sparkles,
-  CreditCard,
-  Scale,
   Globe2,
 } from "lucide-react";
 import evostepLogo from "@/assets/evostep-logo.asset.json";
@@ -35,6 +33,8 @@ import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
 import gabrielaRadu from "@/assets/gabriela-radu.png.asset.json";
 import costel from "@/assets/costel.png.asset.json";
 import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
+import anpcLogo from "@/assets/anpc-logo.png";
+import stripeLogo from "@/assets/stripe-logo.png";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -761,11 +761,9 @@ function Index() {
                   href="https://anpc.ro/ce-este-sal/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 rounded-lg border border-border bg-card p-3 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition"
+                  className="flex items-center gap-3 rounded-lg border border-border bg-card p-3 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition"
                 >
-                  <span className="h-9 w-9 shrink-0 rounded-md bg-primary-soft flex items-center justify-center text-primary">
-                    <Scale className="h-4 w-4" />
-                  </span>
+                  <img src={anpcLogo} alt="Sigla ANPC" width={40} height={40} className="h-9 w-9 shrink-0 object-contain" />
                   <span className="min-w-0">
                     <span className="block text-sm font-semibold text-foreground">ANPC — SAL</span>
                     <span className="block text-xs text-muted-foreground leading-snug">Soluționarea Alternativă a Litigiilor</span>
@@ -777,7 +775,7 @@ function Index() {
                   href="https://ec.europa.eu/consumers/odr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 rounded-lg border border-border bg-card p-3 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition"
+                  className="flex items-center gap-3 rounded-lg border border-border bg-card p-3 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition"
                 >
                   <span className="h-9 w-9 shrink-0 rounded-md bg-primary-soft flex items-center justify-center text-primary">
                     <Globe2 className="h-4 w-4" />
@@ -791,15 +789,10 @@ function Index() {
             </ul>
 
             <h4 className="font-semibold text-foreground mt-6 mb-3">Plăți securizate</h4>
-            <div className="flex items-center gap-2 rounded-lg border border-border bg-card p-3">
-              <span className="h-9 w-9 shrink-0 rounded-md bg-primary-soft flex items-center justify-center text-primary">
-                <Lock className="h-4 w-4" />
-              </span>
+            <div className="flex items-center gap-3 rounded-lg border border-border bg-card p-3">
+              <img src={stripeLogo} alt="Stripe" width={72} height={40} className="h-6 w-auto shrink-0 object-contain" />
               <div className="min-w-0">
-                <div className="flex items-center gap-1.5">
-                  <CreditCard className="h-3.5 w-3.5 text-muted-foreground" />
-                  <span className="text-sm font-semibold text-foreground">Stripe</span>
-                </div>
+                <span className="text-sm font-semibold text-foreground">Stripe</span>
                 <span className="block text-xs text-muted-foreground leading-snug">Visa · Mastercard · Apple Pay · Google Pay</span>
               </div>
             </div>
