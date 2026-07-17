@@ -712,7 +712,7 @@ function Index() {
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-8 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="mx-auto max-w-7xl px-6 py-10 md:py-12 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div>
             <Logo />
@@ -743,7 +743,7 @@ function Index() {
           {/* Contact */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
-            <p className="text-sm text-muted-foreground mb-3">Scrie-ne pe Discord sau pe email:</p>
+            <p className="text-sm text-muted-foreground mb-3">Suntem 100% online. Ne găsești pe Discord sau pe email:</p>
             <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition mb-4">
               <Mail className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
             </a>
@@ -751,12 +751,65 @@ function Index() {
               <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Discord
             </a>
           </div>
+
+          {/* Protecția consumatorilor & Plăți */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Protecția consumatorilor</h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="https://anpc.ro/ce-este-sal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 rounded-lg border border-border bg-card p-3 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition"
+                >
+                  <span className="h-9 w-9 shrink-0 rounded-md bg-primary-soft flex items-center justify-center text-primary">
+                    <Scale className="h-4 w-4" />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-semibold text-foreground">ANPC — SAL</span>
+                    <span className="block text-xs text-muted-foreground leading-snug">Soluționarea Alternativă a Litigiilor</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://ec.europa.eu/consumers/odr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 rounded-lg border border-border bg-card p-3 hover:border-primary/40 hover:shadow-[var(--shadow-card)] transition"
+                >
+                  <span className="h-9 w-9 shrink-0 rounded-md bg-primary-soft flex items-center justify-center text-primary">
+                    <Globe2 className="h-4 w-4" />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-semibold text-foreground">ANPC — SOL</span>
+                    <span className="block text-xs text-muted-foreground leading-snug">Soluționarea Online a Litigiilor</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+
+            <h4 className="font-semibold text-foreground mt-6 mb-3">Plăți securizate</h4>
+            <div className="flex items-center gap-2 rounded-lg border border-border bg-card p-3">
+              <span className="h-9 w-9 shrink-0 rounded-md bg-primary-soft flex items-center justify-center text-primary">
+                <Lock className="h-4 w-4" />
+              </span>
+              <div className="min-w-0">
+                <div className="flex items-center gap-1.5">
+                  <CreditCard className="h-3.5 w-3.5 text-muted-foreground" />
+                  <span className="text-sm font-semibold text-foreground">Stripe</span>
+                </div>
+                <span className="block text-xs text-muted-foreground leading-snug">Visa · Mastercard · Apple Pay · Google Pay</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="border-t border-border">
-          <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+          <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground text-center md:text-left">
             <span>© {new Date().getFullYear()} EvoStep. Toate drepturile rezervate.</span>
-            <span>Proiectat cu grijă pentru comunitatea EvoStep.</span>
+            <span>Activitate desfășurată integral online. Proiectat cu grijă pentru comunitatea EvoStep.</span>
           </div>
         </div>
       </footer>
