@@ -168,10 +168,10 @@ const trust = [
 ];
 
 const rezultate = [
-  { icon: Eye, t: "Vezi mai clar ce vrei", s: "și ieși din pilot automat." },
-  { icon: Compass, t: "Alegi mai bine pentru tine", s: "cu repere care rămân." },
-  { icon: Users, t: "Înțelegi ce se întâmplă în relații", s: "și pui limite fără să te pierzi." },
-  { icon: Mountain, t: "Îți găsești direcția", s: "pentru ce urmează." },
+  { icon: Eye, t: "O parte din ceea ce știi despre tine", s: "a fost scrisă de ceilalți. Aici începi să-ți scrii propria versiune." },
+  { icon: Compass, t: "Când îți construiești propriile alternative", s: "alegerile tale te aduc mai aproape de tine." },
+  { icon: Users, t: "Alegi relații în care nu doar încapi", s: "ci contezi." },
+  { icon: Mountain, t: "Direcția ta nu se găsește", s: "Se construiește." },
 ];
 
 function Logo() {
