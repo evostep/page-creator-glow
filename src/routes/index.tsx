@@ -347,7 +347,7 @@ function Index() {
               Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
-              O aventură de dezvoltare personală, în care fiecare misiune te transformă.
+              Un parcurs în care fiecare misiune îți lasă un artefact, iar toate artefactele se leagă într-o hartă construită de tine.
             </p>
             <ul className="mt-7 space-y-3">
               {[
