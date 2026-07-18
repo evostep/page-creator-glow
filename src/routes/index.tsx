@@ -43,9 +43,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "EvoStep — Evoluție pas cu pas" },
-      { name: "description", content: "O aventură de dezvoltare personală pe Discord. Misiuni progresive, comunitate activă, acces prin roluri." },
+      { name: "description", content: "O aventură de dezvoltare personală pe Discord. Acces pe niveluri, comunitate activă, acces activat automat." },
       { property: "og:title", content: "EvoStep — Evoluție pas cu pas" },
-      { property: "og:description", content: "O aventură de dezvoltare personală pe Discord. Misiuni progresive, comunitate activă, acces prin roluri." },
+      { property: "og:description", content: "O aventură de dezvoltare personală pe Discord. Acces pe niveluri, comunitate activă, acces activat automat." },
     ],
   }),
   component: Index,
@@ -351,9 +351,9 @@ function Index() {
             </p>
             <ul className="mt-7 space-y-3">
               {[
-                { icon: Users, label: "Misiuni progresive" },
+                { icon: Users, label: "Acces pe niveluri" },
                 { icon: Compass, label: "Comunitate activă" },
-                { icon: Lock, label: "Acces doar prin roluri" },
+                { icon: Lock, label: "Acces activat automat" },
               ].map((f) => (
                 <li key={f.label} className="flex items-center gap-3">
                   <span className="h-10 w-10 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
