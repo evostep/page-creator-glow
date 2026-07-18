@@ -636,22 +636,22 @@ function Index() {
               <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <h4 className="mt-3 font-semibold text-foreground">Acces gratuit pe Discord</h4>
-              <p className="mt-1 text-sm text-muted-foreground">Intri ca Vizitator, vezi comunitatea și modul de lucru înainte să decizi.</p>
+              <h4 className="mt-3 font-semibold text-foreground">Comunitate activă</h4>
+              <p className="mt-1 text-sm text-muted-foreground">Intri ca Vizitator, descoperi comunitatea și vezi cum funcționează EvoStep înainte să alegi.</p>
             </div>
             <div className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
               <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <h4 className="mt-3 font-semibold text-foreground">Plată o singură dată</h4>
-              <p className="mt-1 text-sm text-muted-foreground">Nu se reînnoiește automat. Cumperi fiecare misiune separat, când ești pregătit să continui.</p>
+              <h4 className="mt-3 font-semibold text-foreground">Plată unică</h4>
+              <p className="mt-1 text-sm text-muted-foreground">Fără reînnoire automată. Cumperi fiecare misiune separat, atunci când ești pregătit să continui.</p>
             </div>
             <div className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
               <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <h4 className="mt-3 font-semibold text-foreground">Ritmul tău</h4>
-              <p className="mt-1 text-sm text-muted-foreground">Fără termene, fără presiune. Parcurgi misiunile în timpul care ți se potrivește.</p>
+              <h4 className="mt-3 font-semibold text-foreground">Ritm ghidat, fără presiune</h4>
+              <p className="mt-1 text-sm text-muted-foreground">Îți recomandăm o misiune pe săptămână, urmată de două Misiuni Fulger în care aplici ce ai descoperit. După ele, se deschide următoarea misiune.</p>
             </div>
           </div>
         </div>
