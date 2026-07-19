@@ -69,9 +69,9 @@ const steps = [
   { n: 1, title: "Nu ai cont Discord?", desc: "Creează-ți contul Discord în câțiva pași simpli, cu poze la fiecare etapă.", icon: UserPlus, cta: { label: "Vezi pașii", variant: "primary" as const, href: "/ghid/cont-discord" } },
   { n: 2, title: "Intră pe server", desc: "Apasă pe butonul de mai jos pentru a intra direct în comunitatea EvoStep. Acolo vei primi rolul de Vizitator.", icon: DiscordIcon, cta: { label: "Apasă și intră direct", variant: "primary" as const, href: "https://discord.com/invite/fsXDY8qv5n" } },
   { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2, cta: { label: "Am citit", variant: "primary" as const, href: undefined } },
-  { n: 4, title: "Începe cu prima misiune", desc: "Parcursul începe cu «Hoțul de Roluri». După finalizarea misiunii și a Misiunilor Fulger, poți continua cu următoarea etapă.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "primary" as const, href: undefined } },
+  { n: 4, title: "Începe cu prima misiune", desc: "Parcursul începe cu «Hoțul de Roluri». După finalizarea misiunii și a celor două Misiuni Fulger, poți alege să achiziționezi următoarea misiune.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "primary" as const, href: undefined } },
   { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: VenetianMask, cta: { label: "Stripe", variant: "primary" as const, href: undefined } },
-  { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi transformarea.", icon: Sparkles, cta: { label: "Simplu și rapid", variant: "primary" as const, href: undefined } },
+  { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi prima misiune.", icon: Sparkles, cta: { label: "Simplu și rapid", variant: "primary" as const, href: undefined } },
 ];
 
 const missions = [
@@ -168,12 +168,12 @@ const trust = [
 ];
 
 const includes = [
-  "acces la conținutul complet al misiunii;",
-  "jocuri, povești, întrebări și activități;",
-  "artefactul personal rezultat;",
-  "două Misiuni Fulger;",
-  "acces la canalul de discuții al nivelului;",
-  "acces la mesajele și activitățile comunității.",
+  "Acces la conținutul complet al misiunii",
+  "Jocuri, povești, întrebări și activități",
+  "Artefactul construit în cadrul misiunii",
+  "Două Misiuni Fulger",
+  "Acces la canalul de discuții al nivelului",
+  "Acces la mesajele și activitățile comunității",
 ];
 
 const nivel1Artefacte = [
@@ -360,7 +360,7 @@ function Index() {
             </p>
             <ul className="mt-7 space-y-3">
               {[
-                { icon: Users, label: "Acces pe niveluri" },
+                { icon: Users, label: "Acces pe misiuni" },
                 { icon: Compass, label: "Comunitate activă" },
                 { icon: Lock, label: "Acces activat automat" },
               ].map((f) => (
@@ -487,11 +487,11 @@ function Index() {
             <span className="h-px w-12 bg-primary/40" />
           </div>
           <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
-            Patru misiuni, o singură <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">transformare</span>
+            Patru misiuni, o <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">Busolă Interioară</span>
           </p>
         </div>
         <p className="text-center text-base text-muted-foreground mb-5 max-w-2xl mx-auto whitespace-pre-line">
-          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Misiuni Fulger între misiuni\n\n🎁 În primele 3 misiuni vei recupera 3 artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Interioară.\n\n"}
+          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Misiuni Fulger între misiuni\n\n🎁 În primele trei misiuni construiești trei artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Interioară.\n\n"}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -566,12 +566,12 @@ function Index() {
             <span className="h-px w-12 bg-primary/40" />
           </div>
           <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
-            Patru artefacte, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">o singură hartă</span>
+            Trei artefacte, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">integrate în Busola Interioară</span>
           </p>
         </div>
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-base text-muted-foreground leading-relaxed">
-            Fiecare misiune îți lasă în urmă un artefact: o piesă simbolică, practică și personală, construită din propriile tale răspunsuri. Artefactele nu sunt obiecte decorative. Ele păstrează ceea ce ai descoperit și devin repere pe care le poți folosi în viața reală.
+            În primele trei misiuni construiești trei artefacte personale. În Misiunea 4 le integrezi în artefactul final al nivelului: Busola Interioară.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mt-6">
@@ -677,7 +677,7 @@ function Index() {
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <h4 className="mt-3 font-semibold text-foreground">Comunitate activă</h4>
-              <p className="mt-1 text-sm text-muted-foreground">Ca Vizitator ai acces la prezentarea EvoStep, regulament și cabinetele private ale mentorilor, cu programare prealabilă. Din Info EvoStep poți accesa misiunile, iar conținutul acestora se deschide după achiziție.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Ca Vizitator ai acces la prezentarea EvoStep, la regulament și la cabinetele private ale mentorilor, cu programare prealabilă. Din Info EvoStep poți vedea și achiziționa misiunile, iar conținutul lor se deschide după confirmarea plății.</p>
             </div>
             <div className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
               <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
@@ -781,7 +781,7 @@ function Index() {
           <div>
             <Logo />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">
-              EvoStep — un parcurs în care fiecare misiune îți lasă un artefact, iar toate artefactele se leagă într-o hartă construită de tine.
+              EvoStep — evoluție pas cu pas, prin misiuni aplicate în viața reală.
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" aria-label="Discord EvoStep" className="h-9 w-9 shrink-0 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
