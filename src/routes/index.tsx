@@ -34,7 +34,6 @@ import costel from "@/assets/costel.png.asset.json";
 import hartaEvostep from "@/assets/harta-evostep.png.asset.json";
 import stripeLogo from "@/assets/stripe-logo.svg";
 import anpcSal from "@/assets/anpc-sal.png.asset.json";
-import anpcSol from "@/assets/anpc-sol.png.asset.json";
 import asociatiaCopilot from "@/assets/asociatia-copilot-cropped.png.asset.json";
 import lifeLiveEventsLogo from "@/assets/life-live-events-logo.png.asset.json";
 
@@ -70,7 +69,7 @@ const steps = [
   { n: 1, title: "Nu ai cont Discord?", desc: "Creează-ți contul Discord în câțiva pași simpli, cu poze la fiecare etapă.", icon: UserPlus, cta: { label: "Vezi pașii", variant: "primary" as const, href: "/ghid/cont-discord" } },
   { n: 2, title: "Intră pe server", desc: "Apasă pe butonul de mai jos pentru a intra direct în comunitatea EvoStep. Acolo vei primi rolul de Vizitator.", icon: DiscordIcon, cta: { label: "Apasă și intră direct", variant: "primary" as const, href: "https://discord.com/invite/fsXDY8qv5n" } },
   { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2, cta: { label: "Am citit", variant: "primary" as const, href: undefined } },
-  { n: 4, title: "Alege o misiune", desc: "Selectează misiunea care rezonează cu tine și efectuează plata în siguranță.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "primary" as const, href: undefined } },
+  { n: 4, title: "Începe cu prima misiune", desc: "Parcursul începe cu «Hoțul de Roluri». După finalizarea misiunii și a Misiunilor Fulger, poți continua cu următoarea etapă.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "primary" as const, href: undefined } },
   { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: VenetianMask, cta: { label: "Stripe", variant: "primary" as const, href: undefined } },
   { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi transformarea.", icon: Sparkles, cta: { label: "Simplu și rapid", variant: "primary" as const, href: undefined } },
 ];
@@ -168,11 +167,20 @@ const trust = [
   { icon: Headphones, t: "Mentorat și", s: "cabinete de voce" },
 ];
 
-const rezultate = [
-  { icon: Eye, t: "O parte din ceea ce știi despre tine", s: "a fost scrisă de ceilalți. Aici începi să-ți scrii propria versiune." },
-  { icon: Compass, t: "Când îți construiești propriile alternative", s: "alegerile tale te aduc mai aproape de tine." },
-  { icon: Users, t: "Alegi relații în care nu doar încapi", s: "ci contezi." },
-  { icon: Mountain, t: "Direcția ta nu se găsește", s: "Se construiește." },
+const includes = [
+  "acces la conținutul complet al misiunii;",
+  "jocuri, povești, întrebări și activități;",
+  "artefactul personal rezultat;",
+  "două Misiuni Fulger;",
+  "acces la canalul de discuții al nivelului;",
+  "acces la mesajele și activitățile comunității.",
+];
+
+const nivel1Artefacte = [
+  { icon: Sparkles, title: "Reperul Interior" },
+  { icon: Lock, title: "Codul Operatorului Secret" },
+  { icon: Zap, title: "Superputerea" },
+  { icon: Compass, title: "Busola Interioară" },
 ];
 
 function Logo() {
@@ -348,7 +356,7 @@ function Index() {
               Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
             </h1>
             <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Un parcurs în care fiecare misiune îți lasă un artefact, iar toate artefactele se leagă într-o hartă construită de tine.
+              EvoStep este un parcurs interactiv de dezvoltare personală în 12 niveluri, construit din jocuri, misiuni și întrebări care te ajută să îți formezi repere proprii pentru felul în care te vezi, alegi, relaționezi și mergi mai departe în viața reală.
             </p>
             <ul className="mt-7 space-y-3">
               {[
@@ -483,7 +491,7 @@ function Index() {
           </p>
         </div>
         <p className="text-center text-base text-muted-foreground mb-5 max-w-2xl mx-auto whitespace-pre-line">
-          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Operațiuni Fulger între misiuni\n\n🎁 În primele 3 misiuni vei recupera 3 artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Personală.\n\n"}
+          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Misiuni Fulger între misiuni\n\n🎁 În primele 3 misiuni vei recupera 3 artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Personală.\n\n"}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -525,30 +533,61 @@ function Index() {
         </div>
       </section>
 
-      {/* REZULTATE AȘTEPTATE */}
-      <section id="rezultate" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+      {/* CE INCLUDE FIECARE MISIUNE */}
+      <section id="include" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
         <div className="flex flex-col items-center gap-3 mb-6">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
-            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Rezultate așteptate</h2>
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Ce include fiecare misiune</h2>
             <span className="h-px w-12 bg-primary/40" />
           </div>
           <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
-            Ce poți duce cu tine <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">după primele misiuni</span>
+            Tot ce primești <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">când achiziționezi o misiune</span>
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-          {rezultate.map((r) => (
-            <div key={r.t} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
-              <span className="h-11 w-11 shrink-0 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                <r.icon className="h-5 w-5 text-white" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          {includes.map((item) => (
+            <div key={item} className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
+              <span className="h-8 w-8 shrink-0 rounded-lg [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                <CheckCircle2 className="h-4 w-4 text-white" />
               </span>
-              <div>
-                <div className="font-semibold text-foreground">{r.t}</div>
-                <div className="text-sm text-muted-foreground mt-0.5">{r.s}</div>
-              </div>
+              <span className="text-foreground font-medium text-sm leading-snug">{item}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* CE CONSTRUIEȘTI ÎN NIVELUL 1 */}
+      <section id="nivel1" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+        <div className="flex flex-col items-center gap-3 mb-6">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Ce construiești în Nivelul 1</h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
+            Patru artefacte, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">o singură hartă</span>
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Fiecare misiune îți lasă în urmă un artefact: o piesă simbolică, practică și personală, construită din propriile tale răspunsuri. Artefactele nu sunt obiecte decorative. Ele păstrează ceea ce ai descoperit și devin repere pe care le poți folosi în viața reală.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mt-6">
+          {nivel1Artefacte.map((a) => (
+            <div key={a.title} className="flex flex-col items-center text-center rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
+              <span className="h-12 w-12 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                <a.icon className="h-6 w-6 text-white" />
+              </span>
+              <h4 className="mt-4 font-semibold text-foreground">{a.title}</h4>
+            </div>
+          ))}
+        </div>
+        <div className="max-w-3xl mx-auto mt-6 text-center">
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Pe măsură ce înaintezi prin EvoStep, artefactele se leagă între ele și formează o hartă mai mare: harta ta de orientare. Fiecare piesă adaugă un reper nou pentru felul în care te înțelegi, alegi, relaționezi și acționezi în viața reală.
+          </p>
         </div>
       </section>
 
@@ -638,7 +677,7 @@ function Index() {
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <h4 className="mt-3 font-semibold text-foreground">Comunitate activă</h4>
-              <p className="mt-1 text-sm text-muted-foreground">Intri ca Vizitator, descoperi comunitatea și vezi cum funcționează EvoStep înainte să alegi.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Ca Vizitator ai acces la prezentarea EvoStep, regulament și cabinetele private ale mentorilor, cu programare prealabilă. Din Info EvoStep poți accesa misiunile, iar conținutul acestora se deschide după achiziție.</p>
             </div>
             <div className="rounded-2xl bg-card border border-border p-5 shadow-[var(--shadow-card)]">
               <div className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
@@ -652,7 +691,7 @@ function Index() {
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <h4 className="mt-3 font-semibold text-foreground">Ritm ghidat, fără presiune</h4>
-              <p className="mt-1 text-sm text-muted-foreground">Îți recomandăm o misiune pe săptămână, urmată de două Misiuni Fulger în care aplici ce ai descoperit. După ele, se deschide următoarea misiune.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Îți recomandăm o misiune pe săptămână, urmată de două Misiuni Fulger în care aplici ce ai descoperit. După ce le finalizezi, poți alege să continui cu următoarea misiune.</p>
             </div>
           </div>
         </div>
@@ -722,19 +761,15 @@ function Index() {
               {/* Developer */}
               <div className="flex flex-col items-center justify-center gap-3 text-center">
                 <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Proiect dezvoltat de</span>
-                <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px]">
-                  <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="h-14 sm:h-16 w-full object-contain" />
+                <div className="relative h-20 w-full max-w-[280px] flex items-center justify-center">
+                  <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="max-h-full max-w-full object-contain" />
                 </div>
               </div>
               {/* Partner */}
               <div className="flex flex-col items-center justify-center gap-3 text-center">
                 <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Partener</span>
-                <div className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] rounded-xl bg-white p-3 border border-border">
-                  <img
-                    src={asociatiaCopilot.url}
-                    alt="Asociația Copilot — partener EvoStep"
-                    className="h-14 sm:h-16 w-full object-contain"
-                  />
+                <div className="relative h-20 w-full max-w-[280px] flex items-center justify-center">
+                  <img src={asociatiaCopilot.url} alt="Asociația Copilot — partener EvoStep" className="max-h-full max-w-full object-contain" />
                 </div>
               </div>
             </div>
@@ -794,15 +829,6 @@ function Index() {
               >
                 <img src={anpcSal.url} alt="ANPC — Soluționarea Alternativă a Litigiilor" className="h-10 w-auto block" />
               </a>
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="ANPC — Soluționarea Online a Litigiilor"
-                className="inline-block rounded-md bg-white p-1 hover:opacity-90 transition w-fit"
-              >
-                <img src={anpcSol.url} alt="ANPC — Soluționarea Online a Litigiilor" className="h-10 w-auto block" />
-              </a>
             </div>
 
             <h4 className="font-semibold text-foreground mt-6 mb-3">Plăți securizate</h4>
@@ -813,9 +839,10 @@ function Index() {
         </div>
 
         <div className="border-t border-border">
-          <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground text-center md:text-left">
+          <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col items-center gap-2 text-xs text-muted-foreground text-center">
             <span>© {new Date().getFullYear()} EvoStep. Toate drepturile rezervate.</span>
-            <span>Proiect dezvoltat de Life & Live Events. Activitate desfășurată integral online.</span>
+            <span>Life & Live Events SRL · CUI: 34193631 · Nr. Registrul Comerțului: J40/2688/2015 · Sediu social: Str. V. Toneanu nr. 18, Sector 3, București</span>
+            <span>Activitate desfășurată integral online.</span>
           </div>
         </div>
       </footer>
