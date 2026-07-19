@@ -36,6 +36,7 @@ import stripeLogo from "@/assets/stripe-logo.svg";
 import anpcSal from "@/assets/anpc-sal.png.asset.json";
 import anpcSol from "@/assets/anpc-sol.png.asset.json";
 import asociatiaCopilot from "@/assets/asociatia-copilot-cropped.png.asset.json";
+import lifeLiveEventsLogo from "@/assets/life-live-events-logo.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
