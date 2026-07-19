@@ -719,6 +719,13 @@ function Index() {
           <div className="relative rounded-2xl border border-border bg-card p-5 md:p-6 shadow-[var(--shadow-card)] overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-1 [background-image:var(--gradient-primary)] opacity-60" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {/* Developer */}
+              <div className="flex flex-col items-center justify-center gap-3 text-center">
+                <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Proiect dezvoltat de</span>
+                <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px]">
+                  <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="h-14 sm:h-16 w-full object-contain" />
+                </div>
+              </div>
               {/* Partner */}
               <div className="flex flex-col items-center justify-center gap-3 text-center">
                 <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Partener</span>
@@ -728,13 +735,6 @@ function Index() {
                     alt="Asociația Copilot — partener EvoStep"
                     className="h-14 sm:h-16 w-full object-contain"
                   />
-                </div>
-              </div>
-              {/* Developer */}
-              <div className="flex flex-col items-center justify-center gap-3 text-center">
-                <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Proiect dezvoltat de</span>
-                <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px]">
-                  <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="h-14 sm:h-16 w-full object-contain" />
                 </div>
               </div>
             </div>
