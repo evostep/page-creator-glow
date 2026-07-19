@@ -675,32 +675,6 @@ function Index() {
         </div>
       </section>
 
-      {/* PARTENERI */}
-      <section id="parteneri" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="flex flex-col items-center gap-3 mb-6">
-            <div className="flex items-center gap-4">
-              <span className="h-px w-12 bg-primary/40" />
-              <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Parteneri</h2>
-              <span className="h-px w-12 bg-primary/40" />
-            </div>
-            <p className="font-serif text-2xl md:text-3xl font-bold text-center text-foreground leading-tight tracking-tight">
-              Împreună pentru dezvoltare personală
-            </p>
-          </div>
-          <div
-            title="Asociația Copilot — partener EvoStep"
-            className="inline-block rounded-2xl bg-white p-4 md:p-6 border border-border shadow-[var(--shadow-card)]"
-          >
-            <img
-              src={asociatiaCopilot.url}
-              alt="Asociația Copilot — partener EvoStep"
-              className="h-24 sm:h-28 md:h-32 w-auto max-w-[320px] md:max-w-[380px] object-contain block"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
         <div className="flex flex-col items-center gap-3 mb-6">
