@@ -36,6 +36,7 @@ import stripeLogo from "@/assets/stripe-logo.svg";
 import anpcSal from "@/assets/anpc-sal.png.asset.json";
 import anpcSol from "@/assets/anpc-sol.png.asset.json";
 import asociatiaCopilot from "@/assets/asociatia-copilot-cropped.png.asset.json";
+import lifeLiveEventsLogo from "@/assets/life-live-events-logo.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -739,12 +740,23 @@ function Index() {
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-10 md:py-12 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+        {/* Company logo banner */}
+        <div className="mx-auto max-w-7xl px-6 pt-10 md:pt-12 pb-8 md:pb-10">
+          <div className="relative rounded-2xl border border-border bg-card p-5 md:p-6 shadow-[var(--shadow-card)] flex flex-col items-center justify-center gap-3 text-center overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-1 [background-image:var(--gradient-primary)] opacity-60" />
+            <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Proiect dezvoltat de</span>
+            <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px]">
+              <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="h-14 sm:h-16 w-full object-contain" />
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6 py-8 md:py-10 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div>
             <Logo />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">
-              EvoStep — o aventură de dezvoltare personală. Devino cea mai bună versiune a ta.
+              EvoStep — un parcurs în care fiecare misiune îți lasă un artefact, iar toate artefactele se leagă într-o hartă construită de tine.
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" aria-label="Discord EvoStep" className="h-9 w-9 shrink-0 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
@@ -813,7 +825,7 @@ function Index() {
         <div className="border-t border-border">
           <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground text-center md:text-left">
             <span>© {new Date().getFullYear()} EvoStep. Toate drepturile rezervate.</span>
-            <span>Activitate desfășurată integral online. Proiectat cu grijă pentru comunitatea EvoStep.</span>
+            <span>Proiect dezvoltat de Life & Live Events. Activitate desfășurată integral online.</span>
           </div>
         </div>
       </footer>
