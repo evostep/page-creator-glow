@@ -742,11 +742,11 @@ function Index() {
       <footer className="border-t border-border bg-background">
         {/* Company logo banner */}
         <div className="mx-auto max-w-7xl px-6 pt-10 md:pt-12 pb-8 md:pb-10">
-          <div className="relative rounded-2xl border border-border bg-card p-6 md:p-8 shadow-[var(--shadow-card)] flex flex-col items-center justify-center gap-4 text-center overflow-hidden">
+          <div className="relative rounded-2xl border border-border bg-card p-5 md:p-6 shadow-[var(--shadow-card)] flex flex-col items-center justify-center gap-3 text-center overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-1 [background-image:var(--gradient-primary)] opacity-60" />
             <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Proiect dezvoltat de</span>
-            <div className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px]">
-              <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="h-12 sm:h-14 w-full object-contain" />
+            <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px]">
+              <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="h-14 sm:h-16 w-full object-contain" />
             </div>
           </div>
         </div>
