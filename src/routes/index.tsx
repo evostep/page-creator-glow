@@ -68,7 +68,7 @@ const navLinks = [
 const steps = [
   { n: 1, title: "Nu ai cont Discord?", desc: "Creează-ți contul Discord în câțiva pași simpli, cu poze la fiecare etapă.", icon: UserPlus, cta: { label: "Vezi pașii", variant: "primary" as const, href: "/ghid/cont-discord" } },
   { n: 2, title: "Intră pe server", desc: "Apasă pe butonul de mai jos pentru a intra direct în comunitatea EvoStep. Acolo vei primi rolul de Vizitator.", icon: DiscordIcon, cta: { label: "Apasă și intră direct", variant: "primary" as const, href: "https://discord.com/invite/fsXDY8qv5n" } },
-  { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2, note: "Se face la intrarea pe server" },
+  { n: 3, title: "Acceptă regulamentul", desc: "La intrare vei vedea un pop-up cu regulamentul comunității. Te rugăm să îl accepți.", icon: CheckCircle2, note: "Se confirmă în Discord" },
   { n: 4, title: "Începe cu prima misiune", desc: "Parcursul începe cu «Hoțul de Roluri». După finalizarea misiunii și a celor două Misiuni Fulger, poți alege să achiziționezi următoarea misiune.", icon: ShoppingCart, cta: { label: "Vezi misiunile", variant: "primary" as const, href: "#misiuni" } },
   { n: 5, title: "Plata confirmată", desc: "După confirmarea plății, vei primi automat rolul și accesul la canalele misiunii tale.", icon: VenetianMask, note: "Plată securizată prin Stripe" },
   { n: 6, title: "Acces activat", desc: "Revino în Discord și bucură-te de misiune! Ești gata să începi prima misiune.", icon: Sparkles, note: "Acces instant în Discord" },
