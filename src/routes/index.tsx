@@ -402,8 +402,8 @@ function Index() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-          {steps.map((s, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {steps.map((s) => (
             <div key={s.n} className="relative">
               <div className="h-full rounded-2xl bg-card border border-border p-4 shadow-[var(--shadow-card)] flex flex-col">
                 <div className="mx-auto h-10 w-10 rounded-full [background-image:var(--gradient-primary)] text-primary-foreground font-bold flex items-center justify-center text-sm">{s.n}</div>
@@ -412,28 +412,23 @@ function Index() {
                 </div>
                 <h3 className="mt-3 text-center font-semibold text-foreground text-sm">{s.title}</h3>
                 <p className="mt-2 text-center text-xs text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
-                {s.cta && (
-                  s.cta.href ? (
-                    s.cta.href.startsWith("http") ? (
-                      <a href={s.cta.href} onClick={s.cta.href === discordInviteUrl ? openDiscordInvite : undefined} target="_blank" rel="noopener noreferrer" className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
-                        {s.cta.label}
-                      </a>
-                    ) : (
-                      <Link to={s.cta.href as "/ghid/cont-discord"} className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
-                        {s.cta.label}
-                      </Link>
-                    )
-                  ) : (
-                    <span className="mt-3 mx-auto inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary-soft/60 px-3 py-1 text-[11px] font-medium text-primary">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
+                {"note" in s && s.note ? (
+                  <span className="mt-3 mx-auto inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary-soft/60 px-3 py-1 text-[11px] font-medium text-primary">
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    {s.note}
+                  </span>
+                ) : s.cta?.href ? (
+                  s.cta.href.startsWith("http") ? (
+                    <a href={s.cta.href} onClick={s.cta.href === discordInviteUrl ? openDiscordInvite : undefined} target="_blank" rel="noopener noreferrer" className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
                       {s.cta.label}
-                    </span>
+                    </a>
+                  ) : (
+                    <a href={s.cta.href} className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
+                      {s.cta.label}
+                    </a>
                   )
-                )}
+                ) : null}
               </div>
-              {i < steps.length - 1 && (
-                <ChevronRight className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-primary/40" />
-              )}
             </div>
           ))}
         </div>
