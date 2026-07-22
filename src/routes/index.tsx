@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import type { MouseEvent } from "react";
+import { Fragment, type MouseEvent } from "react";
 import {
   Compass,
   Users,
@@ -579,21 +579,21 @@ function Index() {
         <div className="max-w-5xl mx-auto mt-6">
           <div className="flex flex-wrap md:flex-nowrap items-stretch justify-center gap-3 md:gap-2">
             {nivel1Artefacte.slice(0, 3).map((a, idx) => (
-              <>
-                <div key={a.title} className="flex-1 min-w-[130px] flex flex-col items-center text-center rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)]">
+              <Fragment key={a.title}>
+                <div className="flex-1 min-w-[130px] flex flex-col items-center text-center rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)]">
                   <span className="h-11 w-11 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
                     <a.icon className="h-5 w-5 text-white" />
                   </span>
                   <h4 className="mt-3 font-semibold text-foreground text-sm leading-tight">{a.title}</h4>
                 </div>
                 {idx < 2 ? (
-                  <div key={`arrow-${idx}`} className="hidden md:flex items-center text-primary/60 shrink-0 px-1">
+                  <div className="hidden md:flex items-center text-primary/60 shrink-0 px-1">
                     <ChevronRight className="h-6 w-6" />
                   </div>
                 ) : (
-                  <div key="equals" className="hidden md:flex items-center text-primary shrink-0 px-1 font-serif text-3xl font-bold">=</div>
+                  <div className="hidden md:flex items-center text-primary shrink-0 px-1 font-serif text-3xl font-bold">=</div>
                 )}
-              </>
+              </Fragment>
             ))}
             <div className="flex-1 min-w-[140px] flex flex-col items-center text-center rounded-2xl border border-primary/40 [background-image:var(--gradient-primary)] p-4 shadow-[var(--shadow-glow)]">
               <span className="h-11 w-11 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center ring-2 ring-white/30">
