@@ -499,23 +499,20 @@ function Index() {
           {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Misiuni Fulger între misiuni\n\n🎁 În primele trei misiuni construiești trei artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Interioară.\n\n"}
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {missions.map((m) => (
-            <article key={m.name} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden flex flex-col">
-              <div className="aspect-[16/9] overflow-hidden">
-                <img src={m.img} alt={m.name} width={768} height={432} loading="lazy" className="h-full w-full object-cover contrast-110 saturate-125 brightness-95" />
+            <article key={m.name} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] p-3 md:p-4 flex flex-col">
+              <div className="flex items-start gap-2.5">
+                <span className="h-9 w-9 shrink-0 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                  <m.icon className="h-4.5 w-4.5 text-white" />
+                </span>
+                <h3 className="font-serif text-sm md:text-base font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent leading-tight">{m.name}</h3>
               </div>
-              <div className="p-3 flex flex-col">
-                <div className="flex items-center gap-2">
-                  <m.icon className="h-4 w-4 text-primary" />
-                  <h3 className="font-serif text-base font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">{m.name}</h3>
-                </div>
-                <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2">{m.desc}</p>
-                <div className="mt-3 flex items-end justify-between">
-                  <span className="rounded-md [background-image:var(--gradient-primary)] px-2 py-0.5 text-[10px] font-semibold text-white shadow-sm">{m.level}</span>
-                  <div className="font-serif text-xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">
-                    {m.price}<span className="text-xs text-muted-foreground font-sans ml-1 tracking-wider">RON</span>
-                  </div>
+              <p className="mt-2 text-[11px] md:text-xs text-muted-foreground line-clamp-3 leading-snug flex-1">{m.desc}</p>
+              <div className="mt-3 flex items-end justify-between border-t border-border pt-2.5">
+                <span className="text-[10px] font-medium text-muted-foreground tracking-wider uppercase">{m.level}</span>
+                <div className="font-serif text-lg md:text-xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">
+                  {m.price}<span className="text-[10px] text-muted-foreground font-sans ml-1 tracking-wider">RON</span>
                 </div>
               </div>
             </article>
