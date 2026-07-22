@@ -668,8 +668,15 @@ function Index() {
                 />
                 <h4 className="mt-4 font-serif text-2xl font-bold text-foreground">{p.name}</h4>
                 <p className="text-sm text-primary font-medium">{p.role}</p>
-                <p className="mt-3 text-sm font-semibold text-foreground leading-relaxed">{p.specialist}</p>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+                <p className="mt-3 text-sm font-bold text-foreground leading-relaxed">{p.specialist}</p>
+                <details className="mt-2 group text-left w-full">
+                  <summary className="list-none cursor-pointer text-xs font-semibold text-primary hover:underline inline-flex items-center gap-1 [&::-webkit-details-marker]:hidden">
+                    <span className="group-open:hidden">Citește mai mult</span>
+                    <span className="hidden group-open:inline">Închide</span>
+                    <ChevronRight className="h-3.5 w-3.5 transition-transform group-open:rotate-90" />
+                  </summary>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+                </details>
               </div>
             ))}
           </div>
