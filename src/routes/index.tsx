@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import type { MouseEvent } from "react";
+import { Fragment, type MouseEvent } from "react";
 import {
   Compass,
   Users,
@@ -343,94 +343,104 @@ function Index() {
             <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord
           </a>
         </nav>
-
-        {/* HERO */}
-        <section className="relative mx-auto max-w-7xl px-6 pt-10 pb-10 md:pt-14 md:pb-12 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-          <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full [background-image:var(--gradient-primary)] opacity-20 blur-3xl" />
-          <div aria-hidden className="pointer-events-none absolute -bottom-32 right-0 h-[28rem] w-[28rem] rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
-          <div className="relative">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary-soft/60 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] uppercase text-primary">
-              <Sparkles className="h-3.5 w-3.5" /> Misiuni • Niveluri • Comunitate
-            </span>
-            <h1 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight">
-              Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
-            </h1>
-            <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
-              EvoStep este un parcurs interactiv de dezvoltare personală în 12 niveluri, construit din jocuri, misiuni și întrebări care te ajută să îți formezi repere proprii pentru felul în care te vezi, alegi, relaționezi și mergi mai departe în viața reală.
-            </p>
-            <ul className="mt-7 space-y-3">
-              {[
-                { icon: Users, label: "Acces pe misiuni" },
-                { icon: Compass, label: "Comunitate activă" },
-                { icon: Lock, label: "Acces activat automat" },
-              ].map((f) => (
-                <li key={f.label} className="flex items-center gap-3">
-                  <span className="h-10 w-10 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                    <f.icon className="h-4.5 w-4.5 text-white" />
-                  </span>
-                  <span className="text-foreground/85 text-base">{f.label}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-7 py-4 text-base font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition ring-1 ring-primary/30">
-                <DiscordIcon className="h-5 w-5 text-white" /> Intră pe Discord
-              </a>
-              <a href="#misiuni" className="inline-flex items-center gap-2 rounded-xl border border-border bg-background/70 backdrop-blur px-6 py-4 text-base font-semibold text-foreground hover:border-primary/40 hover:text-primary transition">
-                Vezi misiunile <ChevronRight className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div aria-hidden className="absolute inset-0 -z-10 [background-image:var(--gradient-primary)] opacity-25 blur-3xl rounded-full" />
-            <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="relative w-full h-auto object-contain drop-shadow-2xl" />
-          </div>
-        </section>
       </header>
 
-      {/* HOW IT WORKS */}
-      <section id="cum" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
-        <div className="flex flex-col items-center gap-3 mb-6">
-          <div className="flex items-center gap-4">
-            <span className="h-px w-12 bg-primary/40" />
-            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold text-primary uppercase">Cum funcționează</h2>
-            <span className="h-px w-12 bg-primary/40" />
-          </div>
-          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
-            Șase pași simpli până la <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">prima ta misiune</span>
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {steps.map((s) => (
-            <div key={s.n} className="relative">
-              <div className="h-full rounded-2xl bg-card border border-border p-4 shadow-[var(--shadow-card)] flex flex-col">
-                <div className="mx-auto h-10 w-10 rounded-full [background-image:var(--gradient-primary)] text-primary-foreground font-bold flex items-center justify-center text-sm">{s.n}</div>
-                <div className="mt-4 mx-auto h-16 w-16 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                  <s.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="mt-3 text-center font-semibold text-foreground text-sm">{s.title}</h3>
-                <p className="mt-2 text-center text-xs text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
-                {"note" in s && s.note ? (
-                  <span className="mt-3 mx-auto inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary-soft/60 px-3 py-1 text-[11px] font-medium text-primary">
-                    <CheckCircle2 className="h-3.5 w-3.5" />
-                    {s.note}
+      {/* HERO + CUM FUNCȚIONEAZĂ (2 coloane pe desktop) */}
+      <section className="bg-[var(--gradient-hero)]">
+        <div className="mx-auto max-w-7xl px-6 pt-8 pb-10 md:pt-10 md:pb-12">
+          <div className="grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,460px)] gap-6 lg:gap-8 items-start">
+            {/* HERO */}
+            <div className="relative overflow-hidden rounded-3xl border border-primary/10 bg-card shadow-[var(--shadow-card)]">
+              <div aria-hidden className="pointer-events-none absolute -top-20 -left-20 h-80 w-80 rounded-full [background-image:var(--gradient-primary)] opacity-20 blur-3xl" />
+              <div aria-hidden className="pointer-events-none absolute -bottom-24 right-0 h-80 w-80 rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
+              <div className="relative grid md:grid-cols-[minmax(0,1fr)_minmax(0,42%)] gap-4 md:gap-6 items-center p-6 md:p-8">
+                <div className="min-w-0 order-2 md:order-1">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary-soft/60 px-3 py-1 text-[10px] font-semibold tracking-[0.18em] uppercase text-primary">
+                    <Sparkles className="h-3.5 w-3.5" /> Misiuni • Niveluri • Comunitate
                   </span>
-                ) : s.cta?.href ? (
-                  s.cta.href.startsWith("http") ? (
-                    <a href={s.cta.href} onClick={s.cta.href === discordInviteUrl ? openDiscordInvite : undefined} target="_blank" rel="noopener noreferrer" className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
-                      {s.cta.label}
+                  <h1 className="mt-4 font-serif text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight">
+                    Bine ai venit în <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">EvoStep!</span>
+                  </h1>
+                  <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+                    EvoStep este un parcurs interactiv de dezvoltare personală în 12 niveluri, construit din jocuri, misiuni și întrebări care te ajută să îți formezi repere proprii pentru felul în care te vezi, alegi, relaționezi și mergi mai departe în viața reală.
+                  </p>
+                  <ul className="mt-5 grid grid-cols-1 gap-2.5">
+                    {[
+                      { icon: Lock, label: "Acces pe misiuni", sub: "Plătești o singură dată per misiune" },
+                      { icon: Users, label: "Comunitate activă", sub: "Support real și mentorat" },
+                      { icon: Zap, label: "Acces activat automat", sub: "După confirmarea plății, primești acces imediat" },
+                    ].map((f) => (
+                      <li key={f.label} className="flex items-center gap-3">
+                        <span className="h-9 w-9 shrink-0 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                          <f.icon className="h-4 w-4 text-white" />
+                        </span>
+                        <div className="min-w-0">
+                          <div className="text-sm font-semibold text-foreground leading-tight">{f.label}</div>
+                          <div className="text-xs text-muted-foreground leading-snug">{f.sub}</div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
+                      <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord
                     </a>
-                  ) : (
-                    <a href={s.cta.href} className={`mt-3 mx-auto rounded-lg px-4 py-2 text-xs font-semibold transition ${s.cta.variant === "primary" ? "[background-image:var(--gradient-primary)] text-white shadow-[var(--shadow-glow)]" : "border border-primary/40 text-primary bg-white hover:bg-primary-soft shadow-sm"}`}>
-                      {s.cta.label}
+                    <a href="#misiuni" className="inline-flex items-center gap-2 rounded-xl border border-border bg-background/70 backdrop-blur px-5 py-3 text-sm font-semibold text-foreground hover:border-primary/40 hover:text-primary transition">
+                      Vezi misiunile <ChevronRight className="h-4 w-4" />
                     </a>
-                  )
-                ) : null}
+                    <Link to="/despre" className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-white px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-soft transition">
+                      Citește povestea EvoStep <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+                <div className="relative order-1 md:order-2">
+                  <div aria-hidden className="absolute inset-0 -z-10 [background-image:var(--gradient-primary)] opacity-25 blur-3xl rounded-full" />
+                  <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="relative w-full h-auto object-contain drop-shadow-2xl" />
+                </div>
               </div>
             </div>
-          ))}
+
+            {/* CUM FUNCȚIONEAZĂ — listă compactă */}
+            <div id="cum" className="rounded-3xl bg-card border border-border p-5 md:p-6 shadow-[var(--shadow-card)]">
+              <div className="flex items-start gap-3 mb-4 pb-4 border-b border-border">
+                <span className="h-9 w-9 shrink-0 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center text-white font-bold text-sm shadow-[var(--shadow-glow)]">1</span>
+                <div className="min-w-0">
+                  <h2 className="font-serif text-xl md:text-2xl font-bold text-foreground leading-tight">Cum funcționează</h2>
+                  <p className="text-xs text-muted-foreground mt-0.5">Șase pași simpli până la prima ta misiune</p>
+                </div>
+              </div>
+              <ul className="space-y-2.5">
+                {steps.map((s) => {
+                  const hasNote = "note" in s && s.note;
+                  const cta = "cta" in s ? s.cta : undefined;
+                  const trailing = hasNote ? (
+                    <span className="whitespace-nowrap inline-flex items-center rounded-full border border-primary/25 bg-primary-soft/60 px-2.5 py-1 text-[10px] font-medium text-primary">{s.note}</span>
+                  ) : cta?.href ? (
+                    cta.href.startsWith("http") ? (
+                      <a href={cta.href} onClick={cta.href === discordInviteUrl ? openDiscordInvite : undefined} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap rounded-lg [background-image:var(--gradient-primary)] px-3 py-1.5 text-[11px] font-semibold text-white shadow-[var(--shadow-glow)]">{cta.label}</a>
+                    ) : cta.href.startsWith("/") ? (
+                      <Link to={cta.href as "/ghid/cont-discord"} className="whitespace-nowrap rounded-lg [background-image:var(--gradient-primary)] px-3 py-1.5 text-[11px] font-semibold text-white shadow-[var(--shadow-glow)]">{cta.label}</Link>
+                    ) : (
+                      <a href={cta.href} className="whitespace-nowrap rounded-lg [background-image:var(--gradient-primary)] px-3 py-1.5 text-[11px] font-semibold text-white shadow-[var(--shadow-glow)]">{cta.label}</a>
+                    )
+                  ) : null;
+                  return (
+                    <li key={s.n} className="grid grid-cols-[auto_auto_minmax(0,1fr)_auto] items-center gap-2.5 rounded-xl border border-border bg-background/50 p-2.5 md:p-3">
+                      <span className="h-9 w-9 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
+                        <s.icon className="h-4 w-4" />
+                      </span>
+                      <span className="h-6 w-6 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center text-white text-[11px] font-bold shrink-0">{s.n}</span>
+                      <div className="min-w-0">
+                        <div className="text-[13px] font-semibold text-foreground leading-tight">{s.title}</div>
+                        <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug line-clamp-2">{s.desc}</p>
+                      </div>
+                      <div className="shrink-0">{trailing}</div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -489,23 +499,20 @@ function Index() {
           {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Misiuni Fulger între misiuni\n\n🎁 În primele trei misiuni construiești trei artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Interioară.\n\n"}
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {missions.map((m) => (
-            <article key={m.name} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] overflow-hidden flex flex-col">
-              <div className="aspect-[16/9] overflow-hidden">
-                <img src={m.img} alt={m.name} width={768} height={432} loading="lazy" className="h-full w-full object-cover contrast-110 saturate-125 brightness-95" />
+            <article key={m.name} className="rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] p-3 md:p-4 flex flex-col">
+              <div className="flex items-start gap-2.5">
+                <span className="h-9 w-9 shrink-0 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                  <m.icon className="h-4.5 w-4.5 text-white" />
+                </span>
+                <h3 className="font-serif text-sm md:text-base font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent leading-tight">{m.name}</h3>
               </div>
-              <div className="p-3 flex flex-col">
-                <div className="flex items-center gap-2">
-                  <m.icon className="h-4 w-4 text-primary" />
-                  <h3 className="font-serif text-base font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">{m.name}</h3>
-                </div>
-                <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2">{m.desc}</p>
-                <div className="mt-3 flex items-end justify-between">
-                  <span className="rounded-md [background-image:var(--gradient-primary)] px-2 py-0.5 text-[10px] font-semibold text-white shadow-sm">{m.level}</span>
-                  <div className="font-serif text-xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">
-                    {m.price}<span className="text-xs text-muted-foreground font-sans ml-1 tracking-wider">RON</span>
-                  </div>
+              <p className="mt-2 text-[11px] md:text-xs text-muted-foreground line-clamp-3 leading-snug flex-1">{m.desc}</p>
+              <div className="mt-3 flex items-end justify-between border-t border-border pt-2.5">
+                <span className="text-[10px] font-medium text-muted-foreground tracking-wider uppercase">{m.level}</span>
+                <div className="font-serif text-lg md:text-xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">
+                  {m.price}<span className="text-[10px] text-muted-foreground font-sans ml-1 tracking-wider">RON</span>
                 </div>
               </div>
             </article>
@@ -569,15 +576,32 @@ function Index() {
             În primele trei misiuni construiești trei artefacte personale. În Misiunea 4 le integrezi în artefactul final al nivelului: Busola Interioară.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mt-6">
-          {nivel1Artefacte.map((a) => (
-            <div key={a.title} className="flex flex-col items-center text-center rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
-              <span className="h-12 w-12 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                <a.icon className="h-6 w-6 text-white" />
+        <div className="max-w-5xl mx-auto mt-6">
+          <div className="flex flex-wrap md:flex-nowrap items-stretch justify-center gap-3 md:gap-2">
+            {nivel1Artefacte.slice(0, 3).map((a, idx) => (
+              <Fragment key={a.title}>
+                <div className="flex-1 min-w-[130px] flex flex-col items-center text-center rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)]">
+                  <span className="h-11 w-11 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                    <a.icon className="h-5 w-5 text-white" />
+                  </span>
+                  <h4 className="mt-3 font-semibold text-foreground text-sm leading-tight">{a.title}</h4>
+                </div>
+                {idx < 2 ? (
+                  <div className="hidden md:flex items-center text-primary/60 shrink-0 px-1">
+                    <ChevronRight className="h-6 w-6" />
+                  </div>
+                ) : (
+                  <div className="hidden md:flex items-center text-primary shrink-0 px-1 font-serif text-3xl font-bold">=</div>
+                )}
+              </Fragment>
+            ))}
+            <div className="flex-1 min-w-[140px] flex flex-col items-center text-center rounded-2xl border border-primary/40 [background-image:var(--gradient-primary)] p-4 shadow-[var(--shadow-glow)]">
+              <span className="h-11 w-11 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center ring-2 ring-white/30">
+                <Compass className="h-5 w-5 text-white" />
               </span>
-              <h4 className="mt-4 font-semibold text-foreground">{a.title}</h4>
+              <h4 className="mt-3 font-semibold text-white text-sm leading-tight">Busola Interioară</h4>
             </div>
-          ))}
+          </div>
         </div>
         <div className="max-w-3xl mx-auto mt-6 text-center">
           <p className="text-base text-muted-foreground leading-relaxed">
@@ -644,8 +668,15 @@ function Index() {
                 />
                 <h4 className="mt-4 font-serif text-2xl font-bold text-foreground">{p.name}</h4>
                 <p className="text-sm text-primary font-medium">{p.role}</p>
-                <p className="mt-3 text-sm font-semibold text-foreground leading-relaxed">{p.specialist}</p>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+                <p className="mt-3 text-sm font-bold text-foreground leading-relaxed">{p.specialist}</p>
+                <details className="mt-2 group text-left w-full">
+                  <summary className="list-none cursor-pointer text-xs font-semibold text-primary hover:underline inline-flex items-center gap-1 [&::-webkit-details-marker]:hidden">
+                    <span className="group-open:hidden">Citește mai mult</span>
+                    <span className="hidden group-open:inline">Închide</span>
+                    <ChevronRight className="h-3.5 w-3.5 transition-transform group-open:rotate-90" />
+                  </summary>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+                </details>
               </div>
             ))}
           </div>
