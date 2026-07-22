@@ -576,15 +576,32 @@ function Index() {
             În primele trei misiuni construiești trei artefacte personale. În Misiunea 4 le integrezi în artefactul final al nivelului: Busola Interioară.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mt-6">
-          {nivel1Artefacte.map((a) => (
-            <div key={a.title} className="flex flex-col items-center text-center rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
-              <span className="h-12 w-12 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                <a.icon className="h-6 w-6 text-white" />
+        <div className="max-w-5xl mx-auto mt-6">
+          <div className="flex flex-wrap md:flex-nowrap items-stretch justify-center gap-3 md:gap-2">
+            {nivel1Artefacte.slice(0, 3).map((a, idx) => (
+              <>
+                <div key={a.title} className="flex-1 min-w-[130px] flex flex-col items-center text-center rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)]">
+                  <span className="h-11 w-11 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                    <a.icon className="h-5 w-5 text-white" />
+                  </span>
+                  <h4 className="mt-3 font-semibold text-foreground text-sm leading-tight">{a.title}</h4>
+                </div>
+                {idx < 2 ? (
+                  <div key={`arrow-${idx}`} className="hidden md:flex items-center text-primary/60 shrink-0 px-1">
+                    <ChevronRight className="h-6 w-6" />
+                  </div>
+                ) : (
+                  <div key="equals" className="hidden md:flex items-center text-primary shrink-0 px-1 font-serif text-3xl font-bold">=</div>
+                )}
+              </>
+            ))}
+            <div className="flex-1 min-w-[140px] flex flex-col items-center text-center rounded-2xl border border-primary/40 [background-image:var(--gradient-primary)] p-4 shadow-[var(--shadow-glow)]">
+              <span className="h-11 w-11 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center ring-2 ring-white/30">
+                <Compass className="h-5 w-5 text-white" />
               </span>
-              <h4 className="mt-4 font-semibold text-foreground">{a.title}</h4>
+              <h4 className="mt-3 font-semibold text-white text-sm leading-tight">Busola Interioară</h4>
             </div>
-          ))}
+          </div>
         </div>
         <div className="max-w-3xl mx-auto mt-6 text-center">
           <p className="text-base text-muted-foreground leading-relaxed">
