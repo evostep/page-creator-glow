@@ -43,9 +43,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "EvoStep — Evoluție pas cu pas" },
-      { name: "description", content: "O aventură de dezvoltare personală pe Discord. Acces pe niveluri, comunitate activă, acces activat automat." },
+      { name: "description", content: "O aventură de dezvoltare personală pe Discord. Acces pe misiuni, comunitate activă, acces activat automat." },
       { property: "og:title", content: "EvoStep — Evoluție pas cu pas" },
-      { property: "og:description", content: "O aventură de dezvoltare personală pe Discord. Acces pe niveluri, comunitate activă, acces activat automat." },
+      { property: "og:description", content: "O aventură de dezvoltare personală pe Discord. Acces pe misiuni, comunitate activă, acces activat automat." },
     ],
   }),
   component: Index,
