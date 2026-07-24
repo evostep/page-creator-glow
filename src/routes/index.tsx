@@ -366,7 +366,7 @@ function Index() {
                   </p>
                   <ul className="mt-5 grid grid-cols-1 gap-2.5">
                     {[
-                      { icon: Lock, label: "Acces pe misiuni", sub: "Plătești o singură dată per misiune" },
+                      { icon: Lock, label: "Acces misiuni", sub: "Plătești o singură dată per misiune" },
                       { icon: Users, label: "Comunitate activă", sub: "Support real și mentorat" },
                       { icon: Zap, label: "Acces activat automat", sub: "După confirmarea plății, primești acces imediat" },
                     ].map((f) => (
