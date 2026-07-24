@@ -43,9 +43,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "EvoStep — Evoluție pas cu pas" },
-      { name: "description", content: "O aventură de dezvoltare personală pe Discord. Acces pe misiuni, comunitate activă, acces activat automat." },
+      { name: "description", content: "O aventură de dezvoltare personală pe Discord. Acces misiuni, comunitate activă, acces activat automat." },
       { property: "og:title", content: "EvoStep — Evoluție pas cu pas" },
-      { property: "og:description", content: "O aventură de dezvoltare personală pe Discord. Acces pe misiuni, comunitate activă, acces activat automat." },
+      { property: "og:description", content: "O aventură de dezvoltare personală pe Discord. Acces misiuni, comunitate activă, acces activat automat." },
     ],
   }),
   component: Index,
@@ -366,7 +366,7 @@ function Index() {
                   </p>
                   <ul className="mt-5 grid grid-cols-1 gap-2.5">
                     {[
-                      { icon: Lock, label: "Acces pe misiuni", sub: "Plătești o singură dată per misiune" },
+                      { icon: Lock, label: "Acces misiuni", sub: "Plătești o singură dată per misiune" },
                       { icon: Users, label: "Comunitate activă", sub: "Support real și mentorat" },
                       { icon: Zap, label: "Acces activat automat", sub: "După confirmarea plății, primești acces imediat" },
                     ].map((f) => (
