@@ -84,7 +84,6 @@ const missions = [
   { name: "Busola Interioară", desc: "Construiește-ți Busola Interioară.", level: "Misiunea 4", price: 59, img: mission4, icon: Mountain },
 ];
 
-const discordInviteUrl = "https://discord.gg/fsXDY8qv5n";
 
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
