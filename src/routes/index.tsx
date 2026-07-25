@@ -125,7 +125,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
   {
     q: "Cum primesc accesul la misiune?",
     a: (
-      <p>După confirmarea plății, botul îți atribuie automat rolul corespunzător în Discord și primești acces la canalele private ale misiunii în câteva minute.</p>
+      <p>După confirmarea plății, primești automat rolul corespunzător în Discord și acces la canalele private ale misiunii în câteva minute.</p>
     ),
   },
   {
@@ -303,7 +303,7 @@ function DiscordMockup() {
                 #info-evostep
               </div>
               <p className="mt-1 text-sm text-[#2e3338] leading-snug">
-                Aici <b>citești despre EvoStep</b>, găsești misiunea <b>„Hoțul de Roluri”</b> și te poți <b>abona la notificări</b>. E primul loc unde ajungi.
+                Aici <b>citești despre EvoStep</b>, găsești misiunea <b>„Hoțul de Roluri”</b> și te poți <b>abona la notificări</b>. Este primul canal pe care îl deschizi când intri pe server.
               </p>
             </div>
 
@@ -313,7 +313,7 @@ function DiscordMockup() {
                 #comunitate-evostep
               </div>
               <p className="mt-1 text-sm text-[#2e3338] leading-snug">
-                Aici <b>ne întâlnim cu toții</b> — inima comunității, unde curge discuția și energia zilnică.
+                Aici <b>ne întâlnim cu toții</b> — locul principal de discuție și interacțiune zilnică.
               </p>
             </div>
           </div>
@@ -369,7 +369,7 @@ function Index() {
                   <ul className="mt-5 grid grid-cols-1 gap-2.5">
                     {[
                       { icon: Lock, label: "Acces misiuni", sub: "Plătești o singură dată per misiune" },
-                      { icon: Users, label: "Comunitate activă", sub: "Support real și mentorat" },
+                      { icon: Users, label: "Comunitate activă", sub: "Suport real și mentorat" },
                       { icon: Zap, label: "Acces activat automat", sub: "După confirmarea plății, primești acces imediat" },
                     ].map((f) => (
                       <li key={f.label} className="flex items-center gap-3">
@@ -623,7 +623,7 @@ function Index() {
           <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
             Un spațiu clar, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">structurat pe niveluri</span>
           </p>
-          <p className="text-sm text-muted-foreground text-center max-w-xl">Canale dedicate pentru fiecare nivel, mentori activi, botul Călăuza care îți deschide accesul după plată.</p>
+          <p className="text-sm text-muted-foreground text-center max-w-xl">Canale dedicate pentru fiecare nivel, mentori activi, Călăuza care îți deschide accesul după plată.</p>
         </div>
         <DiscordMockup />
       </section>
