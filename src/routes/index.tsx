@@ -117,7 +117,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
         <p>
           <a href="#misiuni" className="text-primary font-medium hover:underline">Misiunile Nivelului 1</a> costă între 29 și 59 RON, în funcție de temă și de conținut. Fiecare misiune se achiziționează separat, iar prețul exact este afișat pentru fiecare în parte.
         </p>
-        <p>Recomandarea noastră este să le parcurgi și să le achiziționezi în ordine, deoarece misiunile sunt legate între ele și construiesc treptat artefactul nivelului.</p>
+        <p>Recomandarea noastră este să le achiziționezi și să le parcurgi în ordine, deoarece misiunile sunt legate între ele și construiesc treptat artefactul nivelului.</p>
         <p>Plata se face securizat prin platforma Stripe. După confirmarea plății, fluxul automatizat îți acordă accesul în câteva minute.</p>
       </>
     ),
