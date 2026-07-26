@@ -457,6 +457,60 @@ function Index() {
         </div>
       </section>
 
+      {/* VALORI, MISIUNE ȘI PROMISIUNE */}
+      <section id="fundamente" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+        <div className="flex flex-col items-center gap-3 mb-6">
+          <div className="flex items-center gap-4">
+            <span className="h-px w-12 bg-primary/40" />
+            <h2 className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">
+              Fundamentele EvoStep
+            </h2>
+            <span className="h-px w-12 bg-primary/40" />
+          </div>
+          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-2xl leading-tight tracking-tight">
+            Valori, misiune și promisiune
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+          {evoValues.map((v) => (
+            <div key={v.title} className="rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)] flex flex-col items-center text-center">
+              <span className="h-10 w-10 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                <v.icon className="h-5 w-5 text-white" />
+              </span>
+              <h3 className="mt-3 font-serif text-sm font-bold text-foreground leading-tight">{v.title}</h3>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-[var(--shadow-card)]">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-10 w-10 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
+                <Target className="h-5 w-5" />
+              </span>
+              <div className="text-[10px] tracking-[0.24em] font-semibold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">MISIUNEA EVOSTEP</div>
+            </div>
+            <p className="text-foreground leading-relaxed">
+              EvoStep transformă dezvoltarea personală într-un traseu de misiuni prin care descoperi lucruri importante despre tine, despre relațiile tale și despre felul în care îți găsești locul în lume.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-primary/40 [background-image:var(--gradient-primary)] p-6 md:p-8 shadow-[var(--shadow-glow)] text-white">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center ring-2 ring-white/30">
+                <Gift className="h-5 w-5 text-white" />
+              </span>
+              <div className="text-[10px] tracking-[0.24em] font-semibold text-white/80">PROMISIUNEA EVOSTEP</div>
+            </div>
+            <p className="leading-relaxed">
+              La fiecare nivel obții ceva clar și personal, pe care îl poți recunoaște și folosi în viața reală.
+            </p>
+            <p className="mt-4 font-serif text-xl font-bold tracking-wide">DESCOPERI. APLICI. MERGI MAI DEPARTE.</p>
+          </div>
+        </div>
+      </section>
+
       {/* HARTA PARCURSULUI */}
       <section id="harta" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
         <div className="flex flex-col items-center gap-3 mb-6">
