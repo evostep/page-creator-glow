@@ -189,6 +189,13 @@ const nivel1Artefacte = [
   { icon: Compass, title: "Busola Interioară" },
 ];
 
+const evoValues = [
+  { icon: Lightbulb, title: "Înveți din experiență" },
+  { icon: Compass, title: "Îți găsești propriile răspunsuri" },
+  { icon: Zap, title: "Aplici ceea ce descoperi" },
+  { icon: ArrowRight, title: "Fiecare pas te duce mai departe" },
+];
+
 function Logo() {
   return (
     <div className="flex items-center gap-2.5">
