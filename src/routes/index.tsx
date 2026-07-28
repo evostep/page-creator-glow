@@ -903,12 +903,14 @@ function Index() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <p className="text-sm text-muted-foreground mb-3">Suntem 100% online. Ne găsești pe Discord sau pe email:</p>
-            <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition mb-4">
-              <Mail className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
-            </a>
-            <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg [background-image:var(--gradient-primary)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
-              <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Discord
-            </a>
+            <div className="flex flex-col items-start gap-3">
+              <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition break-all">
+                <Mail className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
+              </a>
+              <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg [background-image:var(--gradient-primary)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
+                <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Discord
+              </a>
+            </div>
           </div>
 
           {/* Protecția consumatorilor & Plăți */}
