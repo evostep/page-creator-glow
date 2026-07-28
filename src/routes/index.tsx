@@ -437,19 +437,21 @@ function Index() {
                       <a href={cta.href} className="whitespace-nowrap rounded-lg [background-image:var(--gradient-primary)] px-3 py-1.5 text-[11px] font-semibold text-white shadow-[var(--shadow-glow)]">{cta.label}</a>
                     )
                   ) : null;
-                  return (
-                    <li key={s.n} className="grid grid-cols-[auto_auto_minmax(0,1fr)_auto] items-center gap-2.5 rounded-xl border border-border bg-background/50 p-2.5 md:p-3">
-                      <span className="h-9 w-9 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
-                        <s.icon className="h-4 w-4" />
-                      </span>
-                      <span className="h-6 w-6 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center text-white text-[11px] font-bold shrink-0">{s.n}</span>
-                      <div className="min-w-0">
-                        <div className="text-[13px] font-semibold text-foreground leading-tight">{s.title}</div>
-                        <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug line-clamp-2">{s.desc}</p>
-                      </div>
-                      <div className="shrink-0">{trailing}</div>
-                    </li>
-                  );
+                   return (
+                     <li key={s.n} className="grid grid-cols-[auto_auto_minmax(0,1fr)] sm:grid-cols-[auto_auto_minmax(0,1fr)_auto] items-center gap-x-2.5 gap-y-2 rounded-xl border border-border bg-background/50 p-2.5 md:p-3">
+                       <span className="h-9 w-9 rounded-xl bg-primary-soft flex items-center justify-center text-primary">
+                         <s.icon className="h-4 w-4" />
+                       </span>
+                       <span className="h-6 w-6 rounded-full [background-image:var(--gradient-primary)] flex items-center justify-center text-white text-[11px] font-bold shrink-0">{s.n}</span>
+                       <div className="min-w-0">
+                         <div className="text-[13px] font-semibold text-foreground leading-tight">{s.title}</div>
+                         <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug line-clamp-2">{s.desc}</p>
+                       </div>
+                       {trailing && (
+                         <div className="col-span-3 sm:col-span-1 shrink-0 justify-self-start sm:justify-self-end">{trailing}</div>
+                       )}
+                     </li>
+                   );
                 })}
               </ul>
             </div>
@@ -901,12 +903,14 @@ function Index() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <p className="text-sm text-muted-foreground mb-3">Suntem 100% online. Ne găsești pe Discord sau pe email:</p>
-            <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition mb-4">
-              <Mail className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
-            </a>
-            <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg [background-image:var(--gradient-primary)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
-              <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Discord
-            </a>
+            <div className="flex flex-col items-start gap-3">
+              <a href="mailto:hello.evostep@gmail.com" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition break-all">
+                <Mail className="h-4 w-4 shrink-0" /> hello.evostep@gmail.com
+              </a>
+              <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg [background-image:var(--gradient-primary)] px-4 py-2 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition whitespace-nowrap">
+                <DiscordIcon className="h-4 w-4 shrink-0 text-white" /> Discord
+              </a>
+            </div>
           </div>
 
           {/* Protecția consumatorilor & Plăți */}
