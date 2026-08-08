@@ -708,7 +708,7 @@ function Index() {
                 img: gabrielaBumbac.url,
                 name: "Gabriela Bumbac",
                 role: "Fondatoare EvoStep",
-                specialist: "Specialist în formare și consiliere, cu experiență în lucrul direct cu oamenii și în antreprenoriat.",
+                specialist: "Specialist în formare profesională, consiliere și astrologie.",
                 bio: "Aduce în EvoStep capacitatea de a transforma o idee într-un parcurs coerent și aplicabil, construit din experiență și testat mai întâi pe propriul drum.",
               },
               {
