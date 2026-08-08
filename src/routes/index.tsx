@@ -821,8 +821,8 @@ function Index() {
             Ai nelămuriri? <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">Aici găsești răspunsuri</span>
           </p>
         </div>
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-2">
+        <div className="max-w-5xl mx-auto">
+          <Accordion type="single" collapsible className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {faqs.map((f, i) => (
               <AccordionItem
                 key={f.q}
