@@ -565,7 +565,7 @@ function Index() {
           </p>
         </div>
         <p className="text-center text-base text-muted-foreground mb-5 max-w-2xl mx-auto whitespace-pre-line">
-          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Misiuni Fulger între misiuni\n\n🎁 În primele trei misiuni construiești trei artefacte personale.\n\n🧭 În ultima misiune le vei integra pentru a construi Busola Interioară.\n\n"}
+          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Misiuni Fulger între misiuni\n\n💰 Plătești o singură dată per misiune, doar când ești gata să continui.\n\n"}
         </p>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
