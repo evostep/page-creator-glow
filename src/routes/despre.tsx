@@ -39,7 +39,7 @@ const echipa = [
   {
     nume: "Gabriela Bumbac",
     rol: "Fondatoare EvoStep",
-    subtitlu: "Specialist în formare și consiliere, cu experiență în lucrul direct cu oamenii și în antreprenoriat.",
+    subtitlu: "Specialist în formare profesională, consiliere și astrologie.",
     desc: "Aduce în EvoStep capacitatea de a transforma o idee într-un parcurs coerent și aplicabil, construit din experiență și testat mai întâi pe propriul drum.",
   },
   {
