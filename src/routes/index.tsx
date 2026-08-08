@@ -792,7 +792,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="cta" className="mx-auto max-w-7xl px-6 pb-8 md:pb-10">
+      <section id="cta" className="mx-auto max-w-7xl px-6 pb-6 md:pb-8">
         <div className="relative overflow-hidden rounded-3xl bg-card border border-border px-8 py-10 md:px-12 md:py-12 flex flex-col lg:flex-row items-center gap-6 shadow-[var(--shadow-card)]">
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full [background-image:var(--gradient-primary)] opacity-10 blur-3xl" />
           <div className="relative h-14 w-14 rounded-2xl [background-image:var(--gradient-primary)] flex items-center justify-center shrink-0 shadow-[var(--shadow-glow)]">
@@ -810,7 +810,7 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+      <section id="faq" className="mx-auto max-w-7xl px-6 py-6 md:py-8">
         <div className="flex flex-col items-center gap-3 mb-6">
           <div className="flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
@@ -822,22 +822,22 @@ function Index() {
           </p>
         </div>
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="single" collapsible className="space-y-2">
             {faqs.map((f, i) => (
               <AccordionItem
                 key={f.q}
                 value={`item-${i}`}
-                className="rounded-2xl border border-border bg-card px-5 shadow-[var(--shadow-card)] data-[state=open]:border-primary/40"
+                className="rounded-2xl border border-border bg-card px-4 shadow-[var(--shadow-card)] data-[state=open]:border-primary/40"
               >
-                <AccordionTrigger className="py-4 text-left hover:no-underline">
+                <AccordionTrigger className="py-3 text-left hover:no-underline">
                   <div className="flex items-center gap-3 pr-3">
-                    <span className="h-8 w-8 shrink-0 rounded-lg [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                      <HelpCircle className="h-4 w-4 text-white" />
+                    <span className="h-7 w-7 shrink-0 rounded-lg [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+                      <HelpCircle className="h-3.5 w-3.5 text-white" />
                     </span>
-                    <span className="font-semibold text-foreground text-sm md:text-base leading-tight">{f.q}</span>
+                    <span className="font-semibold text-foreground text-sm leading-tight">{f.q}</span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="pb-5 pl-11 pr-2 text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                <AccordionContent className="pb-4 pl-10 pr-1 text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
@@ -849,7 +849,7 @@ function Index() {
       {/* FOOTER */}
       <footer className="border-t border-border bg-background">
         {/* Partners & developer banner */}
-        <div className="mx-auto max-w-7xl px-6 pt-10 md:pt-12 pb-8 md:pb-10">
+        <div className="mx-auto max-w-7xl px-6 pt-8 md:pt-10 pb-6 md:pb-8">
           <div className="relative rounded-2xl border border-border bg-card p-5 md:p-6 shadow-[var(--shadow-card)] overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-1 [background-image:var(--gradient-primary)] opacity-60" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -871,7 +871,7 @@ function Index() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 py-8 md:py-10 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+        <div className="mx-auto max-w-7xl px-6 py-6 md:py-8 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div>
             <Logo />
