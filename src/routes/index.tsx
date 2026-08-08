@@ -239,8 +239,8 @@ function DiscordMockup() {
     {
       name: "CABINETE",
       channels: [
-        { icon: "🔴", name: "Cabinet-GB" },
-        { icon: "🔴", name: "Cabinet-GR" },
+        { icon: "🔴", name: "Gabriela-Bumbac" },
+        { icon: "🔴", name: "Gabriela-Radu" },
       ],
     },
     {
