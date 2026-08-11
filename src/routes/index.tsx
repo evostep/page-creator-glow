@@ -43,6 +43,66 @@ import lifeLiveEventsLogo from "@/assets/life-live-events-logo.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
+const SITE_URL = "https://evostep.lovable.app";
+
+// Plain-text mirror of the FAQ section, used only for FAQPage structured data.
+const faqSchemaEntries: { q: string; a: string }[] = [
+  {
+    q: "Ce este EvoStep?",
+    a: "EvoStep este un parcurs interactiv în 12 niveluri, desfășurat într-o comunitate Discord. Fiecare nivel conține misiuni tematice, exerciții practice și Misiuni Fulger, iar descoperirile tale se adună în artefacte personale care se leagă treptat într-un sistem propriu de orientare. Pe parcurs poți discuta cu ceilalți participanți și poți cere clarificări mentorilor EvoStep, în timpul programului acestora.",
+  },
+  {
+    q: "Am nevoie de cont Discord?",
+    a: "Da. Pentru a participa la EvoStep ai nevoie de un cont Discord. Îl poți crea gratuit în câteva minute, iar dacă ai deja unul, îl folosești pe acela. Găsești toți pașii în ghidul nostru pentru crearea contului Discord.",
+  },
+  {
+    q: "Cât costă o misiune?",
+    a: "Misiunile Nivelului 1 costă între 29 și 59 RON, în funcție de temă și de conținut. Fiecare misiune se achiziționează separat, iar prețul exact este afișat pentru fiecare în parte. Recomandarea noastră este să le achiziționezi și să le parcurgi în ordine, deoarece misiunile sunt legate între ele. Plata se face securizat prin Stripe, iar accesul este acordat automat în câteva minute.",
+  },
+  {
+    q: "Cum primesc accesul la misiune?",
+    a: "După confirmarea plății, primești automat rolul corespunzător în Discord și acces la canalele private ale misiunii în câteva minute.",
+  },
+  {
+    q: "Unde găsesc informațiile legale și regulile de plată?",
+    a: "Poți consulta oricând Termenii și condițiile, Politica de plată și Politica de confidențialitate, disponibile în footerul site-ului.",
+  },
+  {
+    q: "Cum primesc sprijin în comunitatea EvoStep?",
+    a: "Mentorii EvoStep sunt activi în comunitate, de regulă, între orele 20:00 și 22:00. Pentru probleme tehnice poți trimite un ticket direct pe serverul Discord și primești sprijin în cel mult 24 de ore.",
+  },
+  {
+    q: "Ce se întâmplă după ce termin o misiune sau un nivel?",
+    a: "După ce finalizezi o misiune, primești acces la două Misiuni Fulger — MF1 și MF2. Misiunea următoare poate fi achiziționată imediat sau mai târziu. La finalul fiecărui nivel, artefactele obținute se reunesc într-un artefact principal al nivelului, iar la capătul celor 12 niveluri se conturează harta ta personală de orientare.",
+  },
+];
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "EvoStep",
+  url: SITE_URL,
+  description:
+    "EvoStep este un parcurs interactiv de dezvoltare personală în 12 niveluri, desfășurat într-o comunitate Discord.",
+  email: "contact@evostep.live",
+  areaServed: "RO",
+  founder: [
+    { "@type": "Person", name: "Gabriela Bumbac" },
+    { "@type": "Person", name: "Gabriela Radu" },
+  ],
+  parentOrganization: { "@type": "Organization", name: "Life & Live Events SRL" },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSchemaEntries.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -50,6 +110,11 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "O aventură de dezvoltare personală pe Discord. Acces misiuni, comunitate activă, acces activat automat." },
       { property: "og:title", content: "EvoStep — Evoluție pas cu pas" },
       { property: "og:description", content: "O aventură de dezvoltare personală pe Discord. Acces misiuni, comunitate activă, acces activat automat." },
+    ],
+    links: [{ rel: "canonical", href: SITE_URL + "/" }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(organizationSchema) },
+      { type: "application/ld+json", children: JSON.stringify(faqSchema) },
     ],
   }),
   component: Index,
