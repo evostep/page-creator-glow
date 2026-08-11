@@ -579,6 +579,9 @@ function Index() {
       </section>
 
       {/* HARTA PARCURSULUI */}
+      {/* ANUNȚURI / EMAIL */}
+      <NewsletterSignup />
+
       <section id="harta" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
         <div className="flex flex-col items-center gap-3 mb-6">
           <div className="flex items-center gap-4">
