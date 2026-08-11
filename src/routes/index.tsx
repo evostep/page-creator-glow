@@ -42,6 +42,7 @@ import asociatiaCopilot from "@/assets/asociatia-copilot-cropped.png.asset.json"
 import lifeLiveEventsLogo from "@/assets/life-live-events-logo.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 const SITE_URL = "https://evostep.lovable.app";
 
@@ -578,10 +579,10 @@ function Index() {
         </div>
       </section>
 
-      {/* HARTA PARCURSULUI */}
       {/* ANUNȚURI / EMAIL */}
       <NewsletterSignup />
 
+      {/* HARTA PARCURSULUI */}
       <section id="harta" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
         <div className="flex flex-col items-center gap-3 mb-6">
           <div className="flex items-center gap-4">
