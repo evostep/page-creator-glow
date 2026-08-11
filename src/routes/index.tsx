@@ -27,11 +27,11 @@ import {
   Gift,
 } from "lucide-react";
 import evostepLogo from "@/assets/evostep-logo.asset.json";
-import heroPortal from "@/assets/hero-portal.jpg";
-import mission1 from "@/assets/mission-1.jpg";
-import mission2 from "@/assets/mission-2.jpg";
-import mission3 from "@/assets/mission-3.jpg";
-import mission4 from "@/assets/mission-4.jpg";
+import heroPortal from "@/assets/hero-portal.webp";
+import mission1 from "@/assets/mission-1.webp";
+import mission2 from "@/assets/mission-2.webp";
+import mission3 from "@/assets/mission-3.webp";
+import mission4 from "@/assets/mission-4.webp";
 import gabrielaBumbac from "@/assets/gabriela-bumbac.png.asset.json";
 import gabrielaRadu from "@/assets/gabriela-radu.png.asset.json";
 import costel from "@/assets/costel.png.asset.json";
