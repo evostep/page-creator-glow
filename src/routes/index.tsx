@@ -408,7 +408,7 @@ function Index() {
                 </div>
                 <div className="relative order-1 md:order-2">
                   <div aria-hidden className="absolute inset-0 -z-10 [background-image:var(--gradient-primary)] opacity-25 blur-3xl rounded-full" />
-                  <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1280} height={960} className="relative w-full h-auto object-contain drop-shadow-2xl" />
+                  <img src={heroPortal} alt="Călătoare în fața portalului EvoStep" width={1264} height={848} fetchPriority="high" decoding="async" className="relative w-full h-auto object-contain drop-shadow-2xl" />
                 </div>
               </div>
             </div>
@@ -857,14 +857,14 @@ function Index() {
               <div className="flex flex-col items-center justify-center gap-3 text-center">
                 <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Proiect dezvoltat de</span>
                 <div className="relative h-20 w-full max-w-[280px] flex items-center justify-center">
-                  <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="max-h-full max-w-full object-contain" />
+                  <img src={lifeLiveEventsLogo.url} alt="Life & Live Events" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
                 </div>
               </div>
               {/* Partner */}
               <div className="flex flex-col items-center justify-center gap-3 text-center">
                 <span className="text-xs tracking-[0.2em] uppercase font-semibold text-muted-foreground">Partener</span>
                 <div className="relative h-20 w-full max-w-[280px] flex items-center justify-center">
-                  <img src={asociatiaCopilot.url} alt="Asociația Copilot — partener EvoStep" className="max-h-full max-w-full object-contain" />
+                  <img src={asociatiaCopilot.url} alt="Asociația Copilot — partener EvoStep" className="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
@@ -924,13 +924,13 @@ function Index() {
                 aria-label="ANPC — Soluționarea Alternativă a Litigiilor"
                 className="inline-block rounded-md bg-white p-1 hover:opacity-90 transition w-fit"
               >
-                <img src={anpcSal.url} alt="ANPC — Soluționarea Alternativă a Litigiilor" className="h-10 w-auto block" />
+                <img src={anpcSal.url} alt="ANPC — Soluționarea Alternativă a Litigiilor" className="h-10 w-auto block" loading="lazy" decoding="async" />
               </a>
             </div>
 
             <h4 className="font-semibold text-foreground mt-6 mb-3">Plăți securizate</h4>
             <div className="inline-flex items-center rounded-lg border border-border bg-card p-1">
-              <img src={stripeLogo} alt="Stripe" className="h-8 w-auto shrink-0 object-contain" />
+              <img src={stripeLogo} alt="Stripe" className="h-8 w-auto shrink-0 object-contain" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
