@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import img1 from "@/assets/guide-discord-1.jpg";
-import img2 from "@/assets/guide-discord-2.jpg";
-import img3 from "@/assets/guide-discord-3.jpg";
-import img4 from "@/assets/guide-discord-4.jpg";
-import img5 from "@/assets/guide-discord-5.jpg";
+import img1 from "@/assets/guide-discord-1.webp";
+import img2 from "@/assets/guide-discord-2.webp";
+import img3 from "@/assets/guide-discord-3.webp";
+import img4 from "@/assets/guide-discord-4.webp";
+import img5 from "@/assets/guide-discord-5.webp";
 
 export const Route = createFileRoute("/ghid/cont-discord")({
   head: () => ({
