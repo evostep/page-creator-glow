@@ -25,6 +25,7 @@ import {
   ArrowRight,
   Target,
   Gift,
+  Menu,
 } from "lucide-react";
 import evostepLogo from "@/assets/evostep-logo.asset.json";
 import heroPortal from "@/assets/hero-portal.webp";
@@ -42,6 +43,7 @@ import asociatiaCopilot from "@/assets/asociatia-copilot-cropped.png.asset.json"
 import lifeLiveEventsLogo from "@/assets/life-live-events-logo.png.asset.json";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 const SITE_URL = "https://evostep.lovable.app";
