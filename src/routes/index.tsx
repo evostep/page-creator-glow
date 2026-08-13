@@ -587,9 +587,9 @@ function Index() {
             <p className="text-center font-serif tracking-[0.24em] text-xs font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Harta parcursului</p>
             <span className="h-px w-12 bg-primary/40" />
           </div>
-          <p className="font-serif text-3xl md:text-4xl font-bold text-center max-w-3xl leading-tight tracking-tight">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-center max-w-3xl leading-tight tracking-tight">
             12 niveluri, 3 etape, <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">repere construite pas cu pas</span>
-          </p>
+          </h2>
           <p className="text-center text-base text-muted-foreground max-w-2xl">
             De la <span className="font-semibold text-foreground">Eu cu mine</span>, la <span className="font-semibold text-foreground">Eu cu ceilalți</span> și <span className="font-semibold text-foreground">Eu în lume</span> — fiecare misiune adaugă un artefact, iar artefactele se leagă într-o hartă personală de orientare.
           </p>
@@ -613,7 +613,7 @@ function Index() {
             />
           </a>
           <p className="mt-3 text-center text-xs text-muted-foreground">
-            💡 Atinge harta pentru a o deschide la mărime completă și a citi detaliile fiecărui nivel.
+            Atinge harta pentru a o deschide la mărime completă și a citi detaliile fiecărui nivel.
           </p>
         </div>
       </section>
@@ -630,9 +630,18 @@ function Index() {
             Patru misiuni, o <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">Busolă Interioară</span>
           </h2>
         </div>
-        <p className="text-center text-base text-muted-foreground mb-5 max-w-2xl mx-auto whitespace-pre-line">
-          {"🎭 4 misiuni - una pe săptămână\n\n⚡ 2 Misiuni Fulger între misiuni\n\n💰 Plătești o singură dată per misiune, doar când ești gata să continui.\n\n"}
-        </p>
+        <ul className="mb-6 flex flex-wrap items-center justify-center gap-2.5">
+          {[
+            { icon: Drama, text: "4 misiuni — una pe săptămână" },
+            { icon: Zap, text: "2 Misiuni Fulger între misiuni" },
+            { icon: Lock, text: "Plătești o singură dată per misiune" },
+          ].map((c) => (
+            <li key={c.text} className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-soft/50 px-3.5 py-1.5 text-xs md:text-sm font-medium text-foreground">
+              <c.icon className="h-4 w-4 text-primary" />
+              {c.text}
+            </li>
+          ))}
+        </ul>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {missions.map((m) => (
@@ -766,7 +775,7 @@ function Index() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-6">
             <div className="text-[10px] tracking-[0.24em] font-semibold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">CINE ESTE ÎN SPATELE EVOSTEP</div>
-            <h3 className="mt-1 font-serif text-2xl md:text-3xl font-bold text-foreground">Echipa EvoStep</h3>
+            <h2 className="mt-1 font-serif text-2xl md:text-3xl font-bold text-foreground">Echipa EvoStep</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -865,7 +874,7 @@ function Index() {
             <DiscordIcon className="h-7 w-7 text-white" />
           </div>
           <div className="relative flex-1 text-center lg:text-left">
-            <h3 className="font-serif text-2xl md:text-3xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Ești gata să începi?</h3>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold [background-image:var(--gradient-primary)] bg-clip-text text-transparent">Ești gata să începi?</h2>
             <p className="text-muted-foreground text-sm mt-1">Intră pe Discord și începe-ți misiunea!</p>
             <p className="text-muted-foreground text-sm mt-2">La finalul LV1 vei recupera 3 artefacte pe care le vei integra în Busola Interioară.</p>
           </div>
