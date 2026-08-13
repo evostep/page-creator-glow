@@ -421,6 +421,42 @@ function Index() {
           <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)] hover:opacity-95 transition">
             <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord
           </a>
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                type="button"
+                aria-label="Deschide meniul de navigare"
+                className="lg:hidden inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-background/70 text-foreground hover:text-primary transition"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[82%] max-w-xs bg-background">
+              <SheetHeader className="text-left">
+                <SheetTitle className="font-serif">Navigare</SheetTitle>
+              </SheetHeader>
+              <nav className="mt-2 px-4 pb-6">
+                <ul className="flex flex-col gap-1">
+                  {navLinks.map((l) => (
+                    <li key={l.href}>
+                      <SheetClose asChild>
+                        {l.href.startsWith("/") ? (
+                          <Link to={l.href as "/despre"} className="block rounded-xl px-3 py-3 text-sm font-medium text-foreground hover:bg-primary-soft hover:text-primary transition">{l.label}</Link>
+                        ) : (
+                          <a href={l.href} className="block rounded-xl px-3 py-3 text-sm font-medium text-foreground hover:bg-primary-soft hover:text-primary transition">{l.label}</a>
+                        )}
+                      </SheetClose>
+                    </li>
+                  ))}
+                </ul>
+                <SheetClose asChild>
+                  <a href={discordInviteUrl} onClick={openDiscordInvite} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl [background-image:var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow-glow)]">
+                    <DiscordIcon className="h-4 w-4 text-white" /> Intră pe Discord
+                  </a>
+                </SheetClose>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </nav>
       </header>
 
