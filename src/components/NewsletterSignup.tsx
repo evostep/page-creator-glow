@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BellRing, Check, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { useServerFn } from "@tanstack/react-start";
+import { subscribeToNewsletter } from "@/lib/newsletter.functions";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -8,6 +9,7 @@ export function NewsletterSignup() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [message, setMessage] = useState("");
+  const subscribe = useServerFn(subscribeToNewsletter);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -18,11 +20,10 @@ export function NewsletterSignup() {
       return;
     }
     setStatus("loading");
-    const { error } = await supabase
-      .from("newsletter_subscribers")
-      .insert({ email: value, source: "landing" });
-
-    if (error && error.code !== "23505") {
+    try {
+      await subscribe({ data: { email: value, source: "landing" } });
+    } catch (error) {
+      console.error(error);
       setStatus("error");
       setMessage("Ceva nu a funcționat. Te rugăm să încerci din nou în câteva momente.");
       return;
