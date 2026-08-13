@@ -34,77 +34,62 @@ export function NewsletterSignup() {
   }
 
   return (
-    <section id="anunturi" className="mx-auto max-w-7xl px-6 py-8 md:py-10">
-      <div className="rounded-3xl border border-primary/15 bg-white shadow-[var(--shadow-card)] p-6 md:p-9">
-        <div className="grid gap-6 md:grid-cols-[1.1fr_1fr] md:items-center">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="h-10 w-10 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
-                <BellRing className="h-5 w-5 text-primary-foreground" />
-              </span>
-              <div className="font-serif tracking-[0.24em] text-[10px] font-bold uppercase [background-image:var(--gradient-primary)] bg-clip-text text-transparent">
-                Anunțuri EvoStep
-              </div>
-            </div>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold leading-tight tracking-tight">
-              Vrei să afli primul când lansăm{" "}
-              <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">
-                misiuni și niveluri noi
-              </span>
-              ?
-            </h2>
-            <p className="mt-2 text-muted-foreground leading-relaxed">
-              Lasă-ne adresa ta de email și primești un mesaj scurt la fiecare lansare nouă. Fără reclame, fără mesaje zilnice — te poți dezabona oricând.
-            </p>
-          </div>
+    <section id="anunturi" className="mx-auto max-w-7xl px-6 py-6 md:py-8">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 rounded-2xl border border-primary/15 bg-white shadow-[var(--shadow-card)] p-5 md:p-6">
+        <div className="flex items-center gap-3 md:min-w-[260px]">
+          <span className="h-10 w-10 shrink-0 rounded-xl [background-image:var(--gradient-primary)] flex items-center justify-center shadow-[var(--shadow-glow)]">
+            <BellRing className="h-5 w-5 text-primary-foreground" />
+          </span>
+          <h2 className="font-serif text-lg md:text-xl font-bold leading-tight tracking-tight">
+            Vrei noutăți?{" "}
+            <span className="[background-image:var(--gradient-primary)] bg-clip-text text-transparent">
+              Înscrie-te la newsletterul nostru
+            </span>
+          </h2>
+        </div>
 
-          <div>
-            {status === "done" ? (
-              <div className="flex items-start gap-3 rounded-2xl border border-primary/20 bg-primary-soft p-5">
-                <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-sm font-medium text-foreground">{message}</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-                <label htmlFor="newsletter-email" className="sr-only">
-                  Adresa ta de email
-                </label>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Input
-                    id="newsletter-email"
-                    type="email"
-                    autoComplete="email"
-                    placeholder="nume@exemplu.ro"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      if (status === "error") setStatus("idle");
-                    }}
-                    className="h-12 rounded-xl bg-background"
-                    required
-                  />
-                  <Button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="h-12 rounded-xl px-6 [background-image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-90"
-                  >
-                    {status === "loading" ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" /> Se trimite
-                      </>
-                    ) : (
-                      "Vreau să fiu anunțat"
-                    )}
-                  </Button>
-                </div>
-                <p className={status === "error" ? "text-sm text-destructive" : "text-xs text-muted-foreground"}>
-                  {status === "error"
-                    ? message
-                    : "Folosim adresa ta doar pentru anunțuri despre lansări. Vezi politica de confidențialitate."}
-                </p>
-              </form>
-            )}
-          </div>
+        <div className="flex-1">
+          {status === "done" ? (
+            <div className="flex items-center gap-3">
+              <Check className="h-5 w-5 text-primary shrink-0" />
+              <p className="text-sm font-medium text-foreground">{message}</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+              <label htmlFor="newsletter-email" className="sr-only">
+                Adresa ta de email
+              </label>
+              <Input
+                id="newsletter-email"
+                type="email"
+                autoComplete="email"
+                placeholder="nume@exemplu.ro"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (status === "error") setStatus("idle");
+                }}
+                className="h-11 rounded-xl bg-background"
+                required
+              />
+              <Button
+                type="submit"
+                disabled={status === "loading"}
+                className="h-11 shrink-0 rounded-xl px-5 [background-image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)] hover:opacity-90"
+              >
+                {status === "loading" ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" /> Se trimite
+                  </>
+                ) : (
+                  "Mă înscriu"
+                )}
+              </Button>
+              {status === "error" && (
+                <p className="text-sm text-destructive sm:absolute sm:-bottom-5">{message}</p>
+              )}
+            </form>
+          )}
         </div>
       </div>
     </section>
