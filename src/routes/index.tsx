@@ -875,6 +875,9 @@ function Index() {
         </div>
       </section>
 
+      {/* ÎNSCRIERE NEWSLETTER — micro-conversie finală */}
+      <NewsletterSignup />
+
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-7xl px-6 py-6 md:py-8">
         <div className="flex flex-col items-center gap-3 mb-6">
