@@ -1033,15 +1033,24 @@ function Index() {
           {/* Protecția consumatorilor & Plăți */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Protecția consumatorilor</h4>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               <a
                 href="https://anpc.ro/ce-este-sal/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ANPC — Soluționarea Alternativă a Litigiilor"
-                className="inline-block rounded-md bg-white p-1 hover:opacity-90 transition w-fit"
+                className="block rounded-md bg-white p-2 hover:opacity-90 transition w-full max-w-[260px]"
               >
-                <img src={anpcSal.url} alt="ANPC — Soluționarea Alternativă a Litigiilor" className="h-10 w-auto block" loading="lazy" decoding="async" />
+                <img src={anpcSal.url} alt="ANPC — Soluționarea Alternativă a Litigiilor" className="w-full h-auto block" decoding="async" />
+              </a>
+              <a
+                href="https://ec.europa.eu/consumers/odr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Soluționarea online a litigiilor (SOL)"
+                className="block rounded-md bg-white p-2 hover:opacity-90 transition w-full max-w-[260px]"
+              >
+                <img src={anpcSol.url} alt="Soluționarea online a litigiilor — Comisia Europeană" className="w-full h-auto block" decoding="async" />
               </a>
             </div>
 
